@@ -1,6 +1,6 @@
-CS319-03-Group3E
+**CS319-03-Group3E**
 
-Group Members
+**Group Members**
 
 Erdem Ege Maraşlı - 21602156
 
@@ -13,7 +13,7 @@ Hammad Malik - 21600468
 Ensar Kaya - 21502089
 
 
-Project Description 
+**Project Description** 
 
 In this project we are aiming to develop a game which is inspired by the box game “Walls&Warriors” by Smart Games. 
 The goal of the game is that the player should protect her/his castle with his/her knights by building walls. 
