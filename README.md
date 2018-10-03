@@ -1,7 +1,7 @@
 # TheMob
 CS319 Project(Walls & Warriors)
 
-Project Description
+Project Description 
 
 	In this project we are aiming to develop a game which is inspired by the box game “Walls&Warriors” by Smart Games. The goal of the game is that the player should protect her/his castle with his/her knights by building walls. The components of the game is a virtual game board which the game will be placed, we will show this afterward the choosing pattern screen. 4 or more different wall shapes which will be given to the player to build the walls to keep the castle and friendly knights inside the walls, 1 castle tower as the base, 3 or more side-knights (blue), 4 or more enemy-knights (red). We are planning to add extra modes (classical-level design-campaign-additional) to our application. Upgrades will be decided later.
 
