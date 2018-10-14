@@ -27,7 +27,10 @@ build the walls to keep the castle and friendly knights inside the walls,
 1 castle tower as the base, 
 3 or more side-knights (blue), 
 4 or more enemy-knights (red). 
-We are planning to add extra modes (classical-level design-campaign) to our application. 
+This features are same as the real game(classical mode).
+However, we are planning to add extra modes which will be different from the real game Walls&Warriors.
+We are planning to add extra modes: level design and campaign
+to our application. 
 Upgrades will be decided later.
 
 In the classical mode of our application, 
