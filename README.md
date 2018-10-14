@@ -38,7 +38,6 @@ the castle tower and knights will be built on to the virtual game board within t
 the game will be ready to play. 
 The player should analyze wisely then build walls to protect the castle and side-knights. 
 Also, the enemy knights should be kept outside of the walls to pass the levels.
-
 Moreover, we are planning to add another mode that the player can make the level design of pattern, 
 number of knights own. 
 In this mode, there will be an empty virtual game board 
