@@ -5,7 +5,7 @@
 **Group Members**
 
 Erdem Ege Maraşlı - 21602156
-
+ 
 Ayça Begüm Taşcıoğlu - 21600907
 
 Alperen Koca - 21502810
@@ -15,6 +15,17 @@ Hammad Malik - 21600468
 Ensar Kaya - 21502089
 
 **Project Topic**: A strategy desktop game inspired by "Walls&Warriors".
+
+**Walls and Warriors Description**
+
+There are various patterns that player can choose and based on the desired pattern, 
+enemy warriors and player’s warriors are placed. 
+Initially, the player should pick up the pattern which he/she want to challenge him/herself. 
+Regarding that choice, the game will be set up; 
+the castle tower and knights will be built on to the virtual game board within this pattern, 
+the game will be ready to play. 
+The player should analyze wisely then build walls to protect the castle and side-knights. 
+Also, the enemy knights should be kept outside of the walls to pass the levels.
 
 **Project Description and Requirements** 
 
@@ -32,16 +43,6 @@ However, we are planning to add extra modes which will be different from the rea
 We are planning to add extra modes: level design and campaign
 to our application. 
 Upgrades will be decided later.
-
-In the classical mode of our application, 
-there are various patterns that player can choose and based on the desired pattern, 
-enemy warriors and player’s warriors are placed. 
-Initially, the player should pick up the pattern which he/she want to challenge him/herself. 
-Regarding that choice, the game will be set up; 
-the castle tower and knights will be built on to the virtual game board within this pattern, 
-the game will be ready to play. 
-The player should analyze wisely then build walls to protect the castle and side-knights. 
-Also, the enemy knights should be kept outside of the walls to pass the levels.
 
 Moreover, we are planning to add another mode that the player can make the level design of pattern, 
 number of knights own. 
