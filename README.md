@@ -62,6 +62,19 @@ these characters interact with each other and flow of events in the game will ch
 Also, we are planning to add time option that 
 the user should finish the game in this decided time to win and pass the level.
 
+In the map designer mode, 
+players will be able to create their own patterns using the same objects in "The Wall".
+As template,
+the base platform of the classic game will be used and players will create 
+their patterns by putting knights, walls and castles as their wishes.
+We are planning to check these created patterns whether they have a distinct solution or not.
+The successful patterns created by players will be added to the player's game.
+Moreover,
+our aim is to make the game modifiable and allow users to have a 
+different perspective towards the game and concept of strategy. 
+By preparing the map designer mode,
+desktop game "The Wall" will present an additional mode that 
+cannot be found in the board game.  
 
 	
 Reference: https://www.smartgames.eu/uk/one-player-games/walls-warriors
