@@ -26,7 +26,7 @@ build the walls to keep the castle and friendly knights inside the walls,
 1 castle tower as the base, 
 3 or more side-knights (blue), 
 4 or more enemy-knights (red). 
-We are planning to add extra modes (classical-level design-campaign-additional) to our application. 
+We are planning to add extra modes (classical-level design-campaign) to our application. 
 Upgrades will be decided later.
 
 In the classical mode of our application, 
@@ -48,13 +48,13 @@ In campaign mode, we are planning to add stories to levels to make the game more
 we will show a story to our player at the beginning of the game; 
 while the player is playing, 
 there will be popups to give strategy to the player.
-
-In additional mode, there will be more roles, other than knights. 
+Moreover, there will be more roles in this mode, other than knights. 
 We are planning to add characters such as mercenaries with different powers. 
 In this way, if the player can reach these characters, 
 these characters interact with each other and flow of events in the game will change. 
 Also, we are planning to add time option that 
 the user should finish the game in this decided time to win and pass the level.
+
 
 	
 Reference: https://www.smartgames.eu/uk/one-player-games/walls-warriors
