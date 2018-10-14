@@ -5,7 +5,7 @@
 **Group Members**
 
 Erdem Ege Maraşlı - 21602156
- 
+
 Ayça Begüm Taşcıoğlu - 21600907
 
 Alperen Koca - 21502810
@@ -14,11 +14,31 @@ Hammad Malik - 21600468
 
 Ensar Kaya - 21502089
 
-**Project Topic**: A strategy desktop game inspired by "Walls&Warriors".
+**Project Topic**: A strategy desktop game inspired by the board game: "Walls&Warriors".
 
-**Walls and Warriors Description**
+**Brief Description of the board-game "WALLS AND WARRIORS**
 
-There are various patterns that player can choose and based on the desired pattern, 
+This game contains a game-board, 1 high-tower piece, 3 blue-knights, 4 red-knights and 4 different wall shapes. There are many predefined challenges in the board-game which indicate how to place (some) walls, high-towers and knights. One may not need to use all the objects. After correct placement of the objects as indicated in the specific level, the player has to place the pieces in such a manner that all the red knights are kept outside the walls and all the blue knights are placed inside the walls. Also, the castle must be closed on all sides and red knights can never be walled in, meaning they cannot be surrounded by walls on all 4 sides. A challenge is solved once all these objectives are completed. There is only one solution of placement of the pieces; these solutions are found at the end of the booklet. 
+
+
+
+**Project Description & Requirements** 
+
+In this project we are aiming to develop a game which is inspired by the box game “Walls&Warriors” by Smart Games. 
+The goal of the game is that the player should protect her/his castle with his/her knights by building walls. 
+ 
+Contents/Components of the game:
+Virtual game-board
+4 or more different wall shapes will be given to the player to 
+build the walls to keep the castle and friendly knights inside the walls, 
+1 castle tower as the base, 
+3 or more side-knights (blue), 
+4 or more enemy-knights (red). 
+We are planning to add extra modes (classical-level design-campaign) to our application. 
+Upgrades will be decided later.
+
+In the classical mode of our application, 
+there are various patterns that player can choose and based on the desired pattern, 
 enemy warriors and player’s warriors are placed. 
 Initially, the player should pick up the pattern which he/she want to challenge him/herself. 
 Regarding that choice, the game will be set up; 
@@ -26,24 +46,6 @@ the castle tower and knights will be built on to the virtual game board within t
 the game will be ready to play. 
 The player should analyze wisely then build walls to protect the castle and side-knights. 
 Also, the enemy knights should be kept outside of the walls to pass the levels.
-
-**Project Description and Requirements** 
-
-In this project we are aiming to develop a game which is inspired by the box game “Walls&Warriors” by Smart Games. 
-The goal of the game is that the player should protect her/his castle with his/her knights by building walls. 
-The components of the game is a virtual game board which the game will be placed, 
-we will show this afterward the choosing pattern screen. 
-4 or more different wall shapes which will be given to the player to 
-build the walls to keep the castle and friendly knights inside the walls, 
-1 castle tower as the base, 
-3 or more side-knights (blue), 
-4 or more enemy-knights (red). 
-This features are same as the real game(classical mode).
-However, we are planning to add extra modes which will be different from the real game Walls&Warriors.
-We are planning to add extra modes: level design and campaign
-to our application. 
-Upgrades will be decided later.
-
 Moreover, we are planning to add another mode that the player can make the level design of pattern, 
 number of knights own. 
 In this mode, there will be an empty virtual game board 
