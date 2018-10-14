@@ -16,7 +16,7 @@ Ensar Kaya - 21502089
 
 **Project Topic**: A strategy desktop game inspired by "Walls&Warriors".
 
-**Project Description** 
+**Project Description and Requirements** 
 
 In this project we are aiming to develop a game which is inspired by the box game “Walls&Warriors” by Smart Games. 
 The goal of the game is that the player should protect her/his castle with his/her knights by building walls. 
