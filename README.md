@@ -15,6 +15,7 @@ Hammad Malik - 21600468
 Ensar Kaya - 21502089
 
 **Project Topic**: A strategy desktop game inspired by "Walls&Warriors".
+
 **Project Description** 
 
 In this project we are aiming to develop a game which is inspired by the box game “Walls&Warriors” by Smart Games. 
