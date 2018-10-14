@@ -77,6 +77,7 @@ desktop game "The Wall" will present an additional mode that
 cannot be found in the board game.  
 
 **What are the differences between "The Wall" and "Walls&Warriors" ?** 
+
 What makes "The Wall" different from the original "Walls&Warriors" is that
 our game offers various new game modes. The players will be able to
 race with time in the challenge mode while they can test 
