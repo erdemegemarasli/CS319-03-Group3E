@@ -44,4 +44,10 @@ abstract class GameBoardComponent implements Drawable
     {
         return height;
     }
+    public ArrayList<Viewer> getViews() {
+		return views;
+	}
+	public void setViews(ArrayList<Viewer> views) {
+		this.views = views;
+	}
 }
