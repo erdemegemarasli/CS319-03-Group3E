@@ -10,7 +10,7 @@ public class Wall implements Moveable, Drawable{
         this.wallEdges = wallEdges;
         this.wallLines = wallLines;
     }
-    public boolean checkPoint(int x, int y,WallEdge[] wallEdges, WallLine[] wallLines, int mouseX, int mouseY)
+    public boolean checkPoint(WallEdge[] wallEdges, WallLine[] wallLines, int mouseX, int mouseY)
     {
     	boolean b=false;
     	for(int i=0; i< wallLines.length;i++)
