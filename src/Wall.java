@@ -10,7 +10,18 @@ public class Wall implements Moveable, Drawable{
         this.wallEdges = wallEdges;
         this.wallLines = wallLines;
     }
-
+    public boolean checkPoint(int x, int y,WallEdge[] wallEdges, WallLine[] wallLines, int mouseX, int mouseY)
+    {
+    	boolean b=false;
+    	for(int i=0; i< wallLines.length;i++)
+    	{
+    		WallLine temp=wallLines[i];
+    		if(temp.getX()<=mouseX && mouseX<=(temp.getWidth()+temp.getX()))
+    			if(temp.getY()<=mouseY && mouseY<=(temp.getHeight()+temp.getY()))
+    				b= true;	
+    	}
+    	return b;
+    }
     public void setWallEdges(WallEdge[] wallEdges) {
         this.wallEdges = wallEdges;
     }
