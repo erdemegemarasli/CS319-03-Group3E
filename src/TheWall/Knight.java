@@ -12,5 +12,6 @@ public class Knight extends GameUnits{
     public void testFoo(){
         System.out.println("test");
     }
+    public void testFoo2(){System.out.println("test2");}
 
 }
