@@ -3,7 +3,9 @@ package TheWall;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+/*
+Creator: Erdem Ege Marasli
+ */
 public class Game {
 
     private GameBoard board;
