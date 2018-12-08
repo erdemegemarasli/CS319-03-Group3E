@@ -2,7 +2,9 @@ package TheWall;
 
 import javax.swing.*;
 import java.awt.*;
-
+/*
+Creator: Erdem Ege Marasli
+ */
 abstract class GameObject implements Moveable, Drawable{
 
     private int x;
