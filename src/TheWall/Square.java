@@ -1,6 +1,9 @@
 package TheWall;
 
 import java.awt.*;
+/*
+Creator: Erdem Ege Marasli
+ */
 
 public class Square extends GameBoardComponent{
     public Square(int x,int y, int width, int height){
