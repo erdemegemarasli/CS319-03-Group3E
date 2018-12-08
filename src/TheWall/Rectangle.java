@@ -1,7 +1,9 @@
 package TheWall;
 
 import java.awt.*;
-
+/*
+Creator: Erdem Ege Marasli
+ */
 public class Rectangle extends GameBoardComponent {
     public Rectangle(int x,int y, int width, int height){
         super(x,y,width,height);
