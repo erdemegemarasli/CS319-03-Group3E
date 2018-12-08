@@ -3,7 +3,9 @@ package TheWall;
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
+/*
+Creator: Erdem Ege Marasli
+ */
 public class MouseListener extends MouseAdapter {
     private Wall [] walls;
     private boolean moving;
