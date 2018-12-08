@@ -1,7 +1,9 @@
 package TheWall;
 
 import java.awt.*;
-
+/*
+Creator: Erdem Ege Marasli
+ */
 public class Edge extends GameBoardComponent {
     public Edge(int x,int y, int width, int height){
         super(x,y,width,height);
