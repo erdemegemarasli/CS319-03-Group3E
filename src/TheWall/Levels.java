@@ -1,4 +1,7 @@
 package TheWall;
+/*
+Creator: Erdem Ege Marasli
+ */
 /**
  * For squareLocations
  * 0 = empty
