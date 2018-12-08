@@ -1,5 +1,7 @@
 package TheWall;
-
+/*
+Creator: Erdem Ege Marasli
+ */
 public class Map {
     int [] squareLocations; // 16
     int [] edgeLocations; // 26
