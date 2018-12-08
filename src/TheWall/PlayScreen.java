@@ -5,8 +5,9 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
+/*
+Creator: Erdem Ege Marasli and Ayca Begum Tascioglu
+ */
 public class PlayScreen extends SimplePanel
 {
     JButton button1 = new JButton("Classical Mode");
