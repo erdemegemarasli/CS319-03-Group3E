@@ -1,7 +1,9 @@
 package TheWall;
 
 import javax.swing.*;
-
+/*
+Creator: Erdem Ege Marasli and Ayca Begum Tascioglu
+ */
 abstract class SimplePanel extends JPanel
 {
     int selection;
