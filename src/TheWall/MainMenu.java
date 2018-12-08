@@ -5,7 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.border.EmptyBorder;
-
+/*
+Creator: Erdem Ege Marasli and Ayca Begum Tascioglu
+ */
 public class MainMenu extends SimplePanel
 {
 
