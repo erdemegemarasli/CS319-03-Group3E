@@ -2,7 +2,9 @@ package TheWall;
 
 import java.awt.*;
 import java.util.ArrayList;
-
+/*
+Creator: Erdem Ege Marasli
+ */
 abstract class GameBoardComponent implements Drawable
 {
     private int x;
