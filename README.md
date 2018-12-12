@@ -18,7 +18,13 @@ Ensar Kaya - 21502089
 
 **Brief Description of the board-game "WALLS AND WARRIORS**
 
-This game contains a game-board, 1 high-tower piece, 3 blue-knights, 4 red-knights and 4 different wall shapes. There are many predefined challenges in the board-game which indicate how to place (some) walls, high-towers and knights. One may not need to use all the objects. After correct placement of the objects as indicated in the specific level, the player has to place the pieces in such a manner that all the red knights are kept outside the walls and all the blue knights are placed inside the walls. Also, the castle must be closed on all sides and red knights can never be walled in, meaning they cannot be surrounded by walls on all 4 sides. A challenge is solved once all these objectives are completed. There is only one solution of placement of the pieces; these solutions are found at the end of the booklet. 
+This game contains:
+a game-board, 
+1 high-tower piece, 
+3 blue-knights, 
+4 red-knights and 
+4 different wall shapes. 
+	There are many predefined challenges in the board-game which indicate how to place (some) walls, high-towers and knights. One may not need to use all the objects. After correct placement of the objects as indicated in the specific level, the player has to place the pieces in such a manner that all the red knights are kept outside the walls and all the blue knights are placed inside the walls. Also, the castle must be closed on all sides and red knights can never be walled in, meaning they cannot be surrounded by walls on all 4 sides. A challenge is solved once all these objectives are completed. There is only one solution of placement of the pieces; these solutions are found at the end of the booklet. 
 
 
 
