@@ -30,6 +30,7 @@ public class MouseListener extends MouseAdapter {
             }
             else if(moving){
                 moving = false;
+
                 wallIndex = -1;
             }
         }
@@ -47,9 +48,6 @@ public class MouseListener extends MouseAdapter {
             walls[wallIndex].setY(e.getY());
         }
 
-
-    }
-    public void mouseReleased(MouseEvent e){
 
     }
 

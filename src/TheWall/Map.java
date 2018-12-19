@@ -29,4 +29,25 @@ public class Map {
     public int[] getVerticalRectangleLocations() {
         return verticalRectangleLocations;
     }
+
+    public boolean isSame(Map temp){
+        for(int i = 0; i < squareLocations.length; i++){
+            if(squareLocations[i] != temp.squareLocations[i])
+                return false;
+        }
+        for(int i = 0; i < edgeLocations.length; i++){
+            if(edgeLocations[i] != temp.edgeLocations[i])
+                return false;
+        }
+        for(int i = 0; i < horizontalRectangleLocations.length; i++){
+            if(horizontalRectangleLocations[i] != temp.horizontalRectangleLocations[i])
+                return false;
+        }
+        for(int i = 0; i < verticalRectangleLocations.length; i++){
+            if(verticalRectangleLocations[i] != temp.verticalRectangleLocations[i])
+                return false;
+        }
+        return true;
+    }
+
 }
