@@ -55,7 +55,7 @@ public class Game {
         return render;
     }
     public boolean checkWinCondition(){
-        return map.isSame(playerMap);
+        return getGameBoard().isGameFinished();
     }
 
     private class RenderListener implements ActionListener

@@ -161,6 +161,26 @@ public class GameBoard implements Drawable
             }
         }
     }
+
+    public boolean isGameFinished(){
+        for(int i = 0; i < squares.length; i++){
+            if(squares[i].getInfo() != map.getSquareLocations()[i])
+                return false;
+        }
+        for(int i = 0; i < edges.length; i++){
+            if(edges[i].getInfo() != map.getEdgeLocations()[i])
+                return false;
+        }
+        for(int i = 0; i < horizontalRectangles.length; i++){
+            if(horizontalRectangles[i].getInfo() != map.getHorizontalRectangleLocations()[i])
+                return false;
+        }
+        for(int i = 0; i < verticalRectangles.length; i++){
+            if(verticalRectangles[i].getInfo() != map.getVerticalRectangleLocations()[i])
+                return false;
+        }
+        return true;
+    }
     public Rectangle[] getHorizontalRectangles() {
         return horizontalRectangles;
     }

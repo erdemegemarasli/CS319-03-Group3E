@@ -34,6 +34,9 @@ public class MouseListener extends MouseAdapter {
             }
             else if(moving){
                 moving = false;
+                if(gameBoard.isValidMove(walls[wallIndex])){
+                    gameBoard.makeMove(walls[wallIndex]);
+                }
                 wallIndex = -1;
             }
         }
@@ -49,8 +52,6 @@ public class MouseListener extends MouseAdapter {
         if(moving){
             walls[wallIndex].setX(e.getX());
             walls[wallIndex].setY(e.getY());
-            int middleX;
-            int middleY;
         }
 
 
