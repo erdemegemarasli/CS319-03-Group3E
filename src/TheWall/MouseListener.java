@@ -46,8 +46,8 @@ public class MouseListener extends MouseAdapter {
                         for(int i = 0; i < temp; i++){
                             walls[wallIndex].rotate();
                         }
-                        //buraya walls[wallIndex].setStartPos() artık adı neyse
                     }
+                    walls[wallIndex].setFixed();
                     rotateCount = 0;
                 }
                 wallIndex = -1;
