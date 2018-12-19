@@ -86,4 +86,37 @@ public class DbConnector {
 			e.printStackTrace();}
 		return str;}
 	
+	/** 
+	 *This method inserts a user into the table
+	 *
+	 * @param   name the name of user
+	 * @param	password the password of user
+	 * @return	true if insertion successful
+	 * @return 	false if insertion fails 		
+	 */
+	public static boolean insertUser(String name, String password){
+		int i = 0;
+		try{
+			con = getConnection();
+			PreparedStatement pStat = con.prepareStatement("INSERT INTO mytable"+" VALUES(?,?,?,?,?,?,?,?)");
+			pStat.setString(1,name);
+			pStat.setString(2,password);
+			pStat.setString(3,"");
+			pStat.setString(4,"");
+			pStat.setInt(5,0);
+			pStat.setString(6, "");
+			pStat.setString(7, "");
+			pStat.setString(8,"");
+			i = pStat.executeUpdate();
+		}
+		catch(SQLException e){
+			e.printStackTrace();}
+		if(i>=1)
+			return true;
+		return false;}
+	
+	
+	
+	
+	
 }
