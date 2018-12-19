@@ -197,6 +197,14 @@ public class DbConnector {
 			e.printStackTrace();}
 		return ret;}
 	
+	/** 
+	 * @author Ensar Kaya
+	 *This method deletes a user from table(whole row)
+	 *@param name the name of user
+	 *@param password the password of user  
+	 * @return	true if deletion is successful
+	 *@return false if deletion is failed		
+	 */
 	public static boolean deleteUser(String name, String password){
 		int i=0;
 		String table="mytable";
