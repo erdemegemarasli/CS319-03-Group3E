@@ -9,7 +9,7 @@ public class GameBoard implements Drawable
 {
     private Map map;
     private ArrayList<GameUnits> gameUnits=new ArrayList<GameUnits>();
-    private Knight[] castle;
+    private GameUnit[] castle;
     final int edgeHeight = 20;
     final int edgeWidth = 20;
     final int squareHeight = 60;
@@ -26,7 +26,7 @@ public class GameBoard implements Drawable
     {
         createEmptyGameBoard();
         this.map = map;
-        castle = new Knight[2];
+        castle = new GameUnit[2];
         setUpGameBoard();
     }
     public void setUpGameBoard(){
@@ -34,13 +34,13 @@ public class GameBoard implements Drawable
         for(int i = 0; i < map.getSquareLocations().length; i++){
             squares[i].setInfo(map.getSquareLocations()[i]);
             if(map.getSquareLocations()[i] == 1){
-                gameUnits.add(new Knight(squares[i].getX(),squares[i].getY(),squareHeight,false));
+                gameUnits.add(new GameUnit(squares[i].getX(),squares[i].getY(),squareHeight,false));
             }
             else if(map.getSquareLocations()[i] == 2){
-                gameUnits.add(new Knight(squares[i].getX(),squares[i].getY(),squareHeight,true));
+                gameUnits.add(new GameUnit(squares[i].getX(),squares[i].getY(),squareHeight,true));
             }
             else if(map.getSquareLocations()[i] == 3){
-                castle[temp] = new Knight(squares[i].getX(),squares[i].getY(),squareHeight,false);
+                castle[temp] = new GameUnit(squares[i].getX(),squares[i].getY(),squareHeight,false);
                 temp++;
             }
         }
