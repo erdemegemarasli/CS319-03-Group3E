@@ -47,6 +47,10 @@ public class Game {
         return walls.getWalls();
     }
 
+    public Map getPlayerMap() {
+        return playerMap;
+    }
+
     public Render getRender() {
         return render;
     }
