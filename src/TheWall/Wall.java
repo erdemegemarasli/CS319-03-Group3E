@@ -23,6 +23,8 @@ public class Wall implements Moveable, Drawable{
 
     boolean isMoving;
 
+    int fixedInitialPositionX;
+    int fixedInitialPositionY;
 
     public Wall(WallEdge[] wallEdges, WallLine[] wallLines,int wallNumber)
     {
@@ -69,9 +71,17 @@ public class Wall implements Moveable, Drawable{
         isMoving = moving;
     }
 
+    public void setFixedInitialPositionX(int fixedInitialPositionX) {
+        this.fixedInitialPositionX = fixedInitialPositionX;
+    }
+
+    public void setFixedInitialPositionY(int fixedInitialPositionY) {
+        this.fixedInitialPositionY = fixedInitialPositionY;
+    }
+
     /*
-        rotates the wall 90 degrees in Clockwise
-         */
+                    rotates the wall 90 degrees in Clockwise
+                     */
     public void rotate(){
 
         for(int i = 0; i < wallLines.length; i++){
@@ -141,6 +151,14 @@ public class Wall implements Moveable, Drawable{
         return initialPositionX;
     }
 
+    public int getFixedInitialPositionY() {
+        return fixedInitialPositionY;
+    }
+
+    public int getFixedInitialPositionX() {
+        return fixedInitialPositionX;
+    }
+
     public WallEdge[] getWallEdges() {
         return wallEdges;
     }
@@ -202,6 +220,10 @@ public class Wall implements Moveable, Drawable{
             wallEdges[i].setY(wallEdges[i].getFixedY());
         }
     }
+
+
+
+
 
     public boolean isMoving() {
         return isMoving;

@@ -86,12 +86,16 @@ public class Walls{
 
 
         walls[0] = new Wall(wallEdges0, wallLines0, 1);
+        walls[0].setFixedInitialPositionX(wallEdges0[0].getX());
+        walls[0].setFixedInitialPositionY(wallEdges0[0].getY());
         walls[0].setInitialPositionX(wallEdges0[0].getX());
         walls[0].setInitialPositionY(wallEdges0[0].getY());
         walls[0].setMidPointX(wallEdges0[0].getX());
         walls[0].setMidPointY(wallEdges0[0].getY());
 
         walls[1] = new Wall(wallEdges1, wallLines1, 2);
+        walls[1].setFixedInitialPositionX(wallEdges1[2].getX());
+        walls[1].setFixedInitialPositionY(wallEdges1[2].getY());
         walls[1].setInitialPositionX(wallEdges1[2].getX());
         walls[1].setInitialPositionY(wallEdges1[2].getY());
         walls[1].setMidPointX(wallEdges1[2].getX());
@@ -99,12 +103,16 @@ public class Walls{
 
 
         walls[2] = new Wall(wallEdges2, wallLines2, 3);
+        walls[2].setFixedInitialPositionX(wallEdges2[1].getX());
+        walls[2].setFixedInitialPositionY(wallEdges2[1].getY());
         walls[2].setInitialPositionX(wallEdges2[1].getX());
         walls[2].setInitialPositionY(wallEdges2[1].getY());
         walls[2].setMidPointX(wallEdges2[1].getX());
         walls[2].setMidPointY(wallEdges2[1].getY());
 
         walls[3] = new Wall(wallEdges3, wallLines3, 4);
+        walls[3].setFixedInitialPositionX(wallEdges3[2].getX());
+        walls[3].setFixedInitialPositionY(wallEdges3[2].getY());
         walls[3].setInitialPositionX(wallEdges3[2].getX());
         walls[3].setInitialPositionY(wallEdges3[2].getY());
         walls[3].setMidPointX(wallEdges3[2].getX());
