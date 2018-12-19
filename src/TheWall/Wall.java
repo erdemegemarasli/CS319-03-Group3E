@@ -192,6 +192,17 @@ public class Wall implements Moveable, Drawable{
 
     }
 
+    public void setFixed(){
+        for(int i = 0; i < wallLines.length; i++){
+            wallLines[i].setX(wallLines[i].getFixedX());
+            wallLines[i].setY(wallLines[i].getFixedY());
+        }
+        for(int i = 0; i < wallEdges.length; i++){
+            wallEdges[i].setX(wallEdges[i].getFixedX());
+            wallEdges[i].setY(wallEdges[i].getFixedY());
+        }
+    }
+
     public boolean isMoving() {
         return isMoving;
     }
