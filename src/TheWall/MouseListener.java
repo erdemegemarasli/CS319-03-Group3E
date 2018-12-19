@@ -8,6 +8,7 @@ Creator: Erdem Ege Marasli
  */
 public class MouseListener extends MouseAdapter {
     private Wall [] walls;
+    private int rotateCount;
     private boolean moving;
     private int wallIndex;
     private Map playerMap;
@@ -35,14 +36,26 @@ public class MouseListener extends MouseAdapter {
             else if(moving){
                 moving = false;
                 if(gameBoard.isValidMove(walls[wallIndex])){
+                    System.out.println("Valid");
                     gameBoard.makeMove(walls[wallIndex]);
+                }
+                else{
+                    int temp = rotateCount % 4;
+                    temp = Math.abs(temp - 4);
+                    if(temp != 4){
+                        for(int i = 0; i < temp; i++){
+                            walls[wallIndex].rotate();
+                        }
+                        //buraya walls[wallIndex].setStartPos() artık adı neyse
+                    }
+                    rotateCount = 0;
                 }
                 wallIndex = -1;
             }
         }
         else if(SwingUtilities.isRightMouseButton(e) && moving && wallIndex > -1){
             walls[wallIndex].rotate();
-            System.out.println("Right");
+            rotateCount++;
         }
 
 
