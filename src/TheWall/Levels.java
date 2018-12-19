@@ -8,10 +8,13 @@ Creator: Erdem Ege Marasli
  * 1 = blueKnights
  * 2 = redKnights
  * 3 = castle
- * For others
+ * For Edge
  * 0 = empty
  * 1 = non empty
- *
+ * For Rectangles
+ * 0 = empty
+ * 1 = wall
+ * 2 = castle wall
  */
 
 public class Levels {
@@ -38,7 +41,7 @@ public class Levels {
                                             0,0,1,0,1,
                                               0,0,1};
 
-        int [] verticalRectangleLocations = {1,0,1,0,
+        int [] verticalRectangleLocations = {1,2,1,0,
                                             0,0,0,1,1,0,
                                             0,0,1,0,0,1,
                                             0,0,1,1};
@@ -59,7 +62,7 @@ public class Levels {
         int [] horizontalRectangleLocations1 = {0,1,1,
                                                 0,1,0,1,0,
                                                 0,1,0,1,0,
-                                                0,1,1,0,0,
+                                                0,1,1,2,0,
                                                 0,0,1};
 
         int [] verticalRectangleLocations1 = {0,1,0,1,

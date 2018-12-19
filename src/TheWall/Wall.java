@@ -85,7 +85,7 @@ public class Wall implements Moveable, Drawable{
             Rectangle newRec = new Rectangle(wallLines[i].getX(),wallLines[i].getY(), wallLines[i].getWidth(), wallLines[i].getHeight());
             transform.rotate(Math.toRadians(90),  midPointX, midPointY);
             Shape transformed = transform.createTransformedShape(newRec);
-            System.out.println((int)(transformed.getBounds().getX()));
+            //System.out.println((int)(transformed.getBounds().getX()));
             wallLines[i].setX((int)(transformed.getBounds().getX()));
             wallLines[i].setY((int)(transformed.getBounds().getY()));
             wallLines[i].setWidth((int)(transformed.getBounds().getWidth()));
