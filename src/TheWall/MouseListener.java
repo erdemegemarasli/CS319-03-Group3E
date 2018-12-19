@@ -30,11 +30,12 @@ public class MouseListener extends MouseAdapter {
             }
             else if(moving){
                 moving = false;
+
                 wallIndex = -1;
             }
         }
-        else if(SwingUtilities.isRightMouseButton(e)){
-            walls[0].rotate();
+        else if(SwingUtilities.isRightMouseButton(e) && moving && wallIndex > -1){
+            walls[wallIndex].rotate();
             System.out.println("Right");
         }
 
@@ -47,9 +48,6 @@ public class MouseListener extends MouseAdapter {
             walls[wallIndex].setY(e.getY());
         }
 
-
-    }
-    public void mouseReleased(MouseEvent e){
 
     }
 
