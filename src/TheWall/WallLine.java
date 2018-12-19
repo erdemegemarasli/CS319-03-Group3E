@@ -9,13 +9,17 @@ public class WallLine  extends GameObject {
     int height, width;
     int middleX;
     int middleY;
+    int fixedX;
+    int fixedY;
     public static final Color BROWN = new Color(153,102,0);
     public static final Color golden_yellow = new Color(255,204, 51);
 
-    public WallLine(int x, int y, int width, int height) {
+    public WallLine(int x, int y, int width, int height, int fixedX, int fixedY) {
         super(x, y);
         this.height = height;
         this.width = width;
+        this.fixedX = fixedX;
+        this.fixedY = fixedY;
     }
 
     public int getWidth() {
@@ -47,6 +51,22 @@ public class WallLine  extends GameObject {
     public void setX(int x) {
         super.setX(x);
         updateMiddlePoint();
+    }
+
+    public void setFixedX(int fixedX) {
+        this.fixedX = fixedX;
+    }
+
+    public void setFixedY(int fixedY) {
+        this.fixedY = fixedY;
+    }
+
+    public int getFixedX() {
+        return fixedX;
+    }
+
+    public int getFixedY() {
+        return fixedY;
     }
 
     public int getMiddleY() {

@@ -23,6 +23,7 @@ public class Wall implements Moveable, Drawable{
 
     boolean isMoving;
 
+
     public Wall(WallEdge[] wallEdges, WallLine[] wallLines,int wallNumber)
     {
         this.wallEdges = wallEdges;
@@ -73,14 +74,6 @@ public class Wall implements Moveable, Drawable{
          */
     public void rotate(){
 
-
-        /*
-        int tmpX =0;
-        int tmpY = 0;
-        int tmpHeight =0;
-        int tmpWidth = 0;
-        int negativeX =0;
-        */
         for(int i = 0; i < wallLines.length; i++){
             AffineTransform transform = new AffineTransform();
             Rectangle newRec = new Rectangle(wallLines[i].getX(),wallLines[i].getY(), wallLines[i].getWidth(), wallLines[i].getHeight());
@@ -91,31 +84,8 @@ public class Wall implements Moveable, Drawable{
             wallLines[i].setY((int)(transformed.getBounds().getY()));
             wallLines[i].setWidth((int)(transformed.getBounds().getWidth()));
             wallLines[i].setHeight((int)(transformed.getBounds().getHeight()));
-        /*
-            tmpX = wallLines[i].getX() ;
-            tmpY = wallLines[i].getY() ;
-            tmpWidth = wallLines[i].getWidth();
-            tmpHeight = wallLines[i].getHeight();
 
-            int sin = 1;
-            int cos = 0;
-            int pX = tmpX - midPointX;
-            int pY = tmpY - midPointY;
-            wallLines[i].setX(pX);
-            wallLines[i].setY( pY ) ;
-
-            int xNew = pX*cos - pY*sin;
-            int yNew = pX*sin + pY*cos;
-            wallLines[i].setX(xNew+midPointX - tmpWidth +tmpHeight);
-            wallLines[i].setY( yNew+ midPointY) ;
-            wallLines[i].setHeight(tmpWidth);
-            wallLines[i].setWidth(tmpHeight);
-            */
         }
-        /*
-        tmpX =0;
-        tmpY = 0;
-        */
 
         for(int i = 0; i < wallEdges.length; i++){
             AffineTransform transform = new AffineTransform();
@@ -125,23 +95,7 @@ public class Wall implements Moveable, Drawable{
             wallEdges[i].setX((int)(transformed.getBounds().getX()));
             wallEdges[i].setY((int)(transformed.getBounds().getY()));
             wallEdges[i].setRadius((int)(transformed.getBounds().getWidth()));
-            //wallEdges[i].setHeight((int)(transformed.getBounds().getHeight()));
-            /*
-            tmpX = wallEdges[i].getX() ;
-            tmpY = wallEdges[i].getY() ;
 
-            int sin = 1;
-            int cos = 0;
-            int pX = tmpX - midPointX;
-            int pY = tmpY - midPointY;
-            wallEdges[i].setX(pX);
-            wallEdges[i].setY( pY ) ;
-
-            int xNew = pX*cos - pY*sin;
-            int yNew = pX*sin + pY*cos;
-            wallEdges[i].setX(xNew+midPointX);
-            wallEdges[i].setY( yNew+ midPointY) ;
-            */
         }
     }
 

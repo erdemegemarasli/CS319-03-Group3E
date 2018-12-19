@@ -10,13 +10,19 @@ public class WallEdge extends GameObject {
     boolean isCastle;
     int middleX;
     int middleY;
+
+    int fixedX;
+    int fixedY;
+
     public static final Color BROWN = new Color(153,102,0);
     public static final Color light_yellow = new Color(255,255,204);
     public static final Color golden_yellow = new Color(255,204, 51);
-    public WallEdge(int x, int y,int radius, boolean isCastle){
+    public WallEdge(int x, int y,int radius, boolean isCastle, int fixedX, int fixedY){
         super(x, y);
         this.radius = radius;
         this.isCastle = isCastle;
+        this.fixedX = fixedX;
+        this.fixedY = fixedY;
     }
 
     @Override
@@ -76,6 +82,22 @@ public class WallEdge extends GameObject {
     @Override
     public int getX() {
         return super.getX();
+    }
+
+    public void setFixedY(int fixedY) {
+        this.fixedY = fixedY;
+    }
+
+    public void setFixedX(int fixedX) {
+        this.fixedX = fixedX;
+    }
+
+    public int getFixedY() {
+        return fixedY;
+    }
+
+    public int getFixedX() {
+        return fixedX;
     }
 
     @Override
