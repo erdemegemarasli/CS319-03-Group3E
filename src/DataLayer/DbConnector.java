@@ -305,7 +305,15 @@ public class DbConnector {
 	}
 		return false;}
 	
-	
+	/** 
+	 * @author Ensar Kaya
+	 *This method edits a user's password
+	 *@param username the username of user
+	 *@param password the password of user  
+	 *@param newPass the new password of user
+	 * @return	true if edition is successful
+	 *@return false if edition is failed		
+	 */
 	public static boolean editPassword(String username,String password,String newPass){
 		int id=verifyUser(username,password);
 		if(0<id)
