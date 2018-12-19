@@ -56,7 +56,10 @@ public class MainFrame extends JFrame
                 }
                 else if(currentPanel.getSelection() == 2)
                 {
-
+                    removeComp(currentPanel);
+                    currentPanel = new CreditsScreen();
+                    addComp(currentPanel);
+                    setVis(true);
                 }
             }
             else if(currentPanel.getType().equals("playScreen"))
@@ -106,6 +109,18 @@ public class MainFrame extends JFrame
                 currentPanel = new LevelSelectionPanel();
                 addComp(currentPanel);
                 setVis(true);
+            }
+            else if(currentPanel.getType().equals("credits"))
+            {
+
+                if(currentPanel.getSelection() == 0)
+                {
+                    removeComp(currentPanel);
+                    currentPanel = new MainMenu();
+                    addComp(currentPanel);
+                    setVis(true);
+                }
+
             }
         }
     }
