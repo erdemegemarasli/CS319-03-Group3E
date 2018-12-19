@@ -1,6 +1,8 @@
 package TheWall;
 
 import java.awt.*;
+import java.awt.Rectangle;
+import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 /*
 Creator: Ayca Begum Tascioglu
@@ -69,6 +71,9 @@ public class Wall implements Moveable, Drawable{
         rotates the wall 90 degrees in Clockwise
          */
     public void rotate(){
+
+
+
         int tmpX =0;
         int tmpY = 0;
         int tmpHeight =0;
@@ -76,6 +81,16 @@ public class Wall implements Moveable, Drawable{
         int negativeX =0;
 
         for(int i = 0; i < wallLines.length; i++){
+            AffineTransform transform = new AffineTransform();
+            Rectangle newRec = new Rectangle(wallLines[i].getX(),wallLines[i].getY(), wallLines[i].getWidth(), wallLines[i].getHeight());
+            transform.rotate(Math.toRadians(90),  midPointX, midPointY);
+            Shape transformed = transform.createTransformedShape(newRec);
+            System.out.println((int)(transformed.getBounds().getX()));
+            wallLines[i].setX((int)(transformed.getBounds().getX()));
+            wallLines[i].setY((int)(transformed.getBounds().getY()));
+            wallLines[i].setWidth((int)(transformed.getBounds().getWidth()));
+            wallLines[i].setHeight((int)(transformed.getBounds().getHeight()));
+        /*
             tmpX = wallLines[i].getX() ;
             tmpY = wallLines[i].getY() ;
             tmpWidth = wallLines[i].getWidth();
@@ -94,6 +109,7 @@ public class Wall implements Moveable, Drawable{
             wallLines[i].setY( yNew+ midPointY) ;
             wallLines[i].setHeight(tmpWidth);
             wallLines[i].setWidth(tmpHeight);
+            */
         }
 
         tmpX =0;
@@ -101,6 +117,15 @@ public class Wall implements Moveable, Drawable{
 
 
         for(int i = 0; i < wallEdges.length; i++){
+            AffineTransform transform = new AffineTransform();
+            Rectangle newRec = new Rectangle(wallEdges[i].getX(),wallEdges[i].getY(), wallEdges[i].getRadius(), wallEdges[i].getRadius());
+            transform.rotate(Math.toRadians(90), midPointX, midPointY);
+            Shape transformed = transform.createTransformedShape(newRec);
+            wallEdges[i].setX((int)(transformed.getBounds().getX()));
+            wallEdges[i].setY((int)(transformed.getBounds().getY()));
+            wallEdges[i].setRadius((int)(transformed.getBounds().getWidth()));
+            //wallEdges[i].setHeight((int)(transformed.getBounds().getHeight()));
+            /*
             tmpX = wallEdges[i].getX() ;
             tmpY = wallEdges[i].getY() ;
 
@@ -115,6 +140,7 @@ public class Wall implements Moveable, Drawable{
             int yNew = pX*sin + pY*cos;
             wallEdges[i].setX(xNew+midPointX);
             wallEdges[i].setY( yNew+ midPointY) ;
+            */
         }
     }
 
