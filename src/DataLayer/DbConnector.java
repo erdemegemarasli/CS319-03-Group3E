@@ -219,7 +219,15 @@ public class DbConnector {
 			return true;
 		return false;}
 	
-	
+	/** 
+	 * @author Ensar Kaya
+	 *This method deletes a map from a user(just one cell) 
+	 *@param name the name of user
+	 *@param password the password of user  
+	 *@param map the code of map
+	 * @return	true if deletion is successful
+	 *@return false if deletion is failed		
+	 */
 	public static boolean deleteMap(String username, String password, String map){
 		int id=verifyUser(username,password);
 		if(0<id)
