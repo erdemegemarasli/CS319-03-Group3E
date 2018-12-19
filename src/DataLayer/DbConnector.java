@@ -54,6 +54,12 @@ public class DbConnector {
 			e.printStackTrace();}		
 		return ret;}
 
+	/** 
+	 *This method returns a string which displays all
+	 *the information in the table
+	 * @param     
+	 * @return	string str, which displays all the information in the table		
+	 */
 	public static String showAllUserData(){
 		String str="";
 		try{
