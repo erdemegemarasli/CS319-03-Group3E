@@ -49,6 +49,8 @@ public class MouseListener extends MouseAdapter {
         if(moving){
             walls[wallIndex].setX(e.getX());
             walls[wallIndex].setY(e.getY());
+            int middleX;
+            int middleY;
         }
 
 
