@@ -33,8 +33,8 @@ public class MouseListener extends MouseAdapter {
                 wallIndex = -1;
             }
         }
-        else if(SwingUtilities.isRightMouseButton(e)){
-            walls[0].rotate();
+        else if(SwingUtilities.isRightMouseButton(e) && moving && wallIndex > -1){
+            walls[wallIndex].rotate();
             System.out.println("Right");
         }
 
