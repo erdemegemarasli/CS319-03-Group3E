@@ -84,6 +84,22 @@ public class WallEdge extends GameObject {
         return super.getX();
     }
 
+    public void setFixedY(int fixedY) {
+        this.fixedY = fixedY;
+    }
+
+    public void setFixedX(int fixedX) {
+        this.fixedX = fixedX;
+    }
+
+    public int getFixedY() {
+        return fixedY;
+    }
+
+    public int getFixedX() {
+        return fixedX;
+    }
+
     @Override
     public void setX(int x) {
         super.setX(x);
