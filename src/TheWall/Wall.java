@@ -74,13 +74,13 @@ public class Wall implements Moveable, Drawable{
     public void rotate(){
 
 
-
+        /*
         int tmpX =0;
         int tmpY = 0;
         int tmpHeight =0;
         int tmpWidth = 0;
         int negativeX =0;
-
+        */
         for(int i = 0; i < wallLines.length; i++){
             AffineTransform transform = new AffineTransform();
             Rectangle newRec = new Rectangle(wallLines[i].getX(),wallLines[i].getY(), wallLines[i].getWidth(), wallLines[i].getHeight());
@@ -112,10 +112,10 @@ public class Wall implements Moveable, Drawable{
             wallLines[i].setWidth(tmpHeight);
             */
         }
-
+        /*
         tmpX =0;
         tmpY = 0;
-
+        */
 
         for(int i = 0; i < wallEdges.length; i++){
             AffineTransform transform = new AffineTransform();
