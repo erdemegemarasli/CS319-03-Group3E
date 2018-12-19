@@ -245,6 +245,10 @@ public class Wall implements Moveable, Drawable{
         setInitialPositionY(getFixedInitialPositionY());
     }
 
+    public void setFixedMidpoint(){
+        setMidPointX(getFixedMidPointX());
+        setMidPointY(getFixedMidPointY());
+    }
 
     public boolean isMoving() {
         return isMoving;
