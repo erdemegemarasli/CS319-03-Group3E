@@ -81,6 +81,18 @@ public class MainFrame extends JFrame
                 }
 
             }
+            else if(currentPanel.getType().equals("credits"))
+            {
+
+                if(currentPanel.getSelection() == 0)
+                {
+                    removeComp(currentPanel);
+                    currentPanel = new MainMenu();
+                    addComp(currentPanel);
+                    setVis(true);
+                }
+
+            }
             else if(currentPanel.getType().equals("levelSelection"))
             {
                 if(currentPanel.getSelection() > 0)
@@ -110,18 +122,7 @@ public class MainFrame extends JFrame
                 addComp(currentPanel);
                 setVis(true);
             }
-            else if(currentPanel.getType().equals("credits"))
-            {
 
-                if(currentPanel.getSelection() == 0)
-                {
-                    removeComp(currentPanel);
-                    currentPanel = new MainMenu();
-                    addComp(currentPanel);
-                    setVis(true);
-                }
-
-            }
         }
     }
 

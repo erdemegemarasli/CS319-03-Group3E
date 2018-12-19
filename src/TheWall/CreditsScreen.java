@@ -15,11 +15,13 @@ public class CreditsScreen extends SimplePanel{
         this.add(title);
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
         this.setBorder(new EmptyBorder(new Insets(300,400,300,400)));
+        ButtonListener buttonListen = new ButtonListener();
         JLabel dev1 = new JLabel("Ayça Begum Tascioglu");
         JLabel dev2 = new JLabel("Erdem Ege Marasli");
         JLabel dev3 = new JLabel("Ensar Kaya");
         JLabel dev4 = new JLabel("Hammad Malik");
         JLabel dev5 = new JLabel("Alperen Koca");
+        returnPrev.addActionListener(buttonListen);
         this.add(dev1);
         this.add(dev2);
         this.add(dev3);
