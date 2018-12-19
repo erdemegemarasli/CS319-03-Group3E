@@ -30,6 +30,9 @@ public class Game {
             if(playerMap.getVerticalRectangleLocations()[i] != 2)
                 playerMap.getVerticalRectangleLocations()[i] = 0;
         }
+        for(int i = 0; i < playerMap.getEdgeLocations().length; i++){
+            playerMap.getEdgeLocations()[i] = 0;
+        }
         board = new GameBoard(map);
 
         render = new Render();
@@ -42,6 +45,10 @@ public class Game {
     public Wall[] getWalls()
     {
         return walls.getWalls();
+    }
+
+    public Map getPlayerMap() {
+        return playerMap;
     }
 
     public Render getRender() {

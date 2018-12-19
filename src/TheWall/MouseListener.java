@@ -10,8 +10,12 @@ public class MouseListener extends MouseAdapter {
     private Wall [] walls;
     private boolean moving;
     private int wallIndex;
-    public MouseListener(Wall[] walls){
+    private Map playerMap;
+    private GameBoard gameBoard;
+    public MouseListener(Wall[] walls, GameBoard gameBoard, Map playerMap){
         this.walls = walls;
+        this.gameBoard = gameBoard;
+        this.playerMap = playerMap;
         moving = false;
         wallIndex = -1;
     }
@@ -30,7 +34,6 @@ public class MouseListener extends MouseAdapter {
             }
             else if(moving){
                 moving = false;
-
                 wallIndex = -1;
             }
         }

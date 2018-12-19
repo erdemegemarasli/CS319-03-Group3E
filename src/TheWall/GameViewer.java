@@ -11,6 +11,7 @@ public class GameViewer extends SimplePanel implements Viewer {
     private Game game;
     private GameBoard board;
     private Wall[] walls;
+    private Map playerMap;
     private JButton backButton = new JButton("Go Back");
     public GameViewer(Game game){
         super();
@@ -25,7 +26,8 @@ public class GameViewer extends SimplePanel implements Viewer {
         this.game = game;
         board = game.getGameBoard();
         walls = game.getWalls();
-        MouseListener mouseListen = new MouseListener(walls);
+        playerMap = game.getPlayerMap();
+        MouseListener mouseListen = new MouseListener(walls, board, playerMap);
         this.addMouseListener(mouseListen);
         this.addMouseMotionListener(mouseListen);
         this.setFocusable(true);

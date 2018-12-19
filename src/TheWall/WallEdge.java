@@ -8,6 +8,8 @@ Creator: Ayca Begum Tascioglu
 public class WallEdge extends GameObject {
     int radius;
     boolean isCastle;
+    int middleX;
+    int middleY;
     public static final Color BROWN = new Color(153,102,0);
     public static final Color light_yellow = new Color(255,255,204);
     public static final Color golden_yellow = new Color(255,204, 51);
@@ -50,6 +52,20 @@ public class WallEdge extends GameObject {
 
     public void setRadius(int radius) {
         this.radius = radius;
+        updateMiddlePoint();
+    }
+
+    public int getMiddleX() {
+        return middleX;
+    }
+
+    public int getMiddleY() {
+        return middleY;
+    }
+
+    public void updateMiddlePoint(){
+        middleX = getX() + radius / 2;
+        middleY = getY() + radius / 2;
     }
 
     @Override
@@ -60,5 +76,17 @@ public class WallEdge extends GameObject {
     @Override
     public int getX() {
         return super.getX();
+    }
+
+    @Override
+    public void setX(int x) {
+        super.setX(x);
+        updateMiddlePoint();
+    }
+
+    @Override
+    public void setY(int y) {
+        super.setY(y);
+        updateMiddlePoint();
     }
 }

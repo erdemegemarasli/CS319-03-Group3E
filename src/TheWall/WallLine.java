@@ -7,6 +7,8 @@ Creator: Ayca Begum Tascioglu
 
 public class WallLine  extends GameObject {
     int height, width;
+    int middleX;
+    int middleY;
     public static final Color BROWN = new Color(153,102,0);
     public static final Color golden_yellow = new Color(255,204, 51);
 
@@ -26,22 +28,39 @@ public class WallLine  extends GameObject {
 
     public void setHeight(int height) {
         this.height = height;
+        updateMiddlePoint();
+        updateMiddlePoint();
     }
 
     public void setWidth(int width) {
         this.width = width;
+        updateMiddlePoint();
     }
 
     @Override
     public void setY(int y) {
         super.setY(y);
+        updateMiddlePoint();
     }
 
     @Override
     public void setX(int x) {
         super.setX(x);
+        updateMiddlePoint();
     }
 
+    public int getMiddleY() {
+        return middleY;
+    }
+
+    public int getMiddleX() {
+        return middleX;
+    }
+
+    public void updateMiddlePoint(){
+        middleX = getX() + width / 2;
+        middleY = getY() + height / 2;
+    }
     @Override
     public void draw(Graphics g){
         g.setColor(golden_yellow);
