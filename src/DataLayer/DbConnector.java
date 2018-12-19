@@ -6,7 +6,7 @@ public class DbConnector {
 	//ATTRIBUTES
 	protected static Connection con;
 	protected static final String USERNAME = "root";
-	protected static final String PASSWORD = "";
+	protected static final String PASSWORD = "ensar123";
 	protected static final String CONN_STRING = "jdbc:mysql://localhost/logininfo?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=Turkey";
 
 	/** 
