@@ -263,4 +263,40 @@ public class DbConnector {
 	}
 		return false;}
 	
+	
+	public static boolean editUserName(String username, String password,String newName){
+		int id=verifyUser(username,password);
+		if(0<id)
+		{
+			try{
+				String sql;
+				con = getConnection();
+				Statement stat= con.createStatement();
+				sql="UPDATE mytable SET username= '"+ newName+"' WHERE ID = " +id;
+				stat.execute(sql);
+				return true;
+				}
+			catch(SQLException e){
+				e.printStackTrace();}
+	}
+		return false;}
+	
+	
+	public static boolean editPassword(String username,String password,String newPass){
+		int id=verifyUser(username,password);
+		if(0<id)
+		{
+			try{
+				String sql;
+				con = getConnection();
+				Statement stat= con.createStatement();
+				sql="UPDATE mytable SET password= '"+ newPass+"' WHERE ID = " +id;
+				stat.execute(sql);
+				return true;
+				}
+			catch(SQLException e){
+				e.printStackTrace();}
+	}
+		return false;}
+
 }
