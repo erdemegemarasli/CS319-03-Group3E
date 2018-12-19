@@ -172,7 +172,155 @@ public class DbConnector {
 		return false;	
 	}
 	
+	/** 
+	 * @author Ensar Kaya
+	 *This method returns a string which displays all
+	 *the uploaded maps in the table   
+	 * @return	string str, which displays all the uploaded maps in the table		
+	 */
+	public static String showAllUploadedMaps(){
+		String ret="";
+		try{
+			con = getConnection();
+			Statement stat = con.createStatement();
+			String sql = "SELECT map1, map2 FROM mytable";
+			ResultSet rs=stat.executeQuery(sql);
+			while(rs.next())
+			{
+				String m1=rs.getString("map1");
+				String m2=rs.getString("map2");	
+				ret+=" Map1: "+m1+" Map2: "+m2+"\n";
+			}
+			rs.close();
+		}
+		catch(SQLException e){
+			e.printStackTrace();}
+		return ret;}
+	
+	/** 
+	 * @author Ensar Kaya
+	 *This method deletes a user from table(whole row)
+	 *@param name the name of user
+	 *@param password the password of user  
+	 * @return	true if deletion is successful
+	 *@return false if deletion is failed		
+	 */
+	public static boolean deleteUser(String name, String password){
+		int i=0;
+		String table="mytable";
+		try{
+			con = getConnection();
+			PreparedStatement pStat = con.prepareStatement("DELETE FROM "+ table+" WHERE username = '"+ name+"'");
+
+			i = pStat.executeUpdate();}
+		catch(SQLException e){
+			e.printStackTrace();}
+		if(i>=1)
+			return true;
+		return false;}
+	
+	/** 
+	 * @author Ensar Kaya
+	 *This method deletes a map from a user(just one cell) 
+	 *@param name the name of user
+	 *@param password the password of user  
+	 *@param map the code of map
+	 * @return	true if deletion is successful
+	 *@return false if deletion is failed		
+	 */
+	public static boolean deleteMap(String username, String password, String map){
+		int id=verifyUser(username,password);
+		if(0<id)
+		{
+			
+			try{
+				con = getConnection();
+				Statement stat= con.createStatement();
+				String sql = "SELECT ID, map1, map2,map3,map4,map5 FROM mytable";
+				ResultSet rs=stat.executeQuery(sql);
+				while(rs.next()){
+					int a=rs.getInt("ID");
+					String m1=rs.getString("map1");
+					String m2=rs.getString("map2");
+					String m3=rs.getString("map3");
+					String m4=rs.getString("map4");
+					String m5=rs.getString("map5");
+					if(a==id){
+						Statement stat2=con.createStatement();
+						String sql2;
+							if(m1.equals(map)){ 
+							sql2="UPDATE mytable SET map1 = '' WHERE ID = " +id;
+							stat2.execute(sql2);
+							return true;}
+							else if(m2.equals(map)){ 
+							sql2="UPDATE mytable SET map2 = '' WHERE ID = " +id;
+							stat2.execute(sql2);
+							return true;}
+							else if(m3.equals(map)){ 
+							sql2="UPDATE mytable SET map3 = '' WHERE ID = " +id;
+							stat2.execute(sql2);
+							return true;}
+							else if(m4.equals(map)){  
+							sql2="UPDATE mytable SET map4 = '' WHERE ID = " +id;
+							stat2.execute(sql2);
+							return true;}
+							else if(m5.equals(map)){ 
+							sql2="UPDATE mytable SET map5 = '' WHERE ID = " +id;
+							stat2.execute(sql2);
+							return true;}
+							else{ 
+							System.out.println("There is no such a map!");
+							return false;}
+					}
+				}
+				}
+			catch(SQLException e){
+				e.printStackTrace();}
+	}
+		return false;}
+	
+	/** 
+	 * @author Ensar Kaya
+	 *This method edits a user's username
+	 *@param username the username of user
+	 *@param password the password of user  
+	 *@param newName the new name of user
+	 * @return	true if edition is successful
+	 *@return false if edition is failed		
+	 */
+	public static boolean editUserName(String username, String password,String newName){
+		int id=verifyUser(username,password);
+		if(0<id)
+		{
+			try{
+				String sql;
+				con = getConnection();
+				Statement stat= con.createStatement();
+				sql="UPDATE mytable SET username= '"+ newName+"' WHERE ID = " +id;
+				stat.execute(sql);
+				return true;
+				}
+			catch(SQLException e){
+				e.printStackTrace();}
+	}
+		return false;}
 	
 	
-	
+	public static boolean editPassword(String username,String password,String newPass){
+		int id=verifyUser(username,password);
+		if(0<id)
+		{
+			try{
+				String sql;
+				con = getConnection();
+				Statement stat= con.createStatement();
+				sql="UPDATE mytable SET password= '"+ newPass+"' WHERE ID = " +id;
+				stat.execute(sql);
+				return true;
+				}
+			catch(SQLException e){
+				e.printStackTrace();}
+	}
+		return false;}
+
 }
