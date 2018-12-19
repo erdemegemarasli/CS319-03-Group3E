@@ -197,5 +197,18 @@ public class DbConnector {
 			e.printStackTrace();}
 		return ret;}
 	
+	public static boolean deleteUser(String name, String password){
+		int i=0;
+		String table="mytable";
+		try{
+			con = getConnection();
+			PreparedStatement pStat = con.prepareStatement("DELETE FROM "+ table+" WHERE username = '"+ name+"'");
+
+			i = pStat.executeUpdate();}
+		catch(SQLException e){
+			e.printStackTrace();}
+		if(i>=1)
+			return true;
+		return false;}
 	
 }
