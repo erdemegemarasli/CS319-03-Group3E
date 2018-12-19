@@ -54,5 +54,30 @@ public class DbConnector {
 			e.printStackTrace();}		
 		return ret;}
 
+	public static String showAllUserData(){
+		String str="";
+		try{
+			con = getConnection();
+			Statement stat = con.createStatement();
+			String sql = "SELECT ID, username, password,map1, map2, map3, map4, map5 FROM mytable";
+			ResultSet rs=stat.executeQuery(sql);
+			while(rs.next())
+			{
+				int v=rs.getInt("ID");
+				String n=rs.getString("username");
+				String p=rs.getString("password");
+				String m1=rs.getString("map1");
+				String m2=rs.getString("map2");
+				String m3=rs.getString("map3");
+				String m4=rs.getString("map4");
+				String m5=rs.getString("map5");		
+				str+=" ID: "+v+" Username: "+n+" Password: "+p+" Map1: "+m1+" Map2: "+m2
+						+" Map3: "+m3+" Map4: "+m4+" Map5: "+m5+"\n";
+			}
+			rs.close();
+		}
+		catch(SQLException e){
+			e.printStackTrace();}
+		return str;}
 	
 }
