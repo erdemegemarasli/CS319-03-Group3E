@@ -10,6 +10,7 @@ public class DbConnector {
 	protected static final String CONN_STRING = "jdbc:mysql://localhost/logininfo?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=Turkey";
 
 	/** 
+	 * @author Ensar Kaya
 	 * This method creates a MySql connection by using
 	 * Username,Password and URL of the my database
 	 * @param     
@@ -27,6 +28,7 @@ public class DbConnector {
 	}
 	
 	/** 
+	 * @author Ensar Kaya
 	 *This method search username, password parameters in mytable
 	 *return -1 if it's not founded 
 	 *return an positive integer which is the index number 
@@ -55,9 +57,9 @@ public class DbConnector {
 		return ret;}
 
 	/** 
+	 * @author Ensar Kaya
 	 *This method returns a string which displays all
-	 *the information in the table
-	 * @param     
+	 *the information in the table   
 	 * @return	string str, which displays all the information in the table		
 	 */
 	public static String showAllUserData(){
@@ -87,8 +89,9 @@ public class DbConnector {
 		return str;}
 	
 	/** 
-	 *This method inserts a user into the table
-	 *
+	 * @author Ensar Kaya
+	 * 
+	 * This method inserts a user into the table
 	 * @param   name the name of user
 	 * @param	password the password of user
 	 * @return	true if insertion successful
@@ -115,6 +118,59 @@ public class DbConnector {
 			return true;
 		return false;}
 	
+	/** 
+	 * @author Ensar Kaya
+	 * This method uploads a map into the table
+	 * @param   username the username of user
+	 * @param	password the password of user
+	 * @param  	map the map is going to upload
+	 * @return	true if upload successful
+	 * @return 	false if upload fails 		
+	 */
+	public static boolean uploadMap(String username,String password,String map){
+		boolean rs2=false;
+		int x=verifyUser(username,password);
+		try{
+			if(0<x)
+			{
+				con = getConnection();
+				Statement stat= con.createStatement();
+				String sql = "SELECT username, password, map1, map2 FROM mytable";
+				ResultSet rs=stat.executeQuery(sql);
+				while(rs.next()){
+					String n=rs.getString("username");
+					String p=rs.getString("password");
+					String m1=rs.getString("map1");
+					String m2=rs.getString("map2");
+					Statement stat2=con.createStatement();
+					if(n.equals(username)&&p.equals(password)&&m1.equals("")){
+						String sql2="UPDATE mytable SET map1 = '" + map +"' WHERE username = '" +username+"'";
+						rs2 = stat2.execute(sql2);
+						return true;
+					}
+					else if(n.equals(username)&&p.equals(password)&&m2.equals("")){
+						String sql2="UPDATE mytable SET map2 = '" + map +"' WHERE username = '" +username+"'";
+						rs2 = stat2.execute(sql2);
+						return true;
+					}
+					else if(n.equals(username)&&p.equals(password)&&!m1.equals("")&&!m2.equals("")){
+						System.out.println("You're out of quota, please delete a map or buy quota!");
+						return false;
+					}
+				}
+				rs.close();		
+			}
+			else{
+				System.out.println("Invalid username or password");
+				return false;
+			}
+		}
+		catch(SQLException e){
+			e.printStackTrace();}
+		if(rs2)
+			return true;
+		return false;	
+	}
 	
 	
 	
