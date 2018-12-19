@@ -6,7 +6,7 @@ public class DbConnector {
 	//ATTRIBUTES
 	protected static Connection con;
 	protected static final String USERNAME = "root";
-	protected static final String PASSWORD = "";
+	protected static final String PASSWORD = "ensar123";
 	protected static final String CONN_STRING = "jdbc:mysql://localhost/logininfo?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=Turkey";
 
 	/** 
@@ -305,7 +305,15 @@ public class DbConnector {
 	}
 		return false;}
 	
-	
+	/** 
+	 * @author Ensar Kaya
+	 *This method edits a user's password
+	 *@param username the username of user
+	 *@param password the password of user  
+	 *@param newPass the new password of user
+	 * @return	true if edition is successful
+	 *@return false if edition is failed		
+	 */
 	public static boolean editPassword(String username,String password,String newPass){
 		int id=verifyUser(username,password);
 		if(0<id)
