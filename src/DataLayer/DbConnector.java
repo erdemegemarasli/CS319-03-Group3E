@@ -279,7 +279,15 @@ public class DbConnector {
 	}
 		return false;}
 	
-	
+	/** 
+	 * @author Ensar Kaya
+	 *This method edits a user's username
+	 *@param username the username of user
+	 *@param password the password of user  
+	 *@param newName the new name of user
+	 * @return	true if edition is successful
+	 *@return false if edition is failed		
+	 */
 	public static boolean editUserName(String username, String password,String newName){
 		int id=verifyUser(username,password);
 		if(0<id)
