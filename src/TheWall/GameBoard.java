@@ -8,7 +8,7 @@ Creator: Erdem Ege Marasli
 public class GameBoard implements Drawable
 {
     private Map map;
-    private ArrayList<GameUnits> gameUnits=new ArrayList<GameUnits>();
+    private ArrayList<GameUnits> gameUnits = new ArrayList<GameUnits>();
     private GameUnit[] castle;
     final int edgeHeight = 20;
     final int edgeWidth = 20;
@@ -42,6 +42,122 @@ public class GameBoard implements Drawable
             else if(map.getSquareLocations()[i] == 3){
                 castle[temp] = new GameUnit(squares[i].getX(),squares[i].getY(),squareHeight,false);
                 temp++;
+            }
+        }
+        for(int i = 0; i < map.getEdgeLocations().length; i++){
+            edges[i].setInfo(map.getEdgeLocations()[i]);
+        }
+        for(int i = 0; i < map.getVerticalRectangleLocations().length; i++){
+            if(map.getVerticalRectangleLocations()[i] == 2){
+                verticalRectangles[i].setInfo(2);
+            }
+            else{
+                verticalRectangles[i].setInfo(0);
+            }
+        }
+        for(int i = 0; i < map.getHorizontalRectangleLocations().length; i++){
+            if(map.getHorizontalRectangleLocations()[i] == 2){
+                horizontalRectangles[i].setInfo(2);
+            }
+            else{
+                horizontalRectangles[i].setInfo(0);
+            }
+        }
+    }
+    public boolean isValidMove(Wall wall){
+        //Found the type of the wall
+        int verticalCount = 0;
+        int horizontalCount = 0;
+        int edgeCount = 0;
+        for(int i = 0; i < wall.getWallLines().length; i++){
+            if(wall.getWallLines()[i].getWidth() > wall.getWallLines()[i].getHeight()){
+                verticalCount++;
+            }
+            else{
+                horizontalCount++;
+            }
+        }
+        for(int i = 0; i < wall.getWallEdges().length; i++){
+            if(wall.getWallEdges()[i].isCastle() == true){
+                edgeCount++;
+            }
+        }
+        int tempVertical = 0;
+        int tempHorizontal = 0;
+        int tempEdge = 0;
+        int middleX;
+        int middleY;
+        for(int i = 0; i < wall.getWallLines().length; i++){
+            middleX = wall.getWallLines()[i].getMiddleX();
+            middleY = wall.getWallLines()[i].getMiddleY();
+            for(int j = 0; j < verticalRectangles.length; j++){
+                if(verticalRectangles[j].isContainPoint(middleX, middleY) && verticalRectangles[j].getInfo() == 0){
+                    tempVertical++;
+                }
+            }
+            for(int j = 0; j < horizontalRectangles.length; j++){
+                if(horizontalRectangles[j].isContainPoint(middleX, middleY) && horizontalRectangles[j].getInfo() == 0){
+                    tempHorizontal++;
+                }
+            }
+        }
+        for(int i = 0; i < wall.getWallEdges().length; i++){
+            middleX = wall.getWallEdges()[i].getMiddleX();
+            middleY = wall.getWallEdges()[i].getMiddleY();
+            for(int j = 0; j < edges.length; j++){
+                if(edges[j].isContainPoint(middleX, middleY)){
+                    if(wall.getWallEdges()[i].isCastle() == true){
+                        if(edges[j].getInfo() == 0)
+                            tempEdge++;
+                    }
+                    else{
+                        tempEdge++;
+                    }
+                }
+            }
+        }
+        return verticalCount == tempVertical && horizontalCount == tempHorizontal && edgeCount == tempEdge;
+
+    }
+
+    public void makeMove(Wall wall){
+        int middleX;
+        int middleY;
+        for(int i = 0; i < wall.getWallLines().length; i++){
+            middleX = wall.getWallLines()[i].getMiddleX();
+            middleY = wall.getWallLines()[i].getMiddleY();
+            for(int j = 0; j < verticalRectangles.length; j++){
+                if(verticalRectangles[j].isContainPoint(middleX, middleY) && verticalRectangles[j].getInfo() == 0){
+                    verticalRectangles[j].setInfo(1);
+                    wall.getWallLines()[i].setX(verticalRectangles[j].getX());
+                    wall.getWallLines()[i].setY(verticalRectangles[j].getY());
+                }
+            }
+            for(int j = 0; j < horizontalRectangles.length; j++){
+                if(horizontalRectangles[j].isContainPoint(middleX, middleY) && horizontalRectangles[j].getInfo() == 0){
+                    horizontalRectangles[j].setInfo(1);
+                    wall.getWallLines()[i].setX(horizontalRectangles[j].getX());
+                    wall.getWallLines()[i].setY(horizontalRectangles[j].getY());
+                }
+            }
+        }
+        for(int i = 0; i < wall.getWallEdges().length; i++){
+            middleX = wall.getWallEdges()[i].getMiddleX();
+            middleY = wall.getWallEdges()[i].getMiddleY();
+            for(int j = 0; j < edges.length; j++){
+                if(edges[j].isContainPoint(middleX, middleY)){
+                    if(wall.getWallEdges()[i].isCastle() == true){
+                        if(edges[j].getInfo() == 0){
+                            edges[j].setInfo(1);
+                            wall.getWallEdges()[i].setX(edges[j].getX());
+                            wall.getWallEdges()[i].setY(edges[j].getY());
+                        }
+                    }
+                    else{
+                        wall.getWallEdges()[i].setX(edges[j].getX());
+                        wall.getWallEdges()[i].setY(edges[j].getY());
+                    }
+                }
             }
         }
     }
@@ -83,7 +199,6 @@ public class GameBoard implements Drawable
         else if(castle[0].getX() == castle[1].getX()){
             g.fillRect(castle[0].getX() + castle[0].getRadius() / 4, castle[0].getY() + castle[0].getRadius() / 4,castle[0].getRadius()/2,castle[0].getRadius()+ castle[0].getRadius()/2);
         }
-
 
 
     }
