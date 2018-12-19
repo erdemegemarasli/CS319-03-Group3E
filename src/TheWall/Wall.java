@@ -3,6 +3,7 @@ package TheWall;
 import java.awt.*;
 import java.awt.Rectangle;
 import java.awt.geom.AffineTransform;
+import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
 /*
 Creator: Ayca Begum Tascioglu
