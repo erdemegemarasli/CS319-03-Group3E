@@ -172,7 +172,24 @@ public class DbConnector {
 		return false;	
 	}
 	
-	
+	public static String showAllUploadedMaps(){
+		String ret="";
+		try{
+			con = getConnection();
+			Statement stat = con.createStatement();
+			String sql = "SELECT map1, map2 FROM mytable";
+			ResultSet rs=stat.executeQuery(sql);
+			while(rs.next())
+			{
+				String m1=rs.getString("map1");
+				String m2=rs.getString("map2");	
+				ret+=" Map1: "+m1+" Map2: "+m2+"\n";
+			}
+			rs.close();
+		}
+		catch(SQLException e){
+			e.printStackTrace();}
+		return ret;}
 	
 	
 }
