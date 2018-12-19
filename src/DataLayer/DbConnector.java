@@ -211,4 +211,56 @@ public class DbConnector {
 			return true;
 		return false;}
 	
+	
+	public static boolean deleteMap(String username, String password, String map){
+		int id=verifyUser(username,password);
+		if(0<id)
+		{
+			
+			try{
+				con = getConnection();
+				Statement stat= con.createStatement();
+				String sql = "SELECT ID, map1, map2,map3,map4,map5 FROM mytable";
+				ResultSet rs=stat.executeQuery(sql);
+				while(rs.next()){
+					int a=rs.getInt("ID");
+					String m1=rs.getString("map1");
+					String m2=rs.getString("map2");
+					String m3=rs.getString("map3");
+					String m4=rs.getString("map4");
+					String m5=rs.getString("map5");
+					if(a==id){
+						Statement stat2=con.createStatement();
+						String sql2;
+							if(m1.equals(map)){ 
+							sql2="UPDATE mytable SET map1 = '' WHERE ID = " +id;
+							stat2.execute(sql2);
+							return true;}
+							else if(m2.equals(map)){ 
+							sql2="UPDATE mytable SET map2 = '' WHERE ID = " +id;
+							stat2.execute(sql2);
+							return true;}
+							else if(m3.equals(map)){ 
+							sql2="UPDATE mytable SET map3 = '' WHERE ID = " +id;
+							stat2.execute(sql2);
+							return true;}
+							else if(m4.equals(map)){  
+							sql2="UPDATE mytable SET map4 = '' WHERE ID = " +id;
+							stat2.execute(sql2);
+							return true;}
+							else if(m5.equals(map)){ 
+							sql2="UPDATE mytable SET map5 = '' WHERE ID = " +id;
+							stat2.execute(sql2);
+							return true;}
+							else{ 
+							System.out.println("There is no such a map!");
+							return false;}
+					}
+				}
+				}
+			catch(SQLException e){
+				e.printStackTrace();}
+	}
+		return false;}
+	
 }
