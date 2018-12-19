@@ -172,6 +172,12 @@ public class DbConnector {
 		return false;	
 	}
 	
+	/** 
+	 * @author Ensar Kaya
+	 *This method returns a string which displays all
+	 *the uploaded maps in the table   
+	 * @return	string str, which displays all the uploaded maps in the table		
+	 */
 	public static String showAllUploadedMaps(){
 		String ret="";
 		try{
