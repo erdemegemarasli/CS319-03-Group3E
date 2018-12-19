@@ -48,6 +48,8 @@ public class MouseListener extends MouseAdapter {
                         }
                     }
                     walls[wallIndex].setFixed();
+                    walls[wallIndex].setFixedInitial();
+                    walls[wallIndex].setFixedMidpoint();
                     rotateCount = 0;
                 }
                 wallIndex = -1;
