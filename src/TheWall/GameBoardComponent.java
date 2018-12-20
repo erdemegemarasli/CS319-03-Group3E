@@ -17,6 +17,7 @@ abstract class GameBoardComponent implements Drawable
         this.y = y;
         this.width = width;
         this.height = height;
+        info = 0;
     }
     public void setX(int x)
     {

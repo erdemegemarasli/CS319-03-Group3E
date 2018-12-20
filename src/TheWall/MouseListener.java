@@ -27,18 +27,23 @@ public class MouseListener extends MouseAdapter {
             if(!moving){
                 for(int i = 0; i < walls.length; i++){
                     if(walls[i].isContainMouse(e.getX(),e.getY())){
+                        rotateCount=0;
                         wallIndex = i;
                         moving = true;
                         walls[i].setMoving(true);
+                        if(walls[i].isPlaced()){
+                            gameBoard.detachWall(walls[i]);
+                        }
                         break;
                     }
                 }
             }
             else if(moving){
                 walls[wallIndex].setMoving(false);
-                moving = false;
+
                 if(gameBoard.isValidMove(walls[wallIndex])){
                     System.out.println("Valid");
+                    walls[wallIndex].makeGreen(false);
                     gameBoard.makeMove(walls[wallIndex]);
                 }
                 else{
@@ -55,6 +60,7 @@ public class MouseListener extends MouseAdapter {
                     rotateCount = 0;
                 }
                 wallIndex = -1;
+                moving = false;
             }
         }
         else if(SwingUtilities.isRightMouseButton(e) && moving && wallIndex > -1){
@@ -69,6 +75,12 @@ public class MouseListener extends MouseAdapter {
         if(moving){
             walls[wallIndex].setX(e.getX());
             walls[wallIndex].setY(e.getY());
+            if(gameBoard.isValidMove(walls[wallIndex])){
+                walls[wallIndex].makeGreen(true);
+            }
+            else{
+                walls[wallIndex].makeGreen(false);
+            }
         }
 
 
