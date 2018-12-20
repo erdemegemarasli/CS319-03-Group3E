@@ -5,19 +5,16 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Component;
-import java.awt.Container;
 
-public class LoginScreen extends SimplePanel{
+public class SignUpScreen extends SimplePanel {
     JButton returnPrev = new JButton("Back");
-    JButton login = new JButton("Login");
     JButton signUpButton = new JButton("Sign Up");
-    public LoginScreen() {
+    public SignUpScreen() {
         super();
-        type = "loginScreen";
+        type = "signUpScreen";
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
         this.setBorder(new EmptyBorder(new Insets(300,400,300,400)));
-        JLabel title = new JLabel("Login");
+        JLabel title = new JLabel("SignUp");
         title.setMinimumSize(new Dimension(50,50));
         title.setPreferredSize(new Dimension(50,50));
         title.setMaximumSize(new Dimension(50,50));
@@ -47,13 +44,7 @@ public class LoginScreen extends SimplePanel{
         passwordLabel.setLabelFor(textField2);
         this.add(textField2);
 
-        login.addActionListener(buttonListen);
-        this.add(login);
-
-        JLabel signUpLabel = new JLabel("Haven't got an account?");
         signUpButton.addActionListener(buttonListen);
-        signUpLabel.setLabelFor(signUpButton);
-        this.add(signUpLabel);
         this.add(signUpButton);
 
         this.add(returnPrev);
@@ -64,14 +55,11 @@ public class LoginScreen extends SimplePanel{
     private class ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event)
         {
+            if(event.getSource() == signUpButton) {
+                selection = 1;
+            }
             if(event.getSource() == returnPrev) {
                 selection = 0;
-            }
-            else if(event.getSource() == login) {
-                selection = 1; //login
-            }
-            else if(event.getSource() == signUpButton) {
-                selection = 2; //login
             }
         }
     }

@@ -83,12 +83,13 @@ public class MainFrame extends JFrame
                     addComp(currentPanel);
                     setVis(true);
                 }
-                if(currentPanel.getSelection() == 2)
+                else if(currentPanel.getSelection() == 2)
                 {
                     removeComp(currentPanel);
                     currentPanel = new LoginScreen();
                     addComp(currentPanel);
                     setVis(true);
+
                 }
                 else if(currentPanel.getSelection() == 0)
                 {
@@ -134,11 +135,52 @@ public class MainFrame extends JFrame
                     setVis(true);
                 }
             }
+            //MEANINGLESS
+            /*
             else if(currentPanel.getSelection() == 0 ){
                 removeComp(currentPanel);
                 currentPanel = new LevelSelectionPanel();
                 addComp(currentPanel);
                 setVis(true);
+            }
+            */
+            else if(currentPanel.getType().equals("loginScreen"))
+            {
+                //login
+                if(currentPanel.getSelection() == 1)
+                {
+
+
+                }
+                else if(currentPanel.getSelection() == 2)
+                {
+                    removeComp(currentPanel);
+                    currentPanel = new SignUpScreen();
+                    addComp(currentPanel);
+                    setVis(true);
+                }
+                else if(currentPanel.getSelection() == 0)
+                {
+                    removeComp(currentPanel);
+                    currentPanel = new PlayScreen();
+                    addComp(currentPanel);
+                    setVis(true);
+                }
+            }
+            else if(currentPanel.getType().equals("signUpScreen"))
+            {
+                //signup
+                if(currentPanel.getSelection() == 1) {
+
+
+                }
+                else if(currentPanel.getSelection() == 0)
+                {
+                    removeComp(currentPanel);
+                    currentPanel = new PlayScreen();
+                    addComp(currentPanel);
+                    setVis(true);
+                }
             }
 
         }
