@@ -30,6 +30,9 @@ public class MouseListener extends MouseAdapter {
                         wallIndex = i;
                         moving = true;
                         walls[i].setMoving(true);
+                        if(walls[i].isPlaced()){
+                            gameBoard.detachWall(walls[i]);
+                        }
                         break;
                     }
                 }

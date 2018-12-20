@@ -135,6 +135,7 @@ public class GameBoard implements Drawable
             for(int j = 0; j < verticalRectangles.length; j++){
                 if(verticalRectangles[j].isContainPoint(middleX, middleY) && verticalRectangles[j].getInfo() == 0){
                     verticalRectangles[j].setInfo(1);
+                    wall.getWallLines()[i].setIndexNo(j);
                     wall.getWallLines()[i].setX(verticalRectangles[j].getX());
                     wall.getWallLines()[i].setY(verticalRectangles[j].getY());
                 }
@@ -142,6 +143,7 @@ public class GameBoard implements Drawable
             for(int j = 0; j < horizontalRectangles.length; j++){
                 if(horizontalRectangles[j].isContainPoint(middleX, middleY) && horizontalRectangles[j].getInfo() == 0){
                     horizontalRectangles[j].setInfo(1);
+                    wall.getWallLines()[i].setIndexNo(j);
                     wall.getWallLines()[i].setX(horizontalRectangles[j].getX());
                     wall.getWallLines()[i].setY(horizontalRectangles[j].getY());
                 }
@@ -155,12 +157,14 @@ public class GameBoard implements Drawable
                     if(wall.getWallEdges()[i].isCastle() == true){
                         if(edges[j].getInfo() == 0){
                             edges[j].setInfo(1);
+                            wall.getWallEdges()[i].setIndexNo(j);
                             //System.out.println(edges[j].getInfo());
                             wall.getWallEdges()[i].setX(edges[j].getX());
                             wall.getWallEdges()[i].setY(edges[j].getY());
                         }
                     }
                     else if(edges[j].getInfo() != 1){
+                        wall.getWallEdges()[i].setIndexNo(j);
                         edges[j].setInfo(2);
                         wall.getWallEdges()[i].setX(edges[j].getX());
                         wall.getWallEdges()[i].setY(edges[j].getY());
@@ -168,6 +172,21 @@ public class GameBoard implements Drawable
                 }
             }
         }
+        wall.setPlaced(true);
+    }
+    public void detachWall(Wall wall){
+        for(int i = 0; i < wall.getWallLines().length; i++){
+            if(wall.getWallLines()[i].isVertical()){
+                verticalRectangles[wall.getWallLines()[i].getIndexNo()].setInfo(0);
+            }
+            else{
+                horizontalRectangles[wall.getWallLines()[i].getIndexNo()].setInfo(0);
+            }
+        }
+        for(int i = 0; i < wall.getWallEdges().length; i++){
+            edges[wall.getWallEdges()[i].getIndexNo()].setInfo(0);
+        }
+        wall.setPlaced(false);
     }
 
     public boolean isGameFinished(){

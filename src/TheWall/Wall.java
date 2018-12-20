@@ -28,6 +28,7 @@ public class Wall implements Moveable, Drawable{
 
     int fixedMidPointX;
     int fixedMidPointY;
+    boolean isPlaced;
 
     public Wall(WallEdge[] wallEdges, WallLine[] wallLines,int wallNumber)
     {
@@ -35,6 +36,7 @@ public class Wall implements Moveable, Drawable{
         this.wallLines = wallLines;
         this.wallNumber = wallNumber;
         isMoving = false;
+        isPlaced = false;
     }
 
 
@@ -44,6 +46,13 @@ public class Wall implements Moveable, Drawable{
 
     public void setWallNumber(int wallNumber) {
         this.wallNumber = wallNumber;
+    }
+
+    public boolean isPlaced(){
+        return isPlaced;
+    }
+    public void setPlaced(boolean b){
+        isPlaced = b;
     }
 
     public void setMidPointX(int midPointX) {
