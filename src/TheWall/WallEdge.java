@@ -14,6 +14,8 @@ public class WallEdge extends GameObject {
     int fixedX;
     int fixedY;
 
+    int indexNo;
+
     public static final Color BROWN = new Color(153,102,0);
     public static final Color light_yellow = new Color(255,255,204);
     public static final Color golden_yellow = new Color(255,204, 51);
@@ -23,6 +25,7 @@ public class WallEdge extends GameObject {
         this.isCastle = isCastle;
         this.fixedX = fixedX;
         this.fixedY = fixedY;
+        indexNo = -1;
     }
 
     @Override
