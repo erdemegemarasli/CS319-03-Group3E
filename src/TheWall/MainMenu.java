@@ -1,9 +1,11 @@
 package TheWall;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import javax.swing.border.EmptyBorder;
 /*
 Creator: Erdem Ege Marasli and Ayca Begum Tascioglu
@@ -15,6 +17,7 @@ public class MainMenu extends SimplePanel
     JButton button2 = new JButton("Credits");
     JButton button3 = new JButton("Settings");
     JButton button4 = new JButton("How to Play");
+    Image img = Toolkit.getDefaultToolkit().createImage("src/images/Background.jpg");
     public MainMenu()
     {
         super();
@@ -33,6 +36,7 @@ public class MainMenu extends SimplePanel
         this.add(button2);
         this.add(button3);
         this.add(button4);
+
     }
 
 
@@ -51,4 +55,18 @@ public class MainMenu extends SimplePanel
         }
     }
 
+    public void paintComponent(Graphics g) {
+        super.paintComponents(g);
+        g.setColor(Color.pink);
+        if (img != null) {
+            g.drawImage(img, 0, 0, null);
+            System.out.println("oluyo");
+        }
+        else
+            System.out.println("olmuyo");
+    }
+
+    public void update(){
+        repaint();
+    }
 }

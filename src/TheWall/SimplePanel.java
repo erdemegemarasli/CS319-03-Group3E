@@ -1,6 +1,8 @@
 package TheWall;
 
 import javax.swing.*;
+import java.awt.*;
+
 /*
 Creator: Erdem Ege Marasli and Ayca Begum Tascioglu
  */
@@ -22,4 +24,6 @@ abstract class SimplePanel extends JPanel
     {
         return type;
     }
+
+
 }

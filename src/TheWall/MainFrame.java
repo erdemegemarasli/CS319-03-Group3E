@@ -1,9 +1,12 @@
 package TheWall;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
+
 /*
 Creator: Erdem Ege Marasli and Ayca Begum Tascioglu
  */
@@ -14,7 +17,6 @@ public class MainFrame extends JFrame
     public MainFrame()
     {
         this.setSize(1200,600);
-        this.add(new JLabel(new ImageIcon("BackGround.jpg")));
         Toolkit tk = Toolkit.getDefaultToolkit();
         Dimension dim = tk.getScreenSize();
 
@@ -30,6 +32,8 @@ public class MainFrame extends JFrame
         this.setVisible(true);
         updateTimer = new Timer(100,new UpdateListener());
         updateTimer.start();
+
+
     }
     public void addComp(Component c){
         this.add(c);
@@ -61,6 +65,13 @@ public class MainFrame extends JFrame
                     addComp(currentPanel);
                     setVis(true);
                 }
+                else if(currentPanel.getSelection() == 3)
+                {
+                    removeComp(currentPanel);
+                    currentPanel = new Settings();
+                    addComp(currentPanel);
+                    setVis(true);
+                }
             }
             else if(currentPanel.getType().equals("playScreen"))
             {
@@ -81,7 +92,7 @@ public class MainFrame extends JFrame
                 }
 
             }
-            else if(currentPanel.getType().equals("credits"))
+            else if(currentPanel.getType().equals("credits") || currentPanel.getType().equals("settings"))
             {
 
                 if(currentPanel.getSelection() == 0)
