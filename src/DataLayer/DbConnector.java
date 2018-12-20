@@ -330,5 +330,65 @@ public class DbConnector {
 				e.printStackTrace();}
 	}
 		return false;}
+	
+	/** 
+	 * @author Ensar Kaya
+	 *This method allows user to download uploaded maps
+	 *@param username the username of user
+	 *@param password the password of user  
+	 *@param map the uploaded map's code
+	 * @return	true if download is successful
+	 *@return false if download is failed		
+	 */	
+	public static boolean downloadMap(String username,String password,String map){
+		boolean rs2=false;
+		int id=verifyUser(username,password);
+		try{
+			if(0<id)
+			{
+				con = getConnection();
+				Statement stat= con.createStatement();
+				String sql = "SELECT ID, map3, map4, map5 FROM mytable";
+				ResultSet rs=stat.executeQuery(sql);
+				while(rs.next()){
+					int x=rs.getInt("ID");
+					String m3=rs.getString("map3");
+					String m4=rs.getString("map4");
+					String m5=rs.getString("map5");
+					Statement stat2=con.createStatement();
+					if(x==id&&m3.equals("")){
+						String sql2="UPDATE mytable SET map3 = '" + map +"' WHERE ID = "+ id ;
+						rs2 = stat2.execute(sql2);
+						return true;
+					}
+					else if(x==id&&m4.equals("")){
+						String sql2="UPDATE mytable SET map4 = '" + map +"' WHERE ID = "+ id;
+						rs2 = stat2.execute(sql2);
+						return true;
+					}
+					else if(x==id&&m5.equals("")){
+						String sql2="UPDATE mytable SET map5 = '" + map +"' WHERE ID = "+ id;
+						rs2 = stat2.execute(sql2);
+						return true;
+					}
+					else if(x==id&&!m3.equals("")&&!m4.equals("")&&!m5.equals("")){
+						System.out.println("You're out of quota, please delete a map or buy quota!");
+						return false;
+					}
+				}
+				rs.close();		
+			}
+			else{
+				System.out.println("Invalid username or password");
+				return false;
+			}
+		}
+		catch(SQLException e){
+			e.printStackTrace();}
+		if(rs2)
+			return true;
+		return false;
+	}
+
 
 }
