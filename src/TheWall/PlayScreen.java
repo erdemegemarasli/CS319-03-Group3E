@@ -20,7 +20,8 @@ public class PlayScreen extends SimplePanel
         super();
         type = "playScreen";
         JLabel title = new JLabel("Choose a Mode to Play!");
-        title.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
+        title.setForeground(Color.RED);
+        title.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
         this.add(title);
 
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));

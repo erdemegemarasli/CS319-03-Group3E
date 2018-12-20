@@ -29,7 +29,7 @@ public class MainMenu extends SimplePanel
         type = "mainScreen";
         JLabel wallString = new JLabel("The Wall");
         wallString.setForeground(Color.RED);
-        wallString.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
+        wallString.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
         this.add(wallString);
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
         this.setBorder(new EmptyBorder(new Insets(300,400,300,400)));
