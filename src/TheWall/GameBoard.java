@@ -45,7 +45,7 @@ public class GameBoard implements Drawable
             }
         }
         for(int i = 0; i < map.getEdgeLocations().length; i++){
-            edges[i].setInfo(map.getEdgeLocations()[i]);
+            edges[i].setInfo(0);
         }
         for(int i = 0; i < map.getVerticalRectangleLocations().length; i++){
             if(map.getVerticalRectangleLocations()[i] == 2){
@@ -195,8 +195,11 @@ public class GameBoard implements Drawable
                 return false;
         }
         for(int i = 0; i < edges.length; i++){
-            if(edges[i].getInfo() != map.getEdgeLocations()[i])
+            if((edges[i].getInfo() == 0 || edges[i].getInfo() == 2 ) && (map.getEdgeLocations()[i] == 1))
                 return false;
+            else if(edges[i].getInfo() ==  1 && map.getEdgeLocations()[i] != 1){
+                return false;
+            }
         }
         for(int i = 0; i < horizontalRectangles.length; i++){
             if(horizontalRectangles[i].getInfo() != map.getHorizontalRectangleLocations()[i])
