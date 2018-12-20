@@ -71,7 +71,8 @@ public class Game {
         {
             render.update();
             if(checkWinCondition() == true){
-                System.out.println("You Won");
+                JOptionPane.showMessageDialog(null, "You Passed The Level " , "You Passed The Level", JOptionPane.INFORMATION_MESSAGE);
+                renderListener.stop();
             }
         }
     }
