@@ -108,19 +108,21 @@ public class GameBoard implements Drawable
             middleY = wall.getWallEdges()[i].getMiddleY();
             for(int j = 0; j < edges.length; j++){
                 if(edges[j].isContainPoint(middleX, middleY)){
-                    System.out.println(edges[j].getInfo());
+
                     if(wall.getWallEdges()[i].isCastle() == true){
                         if(edges[j].getInfo() == 0)
                             tempEdge++;
                     }
                     else{
-                        if(edges[j].getInfo() != 1)
+                        //System.out.println("elseValid");
+                        if(edges[j].getInfo() != 1){
                             tempEdge++;
+                        }
                     }
                 }
             }
         }
-        return verticalCount == tempVertical && horizontalCount == tempHorizontal; //&& edgeCount == tempEdge;
+        return verticalCount == tempVertical && horizontalCount == tempHorizontal && edgeCount == tempEdge;
 
     }
 
@@ -153,7 +155,7 @@ public class GameBoard implements Drawable
                     if(wall.getWallEdges()[i].isCastle() == true){
                         if(edges[j].getInfo() == 0){
                             edges[j].setInfo(1);
-                            System.out.println(edges[j].getInfo());
+                            //System.out.println(edges[j].getInfo());
                             wall.getWallEdges()[i].setX(edges[j].getX());
                             wall.getWallEdges()[i].setY(edges[j].getY());
                         }
