@@ -250,13 +250,13 @@ public class Wall implements Moveable, Drawable{
     }
 
     public void setFixedInitial(){
-        setInitialPositionX(getFixedInitialPositionX());
-        setInitialPositionY(getFixedInitialPositionY());
+        this.setInitialPositionX(this.getFixedInitialPositionX());
+        this.setInitialPositionY(this.getFixedInitialPositionY());
     }
 
     public void setFixedMidpoint(){
-        setMidPointX(getFixedMidPointX());
-        setMidPointY(getFixedMidPointY());
+        this.setMidPointX(this.getFixedMidPointX());
+        this.setMidPointY(this.getFixedMidPointY());
     }
     public void makeGreen(boolean b){
 

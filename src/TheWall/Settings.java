@@ -37,7 +37,7 @@ public class Settings extends SimplePanel{
     }
     public void setBG(Color color){
 
-        this.setBackground(color);
+        setBackgroundofPanel(color);
     }
     private class ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event)

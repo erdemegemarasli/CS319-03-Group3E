@@ -83,6 +83,13 @@ public class MainFrame extends JFrame
                     addComp(currentPanel);
                     setVis(true);
                 }
+                if(currentPanel.getSelection() == 2)
+                {
+                    removeComp(currentPanel);
+                    currentPanel = new LoginScreen();
+                    addComp(currentPanel);
+                    setVis(true);
+                }
                 else if(currentPanel.getSelection() == 0)
                 {
                     removeComp(currentPanel);

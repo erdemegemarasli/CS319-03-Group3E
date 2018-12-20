@@ -18,7 +18,7 @@ public class MainMenu extends SimplePanel
     JButton button2 = new JButton("Credits");
     JButton button3 = new JButton("Settings");
     JButton button4 = new JButton("How to Play");
-    private final ImageIcon img = new ImageIcon("images/Background.jpg");
+    //private final ImageIcon img = new ImageIcon("images/Background.jpg");
     //Image img = Toolkit.getDefaultToolkit().createImage("images/Background.jpg");
     public MainMenu()
     {
@@ -57,18 +57,5 @@ public class MainMenu extends SimplePanel
         }
     }
 
-    public void paintComponent(Graphics g) {
-        super.paintComponents(g);
-        g.setColor(Color.pink);
-        if (img != null) {
-            img.paintIcon(null, g, 0, 0);
-            System.out.println("oluyo");
-        }
-        else
-            System.out.println("olmuyo");
-    }
 
-    public void update(){
-        repaint();
-    }
 }
