@@ -79,7 +79,26 @@ int [] verticalRectangleLocations2 = {1,1,1,0,
                         1,1,1,1,1,1,
                         0,0,0,0,0,0,
                         0,0,0,0};
-levels[2] = new Map(squareLocations2,edgeLocations2,horizontalRectangleLocations2,verticalRectangleLocations2);
+levels[2] = new Map(squareLocations2,edgeLocations2,horizontalRectangleLocations2,verticalRectangleLocations2);//level-19
+int [] squareLocations3 = {0,1,0,
+				        0,0,0,0,0,
+				        0,3,0,1,0,
+				          3,0,0};
+int [] edgeLocations3 = {0,1,0,0,
+				       0,0,0,0,0,0,
+				       0,0,0,0,0,0,
+				       1,0,0,0,1,0,
+				       1,0,0,0};
+int [] horizontalRectangleLocations3={0,1,0,
+				                   0,1,0,0,0,
+				                   1,0,1,1,0,
+				                   1,2,0,1,0,
+				                     1,1,0};
+int [] verticalRectangleLocations3 = {0,1,1,0,
+				                   0,1,1,1,0,0,
+				                   1,0,0,0,1,0,
+				                   1,0,1,0};
+levels[3] = new Map(squareLocations3,edgeLocations3,horizontalRectangleLocations3,verticalRectangleLocations3);
     }
 
     public Map[] getLevels() {
