@@ -26,13 +26,18 @@ public class MainMenu extends SimplePanel
         type = "playScreen";
         type = "mainScreen";
         JLabel wallString = new JLabel("The Wall");
+        wallString.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
         this.add(wallString);
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
         this.setBorder(new EmptyBorder(new Insets(300,400,300,400)));
         ButtonListener buttonListen = new ButtonListener();
+        button1.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
         button1.addActionListener(buttonListen);
+        button2.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
         button2.addActionListener(buttonListen);
+        button3.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
         button3.addActionListener(buttonListen);
+        button4.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
         button4.addActionListener(buttonListen);
         this.add(button1);
         this.add(button2);

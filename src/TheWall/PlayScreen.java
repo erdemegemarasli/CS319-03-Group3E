@@ -20,15 +20,21 @@ public class PlayScreen extends SimplePanel
         super();
         type = "playScreen";
         JLabel title = new JLabel("Choose a Mode to Play!");
+        title.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
         this.add(title);
 
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
         this.setBorder(new EmptyBorder(new Insets(300,400,300,400)));
         ButtonListener buttonListen = new ButtonListener();
+        button1.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
         button1.addActionListener(buttonListen);
+        button2.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
         button2.addActionListener(buttonListen);
+        button3.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
         button3.addActionListener(buttonListen);
+        button4.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
         button4.addActionListener(buttonListen);
+        returnPrev.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
         returnPrev.addActionListener(buttonListen);
         this.add(button1);
         this.add(button2);
