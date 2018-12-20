@@ -86,6 +86,14 @@ public class WallEdge extends GameObject {
         return super.getX();
     }
 
+    public int getIndexNo() {
+        return indexNo;
+    }
+
+    public void setIndexNo(int indexNo) {
+        this.indexNo = indexNo;
+    }
+
     public void setFixedY(int fixedY) {
         this.fixedY = fixedY;
     }
