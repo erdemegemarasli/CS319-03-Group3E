@@ -19,6 +19,8 @@ public class WallEdge extends GameObject {
     public static final Color BROWN = new Color(153,102,0);
     public static final Color light_yellow = new Color(255,255,204);
     public static final Color golden_yellow = new Color(255,204, 51);
+    public static final Color GREEN = Color.GREEN;
+    Color currentColor;
     public WallEdge(int x, int y,int radius, boolean isCastle, int fixedX, int fixedY){
         super(x, y);
         this.radius = radius;
@@ -26,6 +28,7 @@ public class WallEdge extends GameObject {
         this.fixedX = fixedX;
         this.fixedY = fixedY;
         indexNo = -1;
+        currentColor = golden_yellow;
     }
     @Override
     public void draw(Graphics g) {
@@ -41,7 +44,7 @@ public class WallEdge extends GameObject {
         }
         else
         {
-            g.setColor(golden_yellow);
+            g.setColor(currentColor);
             //g.fillOval(this.getX(), this.getY(), radius, radius);
             g.fillRect(this.getX(), this.getY(), radius, radius);
             //g.setColor(Color.BLUE);
@@ -74,6 +77,13 @@ public class WallEdge extends GameObject {
     public void updateMiddlePoint(){
         middleX = getX() + radius / 2;
         middleY = getY() + radius / 2;
+    }
+    public void makeGreen(boolean b){
+        if(b == true)
+            currentColor = GREEN;
+        else{
+            currentColor = golden_yellow;
+        }
     }
 
     @Override

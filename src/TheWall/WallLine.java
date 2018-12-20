@@ -14,9 +14,12 @@ public class WallLine  extends GameObject {
     int indexNo;
     public static final Color BROWN = new Color(153,102,0);
     public static final Color golden_yellow = new Color(255,204, 51);
+    public static final Color GREEN = Color.GREEN;
+    Color currentColor;
 
     public WallLine(int x, int y, int width, int height, int fixedX, int fixedY) {
         super(x, y);
+        currentColor = golden_yellow;
         this.height = height;
         this.width = width;
         this.fixedX = fixedX;
@@ -30,6 +33,14 @@ public class WallLine  extends GameObject {
 
     public int getHeight() {
         return height;
+    }
+
+    public void makeGreen(boolean b){
+        if(b == true)
+            currentColor = GREEN;
+        else{
+            currentColor = golden_yellow;
+        }
     }
 
     public void setHeight(int height) {
@@ -93,7 +104,7 @@ public class WallLine  extends GameObject {
     }
     @Override
     public void draw(Graphics g){
-        g.setColor(golden_yellow);
+        g.setColor(currentColor);
         //g.draw3DRect(this.getX(),this.getY(),height,width,false);
         //g.setColor(Color.WHITE);
         g.fillRect(this.getX(),this.getY(),width,height);

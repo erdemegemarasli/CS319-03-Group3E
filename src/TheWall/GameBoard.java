@@ -76,12 +76,12 @@ public class GameBoard implements Drawable
             else{
                 horizontalCount++;
             }
-        }/*
+        }
         for(int i = 0; i < wall.getWallEdges().length; i++){
             if(wall.getWallEdges()[i].isCastle() == true){
                 edgeCount++;
             }
-        }*/
+        }
         int tempVertical = 0;
         int tempHorizontal = 0;
         int tempEdge = 0;

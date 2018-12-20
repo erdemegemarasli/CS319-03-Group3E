@@ -39,6 +39,7 @@ public class MouseListener extends MouseAdapter {
                 moving = false;
                 if(gameBoard.isValidMove(walls[wallIndex])){
                     System.out.println("Valid");
+                    walls[wallIndex].makeGreen(false);
                     gameBoard.makeMove(walls[wallIndex]);
                 }
                 else{
@@ -69,6 +70,12 @@ public class MouseListener extends MouseAdapter {
         if(moving){
             walls[wallIndex].setX(e.getX());
             walls[wallIndex].setY(e.getY());
+            if(gameBoard.isValidMove(walls[wallIndex])){
+                walls[wallIndex].makeGreen(true);
+            }
+            else{
+                walls[wallIndex].makeGreen(false);
+            }
         }
 
 

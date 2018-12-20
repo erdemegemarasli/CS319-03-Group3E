@@ -249,6 +249,16 @@ public class Wall implements Moveable, Drawable{
         setMidPointX(getFixedMidPointX());
         setMidPointY(getFixedMidPointY());
     }
+    public void makeGreen(boolean b){
+
+        for(int i = 0; i < wallLines.length; i++){
+            wallLines[i].makeGreen(b);
+        }
+        for(int i = 0; i < wallEdges.length; i++){
+            wallEdges[i].makeGreen(b);
+        }
+
+    }
 
     public boolean isMoving() {
         return isMoving;
