@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
 import javax.swing.border.EmptyBorder;
 /*
 Creator: Erdem Ege Marasli and Ayca Begum Tascioglu
@@ -17,7 +18,8 @@ public class MainMenu extends SimplePanel
     JButton button2 = new JButton("Credits");
     JButton button3 = new JButton("Settings");
     JButton button4 = new JButton("How to Play");
-    Image img = Toolkit.getDefaultToolkit().createImage("src/images/Background.jpg");
+    private final ImageIcon img = new ImageIcon("images/Background.jpg");
+    //Image img = Toolkit.getDefaultToolkit().createImage("images/Background.jpg");
     public MainMenu()
     {
         super();
@@ -59,7 +61,7 @@ public class MainMenu extends SimplePanel
         super.paintComponents(g);
         g.setColor(Color.pink);
         if (img != null) {
-            g.drawImage(img, 0, 0, null);
+            img.paintIcon(null, g, 0, 0);
             System.out.println("oluyo");
         }
         else

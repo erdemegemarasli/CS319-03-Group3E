@@ -27,7 +27,6 @@ public class WallEdge extends GameObject {
         this.fixedY = fixedY;
         indexNo = -1;
     }
-
     @Override
     public void draw(Graphics g) {
         //g.setColor(Color.lightGray);

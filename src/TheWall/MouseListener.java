@@ -29,11 +29,13 @@ public class MouseListener extends MouseAdapter {
                     if(walls[i].isContainMouse(e.getX(),e.getY())){
                         wallIndex = i;
                         moving = true;
+                        walls[i].setMoving(true);
                         break;
                     }
                 }
             }
             else if(moving){
+                walls[wallIndex].setMoving(false);
                 moving = false;
                 if(gameBoard.isValidMove(walls[wallIndex])){
                     System.out.println("Valid");

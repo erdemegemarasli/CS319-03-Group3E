@@ -70,7 +70,7 @@ public class GameBoard implements Drawable
         int horizontalCount = 0;
         int edgeCount = 0;
         for(int i = 0; i < wall.getWallLines().length; i++){
-            if(wall.getWallLines()[i].getWidth() > wall.getWallLines()[i].getHeight()){
+            if(wall.getWallLines()[i].isVertical()){
                 verticalCount++;
             }
             else{

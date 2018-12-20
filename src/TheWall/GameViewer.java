@@ -40,6 +40,9 @@ public class GameViewer extends SimplePanel implements Viewer {
         board.draw(g);
         for(int i = 0; i < 4; i++)
             walls[i].draw(g);
+        for(int i = 0; i < 4; i++)
+            if(walls[i].isMoving())
+                walls[i].draw(g);
 
 
     }
