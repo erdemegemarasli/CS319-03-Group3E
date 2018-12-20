@@ -1,6 +1,7 @@
 package TheWall;
-/*
-Creator: Erdem Ege Marasli
+/**
+ * @author Erdem Ege Maraslý
+ * @author Ensar Kaya
  */
 /**
  * For squareLocations
@@ -98,7 +99,26 @@ int [] verticalRectangleLocations3 = {0,1,1,0,
 				                   0,1,1,1,0,0,
 				                   1,0,0,0,1,0,
 				                   1,0,1,0};
-levels[3] = new Map(squareLocations3,edgeLocations3,horizontalRectangleLocations3,verticalRectangleLocations3);
+levels[3] = new Map(squareLocations3,edgeLocations3,horizontalRectangleLocations3,verticalRectangleLocations3);//level-20
+int [] squareLocations4 = {1,3,0,
+				        1,2,3,0,0,
+				        0,0,1,0,0,
+				          0,0,0};
+int [] edgeLocations4 = {1,0,1,0,
+				       1,0,0,0,0,0,
+				       0,0,0,0,0,0,
+				       0,0,0,1,0,0,
+				       0,0,0,0};
+int [] horizontalRectangleLocations4={1,1,0,
+				                   1,1,2,1,0,
+				                   1,0,1,0,0,
+				                   0,0,1,0,0,
+				                     0,0,0};
+int [] verticalRectangleLocations4 = {1,1,1,0,
+				                   1,1,1,1,1,0,
+				                   0,0,1,1,0,0,
+				                   0,0,0,0};
+levels[4] = new Map(squareLocations4,edgeLocations4,horizontalRectangleLocations4,verticalRectangleLocations4);//level-21
     }
 
     public Map[] getLevels() {
