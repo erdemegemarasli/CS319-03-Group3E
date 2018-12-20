@@ -11,6 +11,7 @@ public class WallLine  extends GameObject {
     int middleY;
     int fixedX;
     int fixedY;
+    int indexNo;
     public static final Color BROWN = new Color(153,102,0);
     public static final Color golden_yellow = new Color(255,204, 51);
 
@@ -20,6 +21,7 @@ public class WallLine  extends GameObject {
         this.width = width;
         this.fixedX = fixedX;
         this.fixedY = fixedY;
+        this.indexNo = -1;
     }
 
     public int getWidth() {
@@ -61,6 +63,14 @@ public class WallLine  extends GameObject {
         this.fixedY = fixedY;
     }
 
+    public void setIndexNo(int indexNo) {
+        this.indexNo = indexNo;
+    }
+
+    public int getIndexNo() {
+        return indexNo;
+    }
+
     public int getFixedX() {
         return fixedX;
     }
@@ -92,5 +102,12 @@ public class WallLine  extends GameObject {
         //g.draw3DRect(this.getX(),this.getY(),height,width,true);
         //g.fillRoundRect(this.getX(),this.getY(),height,width,height-10,width-10);
         //g.drawRoundRect(this.getX(),this.getY(),height,width,height-10,width-10);
+    }
+
+    public boolean isVertical(){
+        if (this.width < this.height){
+            return true;
+        }
+        return false;
     }
 }
