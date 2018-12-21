@@ -14,7 +14,7 @@ public class PlayScreen extends SimplePanel
     JButton button2 = new JButton("Developer Mode");
     JButton button3 = new JButton("Challenge Mode");
     JButton button4 = new JButton("Campaign Mode");
-    JButton returnPrev = new JButton("RETURN MAIN MENU");
+    JButton returnPrev = new JButton("Back");
     public PlayScreen()
     {
         super();
