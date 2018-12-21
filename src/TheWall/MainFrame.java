@@ -170,11 +170,17 @@ public class MainFrame extends JFrame
                 if(currentPanel.getSelection() == 1)
                 {
                     removeComp(currentPanel);
+                    currentPanel = new DeveloperMode();
+                    addComp(currentPanel);
+                    setVis(true);
+                    /*
+                    removeComp(currentPanel);
                     Game game = new Game(1, 1, 1); // bura değişicek theme e göre
                     currentPanel = new GameViewer(game);
                     game.getRender().addView((GameViewer)currentPanel);
                     addComp(currentPanel);
                     setVis(true);
+                    */
 
                 }
                 else if(currentPanel.getSelection() == 2)
@@ -203,6 +209,35 @@ public class MainFrame extends JFrame
                 {
                     removeComp(currentPanel);
                     currentPanel = new PlayScreen();
+                    addComp(currentPanel);
+                    setVis(true);
+                }
+            }
+            else if(currentPanel.getType().equals("developerMode"))
+            {
+                if(currentPanel.getSelection() == 2) {
+                    removeComp(currentPanel);
+                    Game game = new Game(1, 1, 1); // bura değişicek theme e göre
+                    currentPanel = new GameViewer(game);
+                    game.getRender().addView((GameViewer)currentPanel);
+                    addComp(currentPanel);
+                    setVis(true);
+
+                }
+                else if(currentPanel.getSelection() == 0)
+                {
+                    removeComp(currentPanel);
+                    currentPanel = new PlayScreen();
+                    addComp(currentPanel);
+                    setVis(true);
+                }
+            }
+            else if(currentPanel.getType().equals("developer"))
+            {
+
+                if(currentPanel.getSelection() == 0 ){
+                    removeComp(currentPanel);
+                    currentPanel = new DeveloperMode();
                     addComp(currentPanel);
                     setVis(true);
                 }
