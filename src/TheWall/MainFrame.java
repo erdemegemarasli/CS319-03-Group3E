@@ -153,6 +153,7 @@ public class MainFrame extends JFrame
                 setVis(true);
             }
             */
+
             else if(currentPanel.getType().equals("loginScreen"))
             {
                 //login

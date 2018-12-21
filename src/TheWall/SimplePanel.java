@@ -32,10 +32,8 @@ abstract class SimplePanel extends JPanel
         g.setColor(Color.pink);
         if (img != null) {
             g.drawImage(newi,0, 0, null);
-            System.out.println("oluyo");
+            //System.out.println("oluyo");
         }
-        else
-            System.out.println("olmuyo");
     }
 
     public void update(){
