@@ -16,9 +16,9 @@ public class LevelSelectionPanel extends SimplePanel
         super();
         type = "levelSelection";
         this.setLayout(new GridLayout(10,10));
-        buttons= new JButton[80];
+        buttons= new JButton[64];
         ButtonListener buttonListen = new ButtonListener();
-        for(int i = 0; i < 80; i++)
+        for(int i = 0; i < 64; i++)
         {
             String str = "Level "+(i + 1);
             buttons[i] = new JButton(str);
@@ -35,7 +35,7 @@ public class LevelSelectionPanel extends SimplePanel
     {
         public void actionPerformed(ActionEvent event)
         {
-            for(int i = 0; i < 80; i++)
+            for(int i = 0; i < 64; i++)
             {
                 if(event.getSource() == buttons[i])
                 {

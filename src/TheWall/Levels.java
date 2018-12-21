@@ -1,6 +1,6 @@
 package TheWall;
 /**
- * @author Erdem Ege Maraslý
+ * @author Erdem Ege Maraslï¿½
  * @author Ensar Kaya
  */
 /**

@@ -100,6 +100,7 @@ public class MainFrame extends JFrame
                 }
                 else if(currentPanel.getSelection() == 0)
                 {
+                    System.out.println("asda");
                     removeComp(currentPanel);
                     currentPanel = new MainMenu();
                     addComp(currentPanel);
