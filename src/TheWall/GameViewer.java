@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 /*
 Creator: Erdem Ege Marasli
  */
+
 public class GameViewer extends SimplePanel implements Viewer {
     private Game game;
     private GameBoard board;

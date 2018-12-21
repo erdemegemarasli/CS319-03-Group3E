@@ -23,48 +23,48 @@ public class GameBoard implements Drawable
     Rectangle horizontalRectangles[] = new Rectangle[21];
     Rectangle verticalRectangles[] = new Rectangle[20];
     int theme;
-    public GameBoard(Map map, int theme)
+    int mode;
+    public GameBoard(Map map, int mode, int theme)
     {
         this.theme = theme;
         createEmptyGameBoard();
         this.map = map;
         castle = new GameUnit[2];
         setUpGameBoard();
+        this.mode = mode;
     }
     public void setUpGameBoard(){
         int temp = 0;
-        for(int i = 0; i < map.getSquareLocations().length; i++){
+        for (int i = 0; i < map.getSquareLocations().length; i++) {
             squares[i].setInfo(map.getSquareLocations()[i]);
-            if(map.getSquareLocations()[i] == 1){
-                gameUnits.add(new GameUnit(squares[i].getX(),squares[i].getY(),squareHeight,false, theme));
-            }
-            else if(map.getSquareLocations()[i] == 2){
-                gameUnits.add(new GameUnit(squares[i].getX(),squares[i].getY(),squareHeight,true, theme));
-            }
-            else if(map.getSquareLocations()[i] == 3){
-                castle[temp] = new GameUnit(squares[i].getX(),squares[i].getY(),squareHeight,false, theme);
+            if (map.getSquareLocations()[i] == 1) {
+                gameUnits.add(new GameUnit(squares[i].getX(), squares[i].getY(), squareHeight, false, theme));
+            } else if (map.getSquareLocations()[i] == 2) {
+                gameUnits.add(new GameUnit(squares[i].getX(), squares[i].getY(), squareHeight, true, theme));
+            } else if (map.getSquareLocations()[i] == 3) {
+                castle[temp] = new GameUnit(squares[i].getX(), squares[i].getY(), squareHeight, false, theme);
                 temp++;
             }
         }
-        for(int i = 0; i < map.getEdgeLocations().length; i++){
+        for (int i = 0; i < map.getEdgeLocations().length; i++) {
             edges[i].setInfo(0);
         }
-        for(int i = 0; i < map.getVerticalRectangleLocations().length; i++){
-            if(map.getVerticalRectangleLocations()[i] == 2){
+        for (int i = 0; i < map.getVerticalRectangleLocations().length; i++) {
+            if (map.getVerticalRectangleLocations()[i] == 2) {
                 verticalRectangles[i].setInfo(2);
-            }
-            else{
+            } else {
                 verticalRectangles[i].setInfo(0);
             }
         }
-        for(int i = 0; i < map.getHorizontalRectangleLocations().length; i++){
-            if(map.getHorizontalRectangleLocations()[i] == 2){
+        for (int i = 0; i < map.getHorizontalRectangleLocations().length; i++) {
+            if (map.getHorizontalRectangleLocations()[i] == 2) {
                 horizontalRectangles[i].setInfo(2);
-            }
-            else{
+            } else {
                 horizontalRectangles[i].setInfo(0);
             }
         }
+
+
     }
     public boolean isValidMove(Wall wall){
         //Found the type of the wall
@@ -239,17 +239,18 @@ public class GameBoard implements Drawable
             verticalRectangles[i].draw(g);
         for(int i = 0; i < 16; i++)
             squares[i].draw(g);
-        for(int i = 0; i < gameUnits.size(); i++)
-            gameUnits.get(i).draw(g);
-        for(int i = 0; i < castle.length; i++){
-            castle[i].draw(g);
-        }
-        g.setColor(Color.BLUE);
-        if(castle[0].getY() == castle[1].getY()){
-            g.fillRect(castle[0].getX() + castle[0].getRadius() / 4, castle[0].getY() + castle[0].getRadius() / 4, castle[0].getRadius()+ castle[0].getRadius()/2, castle[0].getRadius()/2);
-        }
-        else if(castle[0].getX() == castle[1].getX()){
-            g.fillRect(castle[0].getX() + castle[0].getRadius() / 4, castle[0].getY() + castle[0].getRadius() / 4,castle[0].getRadius()/2,castle[0].getRadius()+ castle[0].getRadius()/2);
+        if (mode == 0) {
+            for (int i = 0; i < gameUnits.size(); i++)
+                gameUnits.get(i).draw(g);
+            for (int i = 0; i < castle.length; i++) {
+                castle[i].draw(g);
+            }
+            g.setColor(Color.BLUE);
+            if (castle[0].getY() == castle[1].getY()) {
+                g.fillRect(castle[0].getX() + castle[0].getRadius() / 4, castle[0].getY() + castle[0].getRadius() / 4, castle[0].getRadius() + castle[0].getRadius() / 2, castle[0].getRadius() / 2);
+            } else if (castle[0].getX() == castle[1].getX()) {
+                g.fillRect(castle[0].getX() + castle[0].getRadius() / 4, castle[0].getY() + castle[0].getRadius() / 4, castle[0].getRadius() / 2, castle[0].getRadius() + castle[0].getRadius() / 2);
+            }
         }
 
 

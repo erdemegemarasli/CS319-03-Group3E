@@ -18,6 +18,7 @@ public class MainMenu extends SimplePanel
     JButton button2 = new JButton("Credits");
     JButton button3 = new JButton("Settings");
     JButton button4 = new JButton("How to Play");
+    Image img = Toolkit.getDefaultToolkit().createImage("src/TheWall/images/Background.jpg");
     //51-204-255
     //private final ImageIcon img = new ImageIcon("images/Background.jpg");
     //Image img = Toolkit.getDefaultToolkit().createImage("images/Background.jpg");
@@ -27,6 +28,7 @@ public class MainMenu extends SimplePanel
         JButton buttons[] = {button1,button2,button3,button4};
         type = "playScreen";
         type = "mainScreen";
+
         JLabel wallString = new JLabel("The Wall");
         wallString.setForeground(Color.RED);
         wallString.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
@@ -68,5 +70,10 @@ public class MainMenu extends SimplePanel
         }
     }
 
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.setColor(Color.pink);
+        g.drawImage(img,0, 0, null);
+    }
 
 }

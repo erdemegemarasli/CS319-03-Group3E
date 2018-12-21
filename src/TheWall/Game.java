@@ -37,7 +37,7 @@ public class Game {
         for(int i = 0; i < playerMap.getEdgeLocations().length; i++){
             playerMap.getEdgeLocations()[i] = 0;
         }*/
-            board = new GameBoard(map, theme);
+            board = new GameBoard(map,mode, theme);
 
             render = new Render();
             renderListener = new Timer(25,new RenderListener());
@@ -76,7 +76,11 @@ public class Game {
                     0,0,0,0};
             map = new Map(squareLocations,edgeLocations,horizontalRectangleLocations,verticalRectangleLocations);
             playerMap = null;
+
             board = new GameBoard(map,theme);
+
+            board = new GameBoard(map,mode, theme);
+
 
             render = new Render();
             renderListener = new Timer(25,new RenderListener());

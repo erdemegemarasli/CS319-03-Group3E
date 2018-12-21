@@ -144,7 +144,6 @@ public class MainFrame extends JFrame
                     setVis(true);
 
 
-
                 }
                 else if(currentPanel.getSelection() == 0)
                 {
@@ -170,7 +169,12 @@ public class MainFrame extends JFrame
                 //login
                 if(currentPanel.getSelection() == 1)
                 {
-
+                    removeComp(currentPanel);
+                    Game game = new Game(1, 1, 1); // bura değişicek theme e göre
+                    currentPanel = new GameViewer(game);
+                    game.getRender().addView((GameViewer)currentPanel);
+                    addComp(currentPanel);
+                    setVis(true);
 
                 }
                 else if(currentPanel.getSelection() == 2)
