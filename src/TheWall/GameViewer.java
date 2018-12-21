@@ -15,6 +15,7 @@ public class GameViewer extends SimplePanel implements Viewer {
     private JButton backButton = new JButton("Go Back");
     public GameViewer(Game game){
         super();
+        type = "game";
         selection = 1;
         this.setLayout(null);
         this.setBackground(Color.GRAY);
@@ -34,6 +35,15 @@ public class GameViewer extends SimplePanel implements Viewer {
         //repaint();
 
     }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
