@@ -15,24 +15,27 @@ public class GameViewer extends SimplePanel implements Viewer {
     private JButton backButton = new JButton("Go Back");
     public GameViewer(Game game){
         super();
-        type = "game";
-        selection = 1;
-        this.setLayout(null);
-        this.setBackground(Color.GRAY);
-        backButton.setLocation(1100,500);
-        backButton.setSize(100,100);
-        this.add(backButton);
-        backButton.addActionListener(new ButtonListener());
+        if(game.getMode() == 0){
+            type = "classic";
+            selection = 1;
+            this.setLayout(null);
+            this.setBackground(Color.GRAY);
+            backButton.setLocation(1100,500);
+            backButton.setSize(100,100);
+            this.add(backButton);
+            backButton.addActionListener(new ButtonListener());
 
-        this.game = game;
-        board = game.getGameBoard();
-        walls = game.getWalls();
-        playerMap = game.getPlayerMap();
-        MouseListener mouseListen = new MouseListener(walls, board, playerMap);
-        this.addMouseListener(mouseListen);
-        this.addMouseMotionListener(mouseListen);
-        this.setFocusable(true);
-        //repaint();
+            this.game = game;
+            board = game.getGameBoard();
+            walls = game.getWalls();
+            playerMap = game.getPlayerMap();
+            MouseListener mouseListen = new MouseListener(walls, board, playerMap);
+            this.addMouseListener(mouseListen);
+            this.addMouseMotionListener(mouseListen);
+            this.setFocusable(true);
+            //repaint();
+        }
+
 
     }
 
