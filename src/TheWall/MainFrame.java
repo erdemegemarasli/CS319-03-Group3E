@@ -121,7 +121,7 @@ public class MainFrame extends JFrame
                 }
 
             }
-            else if(currentPanel.getType().equals("game"))
+            else if(currentPanel.getType().equals("classic"))
             {
                 
                 if(currentPanel.getSelection() == 0 ){
