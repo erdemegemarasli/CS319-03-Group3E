@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 
 public class Settings extends SimplePanel{
     public static final Color VERY_LIGHT_BLUE = new Color(51,204,255);
+    //153- 0 - 0
+    public static final Color MY_RED = new Color(153,0,0);
     JButton returnPrev = new JButton("Back");
     JLabel backgroundtitle = new JLabel("Background:");
     JButton c1 = new JButton("Pink");
@@ -63,7 +65,7 @@ public class Settings extends SimplePanel{
                 setBG(Color.blue);
             }
             else if(event.getSource() == c3) {
-                setBG(Color.RED);
+                setBG(MY_RED);
             }
         }
     }

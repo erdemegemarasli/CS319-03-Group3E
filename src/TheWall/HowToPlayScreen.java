@@ -22,10 +22,11 @@ public class HowToPlayScreen extends SimplePanel {
         JLabel info1 = new JLabel("Place the red knights,the blue knights and high towers");
         JLabel info2 = new JLabel( "with blue rooftops on the game board as indicated.");
         JLabel info3 = new JLabel("The red knights are kept outside, ");
-        JLabel info4 = new JLabel( "the blue knights and high towers remain within the ramparts.");
+        JLabel info4 = new JLabel( "the blue knights and high towers remain ");
+        JLabel info41 = new JLabel("within the ramparts.");
         JLabel info5 = new JLabel("There is only one solution per challenge.");
 
-        JLabel texts[] = {info, info1,info2,info3, info4};
+        JLabel texts[] = {info, info1,info2,info3, info4,info41};
         for ( int i = 0; i < texts.length; i++){
             texts[i].setFont(new Font("Comic Sans MS", Font.PLAIN, 15));
             this.add(texts[i]);
