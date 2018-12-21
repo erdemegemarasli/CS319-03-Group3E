@@ -11,7 +11,7 @@ abstract class SimplePanel extends JPanel
     int selection;
     String type;
     int theme;
-    Image img = Toolkit.getDefaultToolkit().createImage("src/TheWall/images/Background.jpg");
+    ImageIcon img = new ImageIcon("src/TheWall/images/Background.jpg");
     //Image newi = img.getScaledInstance(1200,600,Image.SCALE_SMOOTH);
     public SimplePanel()
     {
@@ -39,9 +39,9 @@ abstract class SimplePanel extends JPanel
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.pink);
+        //g.setColor(Color.pink);
         if (img != null) {
-            g.drawImage(img,0, 0, null);
+            img.paintIcon(null, g, 0, 0);
             //System.out.println("oluyo");
         }
     }

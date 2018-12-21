@@ -77,7 +77,7 @@ public class Game {
             map = new Map(squareLocations,edgeLocations,horizontalRectangleLocations,verticalRectangleLocations);
             playerMap = null;
 
-            board = new GameBoard(map,theme);
+            //board = new GameBoard(map,theme);
 
             board = new GameBoard(map,mode, theme);
 
