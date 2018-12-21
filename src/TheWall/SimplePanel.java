@@ -36,13 +36,16 @@ abstract class SimplePanel extends JPanel
     {
         return type;
     }
-
+    void setImageIcon(int imageID){
+        if (imageID == 0){
+            img  = new ImageIcon("src/TheWall/images/Background.jpg");
+        }
+    }
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //g.setColor(Color.pink);
         if (img != null) {
             img.paintIcon(null, g, 0, 0);
-            //System.out.println("oluyo");
         }
     }
 

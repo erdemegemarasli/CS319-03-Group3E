@@ -224,6 +224,13 @@ public class MainFrame extends JFrame
                     setVis(true);
 
                 }
+                if(currentPanel.getSelection() == 1) {
+                    removeComp(currentPanel);
+                    currentPanel = new DesignedMapSelection();
+                    addComp(currentPanel);
+                    setVis(true);
+
+                }
                 else if(currentPanel.getSelection() == 0)
                 {
                     removeComp(currentPanel);
