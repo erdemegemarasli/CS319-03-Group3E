@@ -29,12 +29,14 @@ public class Wall implements Moveable, Drawable{
     int fixedMidPointX;
     int fixedMidPointY;
     boolean isPlaced;
+    int rotateCount;
 
     public Wall(WallEdge[] wallEdges, WallLine[] wallLines,int wallNumber)
     {
         this.wallEdges = wallEdges;
         this.wallLines = wallLines;
         this.wallNumber = wallNumber;
+        rotateCount = 0;
         isMoving = false;
         isPlaced = false;
     }
@@ -43,6 +45,14 @@ public class Wall implements Moveable, Drawable{
     /*
     SETTERS
      */
+
+    public int getRotateCount() {
+        return rotateCount;
+    }
+
+    public void setRotateCount(int rotateCount) {
+        this.rotateCount = rotateCount;
+    }
 
     public void setWallNumber(int wallNumber) {
         this.wallNumber = wallNumber;
