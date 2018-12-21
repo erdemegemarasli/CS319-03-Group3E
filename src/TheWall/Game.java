@@ -49,6 +49,39 @@ public class Game {
             }
         }
 
+        /*
+        DEVELOPER MODE : 1
+         */
+        if(mode == 1){
+            walls = new Walls();
+            int [] squareLocations = {0,0,0,
+                    0,0,0,0,0,
+                    0,0,0,0,0,
+                    0,0,0};
+            int [] edgeLocations = {0,0,0,0,
+                    0,0,0,0,0,0,
+                    0,0,0,0,0,0,
+                    0,0,0,0,0,0,
+                    0,0,0,0};
+            int [] horizontalRectangleLocations = {0,0,0,
+                    0,0,0,0,0,
+                    0,0,0,0,0,
+                    0,0,0,0,0,
+                    0,0,0};
+            int [] verticalRectangleLocations = {0,0,0,0,
+                    0,0,0,0,0,0,
+                    0,0,0,0,0,0,
+                    0,0,0,0};
+            map = new Map(squareLocations,edgeLocations,horizontalRectangleLocations,verticalRectangleLocations);
+            playerMap = null;
+            board = new GameBoard(map);
+
+            render = new Render();
+            renderListener = new Timer(25,new RenderListener());
+            renderListener.start();
+
+        }
+
     }
 
     public void setMode(int mode) {
