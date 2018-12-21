@@ -72,6 +72,13 @@ public class MainFrame extends JFrame
                     addComp(currentPanel);
                     setVis(true);
                 }
+                else if(currentPanel.getSelection() == 4)
+                {
+                    removeComp(currentPanel);
+                    currentPanel = new HowToPlayScreen();
+                    addComp(currentPanel);
+                    setVis(true);
+                }
             }
             else if(currentPanel.getType().equals("playScreen"))
             {
@@ -100,7 +107,8 @@ public class MainFrame extends JFrame
                 }
 
             }
-            else if(currentPanel.getType().equals("credits") || currentPanel.getType().equals("settings"))
+            else if(currentPanel.getType().equals("credits") || currentPanel.getType().equals("settings")
+            || currentPanel.getType().equals("howToPlay"))
             {
 
                 if(currentPanel.getSelection() == 0)
