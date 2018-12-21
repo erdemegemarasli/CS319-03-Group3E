@@ -10,12 +10,22 @@ abstract class SimplePanel extends JPanel
 {
     int selection;
     String type;
+    int theme;
     Image img = Toolkit.getDefaultToolkit().createImage("src/images/Background.jpg");
     Image newi = img.getScaledInstance(1200,600,Image.SCALE_SMOOTH);
     public SimplePanel()
     {
         selection = -1;
+        theme = 0;
         type = "";
+    }
+
+    public void setTheme(int theme) {
+        this.theme = theme;
+    }
+
+    public int getTheme() {
+        return theme;
     }
 
     public int getSelection()

@@ -16,8 +16,10 @@ public class Game {
     private Map map;
     private Map playerMap;
     private int mode;
-    public Game(int level, int mode){
+    private int theme;
+    public Game(int level, int mode, int theme){
         this.mode = mode;
+        this.theme = theme;
         if(mode == 0){
             walls = new Walls();
 
@@ -35,7 +37,7 @@ public class Game {
         for(int i = 0; i < playerMap.getEdgeLocations().length; i++){
             playerMap.getEdgeLocations()[i] = 0;
         }*/
-            board = new GameBoard(map);
+            board = new GameBoard(map, theme);
 
             render = new Render();
             renderListener = new Timer(25,new RenderListener());

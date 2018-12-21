@@ -22,8 +22,10 @@ public class GameBoard implements Drawable
     Square squares[] = new Square[16];
     Rectangle horizontalRectangles[] = new Rectangle[21];
     Rectangle verticalRectangles[] = new Rectangle[20];
-    public GameBoard(Map map)
+    int theme;
+    public GameBoard(Map map, int theme)
     {
+        this.theme = theme;
         createEmptyGameBoard();
         this.map = map;
         castle = new GameUnit[2];
@@ -34,13 +36,13 @@ public class GameBoard implements Drawable
         for(int i = 0; i < map.getSquareLocations().length; i++){
             squares[i].setInfo(map.getSquareLocations()[i]);
             if(map.getSquareLocations()[i] == 1){
-                gameUnits.add(new GameUnit(squares[i].getX(),squares[i].getY(),squareHeight,false));
+                gameUnits.add(new GameUnit(squares[i].getX(),squares[i].getY(),squareHeight,false, theme));
             }
             else if(map.getSquareLocations()[i] == 2){
-                gameUnits.add(new GameUnit(squares[i].getX(),squares[i].getY(),squareHeight,true));
+                gameUnits.add(new GameUnit(squares[i].getX(),squares[i].getY(),squareHeight,true, theme));
             }
             else if(map.getSquareLocations()[i] == 3){
-                castle[temp] = new GameUnit(squares[i].getX(),squares[i].getY(),squareHeight,false);
+                castle[temp] = new GameUnit(squares[i].getX(),squares[i].getY(),squareHeight,false, theme);
                 temp++;
             }
         }

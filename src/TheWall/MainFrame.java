@@ -137,7 +137,7 @@ public class MainFrame extends JFrame
                 {
                     int level = currentPanel.getSelection() -1;
                     removeComp(currentPanel);
-                    Game game = new Game(level, 0);
+                    Game game = new Game(level, 0, 1); // bura değişicek theme e göre
                     currentPanel = new GameViewer(game);
                     game.getRender().addView((GameViewer)currentPanel);
                     addComp(currentPanel);
