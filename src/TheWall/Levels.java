@@ -1,6 +1,6 @@
 package TheWall;
 /**
- * @author Erdem Ege Maraslý
+ * @author Erdem Ege Maraslï¿½
  * @author Ensar Kaya
  */
 /**
@@ -153,7 +153,7 @@ int [] horizontalRectangleLocations6={
 	 1,1,1,
    0,1,1,0,1,
    0,0,1,1,0,
-   0,0,0,,1,
+   0,0,0,1,
      0,0,0};
 int [] verticalRectangleLocations6= {
 		1,2,1,1,
