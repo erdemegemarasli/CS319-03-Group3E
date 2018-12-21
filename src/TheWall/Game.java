@@ -15,13 +15,15 @@ public class Game {
     private Levels levels;
     private Map map;
     private Map playerMap;
-    public Game(int level){
+    private int mode;
+    public Game(int level, int mode){
+        this.mode = mode;
+        if(mode == 0){
+            walls = new Walls();
 
-        walls = new Walls();
-
-        levels = new Levels();
-        map = levels.getLevels()[level];
-        playerMap = map;/*
+            levels = new Levels();
+            map = levels.getLevels()[level];
+            playerMap = map;/*
         for(int i = 0; i < playerMap.getHorizontalRectangleLocations().length; i++){
             if(playerMap.getHorizontalRectangleLocations()[i] != 2)
                 playerMap.getHorizontalRectangleLocations()[i] = 0;
@@ -33,19 +35,30 @@ public class Game {
         for(int i = 0; i < playerMap.getEdgeLocations().length; i++){
             playerMap.getEdgeLocations()[i] = 0;
         }*/
-        board = new GameBoard(map);
+            board = new GameBoard(map);
 
-        render = new Render();
-        renderListener = new Timer(25,new RenderListener());
-        renderListener.start();
-        for(int i = 0; i < board.getHorizontalRectangles().length; i++){
-            System.out.println(board.getHorizontalRectangles()[i].getInfo());
+            render = new Render();
+            renderListener = new Timer(25,new RenderListener());
+            renderListener.start();
+            for(int i = 0; i < board.getHorizontalRectangles().length; i++){
+                System.out.println(board.getHorizontalRectangles()[i].getInfo());
+            }
+            System.out.println("--------------");
+            for(int i = 0; i < map.getHorizontalRectangleLocations().length; i++){
+                System.out.println(map.getHorizontalRectangleLocations()[i]);
+            }
         }
-        System.out.println("--------------");
-        for(int i = 0; i < map.getHorizontalRectangleLocations().length; i++){
-            System.out.println(map.getHorizontalRectangleLocations()[i]);
-        }
+
     }
+
+    public void setMode(int mode) {
+        this.mode = mode;
+    }
+
+    public int getMode() {
+        return mode;
+    }
+
     public GameBoard getGameBoard(){
         return board;
     }
@@ -70,7 +83,7 @@ public class Game {
         public void actionPerformed(ActionEvent event)
         {
             render.update();
-            if(checkWinCondition() == true){
+            if(checkWinCondition() == true && mode == 0){
                 JOptionPane.showMessageDialog(null, "You Passed The Level " , "You Passed The Level", JOptionPane.INFORMATION_MESSAGE);
                 renderListener.stop();
             }
