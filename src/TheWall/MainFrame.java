@@ -121,6 +121,16 @@ public class MainFrame extends JFrame
                 }
 
             }
+            else if(currentPanel.getType().equals("game"))
+            {
+                
+                if(currentPanel.getSelection() == 0 ){
+                    removeComp(currentPanel);
+                    currentPanel = new LevelSelectionPanel();
+                    addComp(currentPanel);
+                    setVis(true);
+                 }
+            }
             else if(currentPanel.getType().equals("levelSelection"))
             {
                 if(currentPanel.getSelection() > 0)
@@ -143,6 +153,7 @@ public class MainFrame extends JFrame
                     addComp(currentPanel);
                     setVis(true);
                 }
+
             }
             //MEANINGLESS
             /*
