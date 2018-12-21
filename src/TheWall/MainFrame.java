@@ -127,7 +127,7 @@ public class MainFrame extends JFrame
                 {
                     int level = currentPanel.getSelection() -1;
                     removeComp(currentPanel);
-                    Game game = new Game(level);
+                    Game game = new Game(level, 0);
                     currentPanel = new GameViewer(game);
                     game.getRender().addView((GameViewer)currentPanel);
                     addComp(currentPanel);
