@@ -15,7 +15,8 @@ public class GameViewer extends SimplePanel implements Viewer {
     private Map playerMap;
     private JButton backButton = new JButton("Go Back");
     private JLabel timerLabel;
-    private Timer timer = new Timer(50,new TimerListener());
+
+    Render render;
     public GameViewer(Game game){
         super();
         if(game.getMode() == 0){
@@ -67,17 +68,6 @@ public class GameViewer extends SimplePanel implements Viewer {
             timerLabel.setLocation(500,10);
             timerLabel.setSize(100,100);
 
-            int time = 3600;
-            Timer timer = new Timer(time, e->timerLabel.setText("Done"));
-            timer.setRepeats(false);
-            timer.start();
-            /*
-            long now = System.currentTimeMillis();
-            int remaining = time - (int)now;
-            String rem = ""+remaining;
-
-            timerLabel.setText(rem);
-            */
             this.add(timerLabel);
             this.setLayout(null);
             this.setBackground(Color.GRAY);
@@ -94,6 +84,7 @@ public class GameViewer extends SimplePanel implements Viewer {
             this.addMouseListener(mouseListen);
             this.addMouseMotionListener(mouseListen);
             this.setFocusable(true);
+
             //repaint();
         }
 
@@ -125,13 +116,6 @@ public class GameViewer extends SimplePanel implements Viewer {
         {
             if(event.getSource() == backButton)
                 selection = 0;
-
-        }
-    }
-    private class TimerListener implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e) {
 
         }
     }

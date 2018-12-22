@@ -260,14 +260,13 @@ public class MainFrame extends JFrame
             }
             else if(currentPanel.getType().equals("designedMapSelection"))
             {
-
                 if(currentPanel.getSelection() == 0 ){
                     removeComp(currentPanel);
-                    currentPanel = new DeveloperMode();
+                    currentPanel = new DesignedMapSelection();
                     addComp(currentPanel);
                     setVis(true);
                 }
-                if(currentPanel.getSelection() == 1 ){
+                else if(currentPanel.getSelection() == 1 ){
                     /*FOR
 
                     TRY
@@ -279,6 +278,7 @@ public class MainFrame extends JFrame
                     game.getRender().addView((GameViewer)currentPanel);
                     addComp(currentPanel);
                     setVis(true);
+                    
                 }
             }
             else if(currentPanel.getType().equals("challenge"))

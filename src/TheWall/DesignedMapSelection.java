@@ -29,8 +29,8 @@ public class DesignedMapSelection extends SimplePanel {
         maps.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                if (maps.getSelectedItem() == list[0])
+                //IF STATEMENT IS OK BUT FOR TRIAL IT IS COMMENTED
+                //if (maps.getSelectedItem() == list[0])
                     selection = 1;
             }
         });

@@ -17,6 +17,8 @@ public class Game {
     private Map playerMap;
     private int mode;
     private int theme;
+    private Timer timer;
+    private boolean timeIsUp;
     public Game(int level, int mode, int theme){
         this.mode = mode;
         this.theme = theme;
@@ -97,7 +99,9 @@ public class Game {
             map = levels.getLevels()[random];
             playerMap = map;
             board = new GameBoard(map,mode, theme);
-
+            timer = new Timer(3600, new RenderListener());
+            timer.setRepeats(false);
+            timer.start();
             render = new Render();
             renderListener = new Timer(25,new RenderListener());
             renderListener.start();
@@ -142,7 +146,14 @@ public class Game {
                 JOptionPane.showMessageDialog(null, "You Passed The Level " , "You Passed The Level", JOptionPane.INFORMATION_MESSAGE);
                 renderListener.stop();
             }
+            else if(timer.getInitialDelay() == 3600 && mode == 2){
+                JOptionPane.showMessageDialog(null, "Time is up " , "Time is up", JOptionPane.INFORMATION_MESSAGE);
+                timer.stop();
+                renderListener.stop();
+            }
         }
     }
+
+
 
 }
