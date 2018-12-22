@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 /*
 Creator: Erdem Ege Marasli
  */
@@ -106,6 +110,8 @@ public class GameViewer extends SimplePanel implements Viewer {
         }
 
     }
+
+
 
     public void setGame(Game game) {
         this.game = game;

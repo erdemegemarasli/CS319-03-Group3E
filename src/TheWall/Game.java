@@ -3,6 +3,7 @@ package TheWall;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 /*
 Creator: Erdem Ege Marasli
  */
@@ -26,12 +27,18 @@ public class Game {
     private int mode;
     private int theme;
     private Timer timer;
+    int level;
+    boolean levelPassed;
+    boolean storyIsShown;
 
     int remainingTime = 150;
     private JButton returnPrev;
     public Game(int level, int mode, int theme){
+        this.level = level;
         this.mode = mode;
         this.theme = theme;
+        levelPassed = false;
+        storyIsShown = false;
         if(mode == 0){
             walls = new Walls();
 
@@ -114,6 +121,7 @@ public class Game {
         CAMPAIGN MODE : 2
          */
         if(mode == 3){
+
             walls = new Walls();
 
             levels = new Levels();
@@ -124,7 +132,6 @@ public class Game {
             render = new Render();
             renderListener = new Timer(25,new RenderListener());
             renderListener.start();
-
         }
 
     }
@@ -156,6 +163,16 @@ public class Game {
         return getGameBoard().isGameFinished();
     }
 
+    public void showStory()throws IOException {
+        //ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
+        BufferedReader br = new BufferedReader(new FileReader("src/TheWall/stories/story.txt"));
+        String aLineFromFile = null;
+        if ((aLineFromFile = br.readLine()) != null){
+            JOptionPane.showMessageDialog(null, aLineFromFile,"Story:", JOptionPane.INFORMATION_MESSAGE);
+        }
+        br.close();
+    }
+
     private class RenderListener implements ActionListener
     {
         public void actionPerformed(ActionEvent event)
@@ -164,6 +181,21 @@ public class Game {
             if(checkWinCondition() == true && mode == 0){
                 JOptionPane.showMessageDialog(null, "You Passed The Level " , "You Passed The Level", JOptionPane.INFORMATION_MESSAGE);
                 renderListener.stop();
+            }
+            if(checkWinCondition() == true && mode == 3){
+                JOptionPane.showMessageDialog(null, "You Passed The Level " , "You Passed The Level", JOptionPane.INFORMATION_MESSAGE);
+                levelPassed = true;
+                renderListener.stop();
+            }
+            if(!storyIsShown && mode == 3){
+
+                try{
+                    showStory();
+                }
+                catch(IOException e){
+                    System.out.println("story is not found");
+                }
+                storyIsShown = true;
             }
 
         }
