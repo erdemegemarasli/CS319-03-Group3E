@@ -12,9 +12,9 @@ public class Settings extends SimplePanel{
     public static final Color MY_RED = new Color(153,0,0);
     JButton returnPrev = new JButton("Back");
     JLabel backgroundtitle = new JLabel("Background:");
-    JButton c1 = new JButton("Pink");
-    JButton c2 = new JButton("Blue");
-    JButton c3 = new JButton("Red");
+    JButton c1 = new JButton("Background");
+    JButton c2 = new JButton("Background 2");
+    JButton c3 = new JButton("Background 3");
     int imageID;
     public Settings() {
         super();
@@ -59,13 +59,13 @@ public class Settings extends SimplePanel{
                 selection = 0;
             }
             else if(event.getSource() == c1) {
-                setTheme(1);
+                setTheme(0);
             }
             else if(event.getSource() == c2) {
-                setTheme(2);
+                setTheme(1);
             }
             else if(event.getSource() == c3) {
-                //setBG(MY_RED);
+                setTheme(2);
             }
         }
     }
