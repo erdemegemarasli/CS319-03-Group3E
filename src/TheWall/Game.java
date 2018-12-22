@@ -167,9 +167,11 @@ public class Game {
         public void actionPerformed(ActionEvent e){
             remainingTime--;
             if(remainingTime ==0){
-                JOptionPane jop = new JOptionPane();
-                jop.add(returnPrev);
                 JOptionPane.showMessageDialog(null, "Time is up " , "Time is up", JOptionPane.INFORMATION_MESSAGE);
+                timer.stop();
+            }
+            if(remainingTime >0 && checkWinCondition()){
+                JOptionPane.showMessageDialog(null, "You Passed The Level " , "You Passed The Level", JOptionPane.INFORMATION_MESSAGE);
                 timer.stop();
             }
         }
