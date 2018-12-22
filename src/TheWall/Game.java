@@ -6,6 +6,14 @@ import java.awt.event.ActionListener;
 /*
 Creator: Erdem Ege Marasli
  */
+/*
+For Modes:
+0 = classic
+1 = developer map create
+2 = challange
+3 = campaign
+4 = developer map play
+ */
 public class Game {
 
     private GameBoard board;
@@ -82,7 +90,7 @@ public class Game {
             playerMap = null;
 
 
-            board = new GameBoard(map,mode, theme);
+            board = new GameBoard(map,mode,theme);
 
 
             render = new Render();

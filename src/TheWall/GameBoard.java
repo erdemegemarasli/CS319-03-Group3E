@@ -24,8 +24,12 @@ public class GameBoard implements Drawable
     Rectangle verticalRectangles[] = new Rectangle[20];
     int theme;
     int mode;
+    int friendlyUnitCount;
+    int hostileUnitCount;
     public GameBoard(Map map, int mode, int theme)
     {
+        friendlyUnitCount=0;
+        hostileUnitCount=0;
         this.theme = theme;
         createEmptyGameBoard();
         this.map = map;
@@ -38,11 +42,20 @@ public class GameBoard implements Drawable
         for (int i = 0; i < map.getSquareLocations().length; i++) {
             squares[i].setInfo(map.getSquareLocations()[i]);
             if (map.getSquareLocations()[i] == 1) {
-                gameUnits.add(new GameUnit(squares[i].getX(), squares[i].getY(), squareHeight, false, theme));
-            } else if (map.getSquareLocations()[i] == 2) {
-                gameUnits.add(new GameUnit(squares[i].getX(), squares[i].getY(), squareHeight, true, theme));
-            } else if (map.getSquareLocations()[i] == 3) {
+                GameUnit unit = new GameUnit(squares[i].getX(), squares[i].getY(), squareHeight, false, theme);
+                unit.setInfo(friendlyUnitCount);
+                friendlyUnitCount++;
+                gameUnits.add(unit);
+            }
+            else if (map.getSquareLocations()[i] == 2) {
+                GameUnit unit = new GameUnit(squares[i].getX(), squares[i].getY(), squareHeight, true, theme);
+                unit.setInfo(hostileUnitCount);
+                hostileUnitCount++;
+                gameUnits.add(unit);
+            }
+            else if (map.getSquareLocations()[i] == 3) {
                 castle[temp] = new GameUnit(squares[i].getX(), squares[i].getY(), squareHeight, false, theme);
+                castle[temp].setIsCastle(true);
                 temp++;
             }
         }
