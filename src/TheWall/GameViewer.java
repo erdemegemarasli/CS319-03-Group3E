@@ -105,9 +105,11 @@ public class GameViewer extends SimplePanel implements Viewer {
             if (walls[i].isMoving())
                 walls[i].draw(g);
         }
-        g.setColor(FOSFORLU_YESIL);
-        g.setFont(new Font("Comic Sans MS", Font.BOLD, 24));;
-        g.drawString("Time: " + game.getRemainingTime(), 500, 30);
+        if ( game.getMode() == 2 ) {
+            g.setColor(FOSFORLU_YESIL);
+            g.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
+            g.drawString("Time: " + game.getRemainingTime(), 500, 30);
+        }
 
     }
     private class ButtonListener implements ActionListener
@@ -116,7 +118,6 @@ public class GameViewer extends SimplePanel implements Viewer {
         {
             if(event.getSource() == backButton)
                 selection = 0;
-
         }
     }
     //update method to call repaint

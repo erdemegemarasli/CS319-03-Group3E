@@ -98,12 +98,19 @@ public class MainFrame extends JFrame
                     setVis(true);
 
                 }
-                if(currentPanel.getSelection() == 3)
+                else if(currentPanel.getSelection() == 3)
                 {
                     removeComp(currentPanel);
                     Game game = new Game(0, 2, 1); // bura değişicek theme e göre
                     currentPanel = new GameViewer(game);
                     game.getRender().addView((GameViewer)currentPanel);
+                    addComp(currentPanel);
+                    setVis(true);
+                }
+                else if(currentPanel.getSelection() == 4)
+                {
+                    removeComp(currentPanel);
+                    currentPanel = new campaignSelectionPanel();
                     addComp(currentPanel);
                     setVis(true);
                 }
