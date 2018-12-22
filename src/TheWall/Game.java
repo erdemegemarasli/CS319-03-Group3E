@@ -104,7 +104,7 @@ public class Game {
          */
         if(mode == 2){
             returnPrev = new JButton("Back");
-            remainingTime = 45;
+            remainingTime = 150;
             walls = new Walls();
             levels = new Levels();
             int random = (int )(Math.random() * 5+ 1);
@@ -113,7 +113,7 @@ public class Game {
             playerMap = map;
             board = new GameBoard(map,mode, theme);
             timer = new Timer(1000, new TimerListener());
-            timer.setRepeats(false);
+            //timer.setRepeats(false);
             timer.start();
             render = new Render();
             renderListener = new Timer(25,new RenderListener());
