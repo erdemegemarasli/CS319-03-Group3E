@@ -109,7 +109,7 @@ public class MainFrame extends JFrame
                 else if(currentPanel.getSelection() == 3)
                 {
                     removeComp(currentPanel);
-                    Game game = new Game(0, 2, theme); // bura değişicek theme e göre
+                    Game game = new Game(0, 2, theme);
                     currentPanel = new GameViewer(game);
                     currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
@@ -166,7 +166,7 @@ public class MainFrame extends JFrame
                 {
                     int level = currentPanel.getSelection() -1;
                     removeComp(currentPanel);
-                    Game game = new Game(level, 0, theme); // bura değişicek theme e göre
+                    Game game = new Game(level, 0, theme);
                     currentPanel = new GameViewer(game);
                     currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
@@ -185,15 +185,6 @@ public class MainFrame extends JFrame
                 }
 
             }
-            //MEANINGLESS
-            /*
-            else if(currentPanel.getSelection() == 0 ){
-                removeComp(currentPanel);
-                currentPanel = new LevelSelectionPanel();
-                addComp(currentPanel);
-                setVis(true);
-            }
-            */
 
             else if(currentPanel.getType().equals("loginScreen"))
             {
@@ -205,14 +196,7 @@ public class MainFrame extends JFrame
                     currentPanel.setTheme(theme);
                     addComp(currentPanel);
                     setVis(true);
-                    /*
-                    removeComp(currentPanel);
-                    Game game = new Game(1, 1, 1); // bura değişicek theme e göre
-                    currentPanel = new GameViewer(game);
-                    game.getRender().addView((GameViewer)currentPanel);
-                    addComp(currentPanel);
-                    setVis(true);
-                    */
+
 
                 }
                 else if(currentPanel.getSelection() == 2)
@@ -253,7 +237,7 @@ public class MainFrame extends JFrame
                 if(currentPanel.getSelection() == 2) {
                     removeComp(currentPanel);
                     System.out.println("create");
-                    Game game = new Game(1, 1, theme); // bura değişicek theme e göre
+                    Game game = new Game(1, 1, theme);
                     currentPanel = new GameViewer(game);
                     currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
@@ -305,7 +289,7 @@ public class MainFrame extends JFrame
 
                      */
                     removeComp(currentPanel);
-                    Game game = new Game(0, 2, theme); // bura değişicek theme e göre
+                    Game game = new Game(0, 2, theme);
                     currentPanel = new GameViewer(game);
                     currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
@@ -339,7 +323,7 @@ public class MainFrame extends JFrame
                     removeComp(currentPanel);
                     int tmp = theme;
                     theme = 1;
-                    Game game = new Game(0, 2, 1); // bura değişicek theme e göre
+                    Game game = new Game(1, 3, 1);
                     currentPanel = new GameViewer(game);
                     currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
@@ -351,13 +335,24 @@ public class MainFrame extends JFrame
                     removeComp(currentPanel);
                     int tmp = theme;
                     theme = 2;
-                    Game game = new Game(0, 2, 2); // bura değişicek theme e göre
+                    Game game = new Game(1, 3, 2);
                     currentPanel = new GameViewer(game);
                     currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
                     addComp(currentPanel);
                     setVis(true);
                     theme = tmp;
+                }
+            }
+            else if(currentPanel.getType().equals("campaign"))
+            {
+
+                if(currentPanel.getSelection() == 0 ){
+                    removeComp(currentPanel);
+                    currentPanel = new campaignSelectionPanel();
+                    currentPanel.setTheme(theme);
+                    addComp(currentPanel);
+                    setVis(true);
                 }
             }
 

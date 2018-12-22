@@ -124,6 +124,7 @@ public class Game {
             render = new Render();
             renderListener = new Timer(25,new RenderListener());
             renderListener.start();
+
         }
 
     }
