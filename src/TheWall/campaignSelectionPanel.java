@@ -40,7 +40,7 @@ public class campaignSelectionPanel extends SimplePanel{
         public void actionPerformed(ActionEvent event)
         {
             if(event.getSource() == returnPrev) {
-            selection = 0;
+                selection = 0;
             }
 
             else if(event.getSource() == button1) {

@@ -41,7 +41,7 @@ public class GameViewer extends SimplePanel implements Viewer {
             this.setFocusable(true);
             //repaint();
         }
-        if(game.getMode() == 1){
+        else if(game.getMode() == 1){
             type = "developer";
             selection = 1;
             this.setLayout(null);
@@ -62,10 +62,31 @@ public class GameViewer extends SimplePanel implements Viewer {
             //repaint();
         }
 
-        if(game.getMode() == 2){
+        else if(game.getMode() == 2){
             type = "challenge";
             selection = 1;
 
+            this.setLayout(null);
+            this.setBackground(Color.GRAY);
+            backButton.setLocation(1100,500);
+            backButton.setSize(100,100);
+            this.add(backButton);
+            backButton.addActionListener(new ButtonListener());
+
+            this.game = game;
+            board = game.getGameBoard();
+            walls = game.getWalls();
+            playerMap = game.getPlayerMap();
+            MouseListener mouseListen = new MouseListener(walls, board, playerMap);
+            this.addMouseListener(mouseListen);
+            this.addMouseMotionListener(mouseListen);
+            this.setFocusable(true);
+            //repaint();
+        }
+
+        if(game.getMode() == 3){
+            type = "campaign";
+            selection = 1;
             this.setLayout(null);
             this.setBackground(Color.GRAY);
             backButton.setLocation(1100,500);

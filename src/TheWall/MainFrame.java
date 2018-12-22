@@ -335,6 +335,30 @@ public class MainFrame extends JFrame
                     addComp(currentPanel);
                     setVis(true);
                 }
+                else if (currentPanel.getSelection() == 1){
+                    removeComp(currentPanel);
+                    int tmp = theme;
+                    theme = 1;
+                    Game game = new Game(0, 2, 1); // bura değişicek theme e göre
+                    currentPanel = new GameViewer(game);
+                    currentPanel.setTheme(theme);
+                    game.getRender().addView((GameViewer)currentPanel);
+                    addComp(currentPanel);
+                    setVis(true);
+                    theme = tmp;
+                }
+                else if (currentPanel.getSelection() == 2){
+                    removeComp(currentPanel);
+                    int tmp = theme;
+                    theme = 2;
+                    Game game = new Game(0, 2, 2); // bura değişicek theme e göre
+                    currentPanel = new GameViewer(game);
+                    currentPanel.setTheme(theme);
+                    game.getRender().addView((GameViewer)currentPanel);
+                    addComp(currentPanel);
+                    setVis(true);
+                    theme = tmp;
+                }
             }
 
         }

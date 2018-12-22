@@ -79,6 +79,7 @@ abstract class GameUnits extends GameObject{
                     khaleesi.paintIcon(null,g,this.getX(),this.getY());
             }
         }
+
         else{
             if(isEnemy) {
                 g.setColor(Color.RED);

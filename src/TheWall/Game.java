@@ -37,18 +37,7 @@ public class Game {
 
             levels = new Levels();
             map = levels.getLevels()[level];
-            playerMap = map;/*
-        for(int i = 0; i < playerMap.getHorizontalRectangleLocations().length; i++){
-            if(playerMap.getHorizontalRectangleLocations()[i] != 2)
-                playerMap.getHorizontalRectangleLocations()[i] = 0;
-        }
-        for(int i = 0; i < playerMap.getVerticalRectangleLocations().length; i++){
-            if(playerMap.getVerticalRectangleLocations()[i] != 2)
-                playerMap.getVerticalRectangleLocations()[i] = 0;
-        }
-        for(int i = 0; i < playerMap.getEdgeLocations().length; i++){
-            playerMap.getEdgeLocations()[i] = 0;
-        }*/
+            playerMap = map;
             board = new GameBoard(map,mode, theme);
 
             render = new Render();
@@ -119,6 +108,22 @@ public class Game {
             renderListener = new Timer(25,new RenderListener());
             renderListener.start();
 
+        }
+
+        /*
+        CAMPAIGN MODE : 2
+         */
+        if(mode == 3){
+            walls = new Walls();
+
+            levels = new Levels();
+            map = levels.getLevels()[level];
+            playerMap = map;
+            board = new GameBoard(map,mode, theme);
+
+            render = new Render();
+            renderListener = new Timer(25,new RenderListener());
+            renderListener.start();
         }
 
     }
