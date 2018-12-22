@@ -325,6 +325,17 @@ public class MainFrame extends JFrame
                     setVis(true);
                 }
             }
+            else if(currentPanel.getType().equals("campaignSelectionPanel"))
+            {
+
+                if(currentPanel.getSelection() == 0 ){
+                    removeComp(currentPanel);
+                    currentPanel = new PlayScreen();
+                    currentPanel.setTheme(theme);
+                    addComp(currentPanel);
+                    setVis(true);
+                }
+            }
 
         }
     }
