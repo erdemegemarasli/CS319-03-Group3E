@@ -60,12 +60,15 @@ public class Settings extends SimplePanel{
             }
             else if(event.getSource() == c1) {
                 setTheme(0);
+                repaint();
             }
             else if(event.getSource() == c2) {
                 setTheme(1);
+                repaint();
             }
             else if(event.getSource() == c3) {
                 setTheme(2);
+                repaint();
             }
         }
     }

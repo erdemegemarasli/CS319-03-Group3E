@@ -111,6 +111,7 @@ public class MainFrame extends JFrame
                     removeComp(currentPanel);
                     Game game = new Game(0, 2, theme); // bura değişicek theme e göre
                     currentPanel = new GameViewer(game);
+                    currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
                     addComp(currentPanel);
                     setVis(true);
@@ -167,6 +168,7 @@ public class MainFrame extends JFrame
                     removeComp(currentPanel);
                     Game game = new Game(level, 0, theme); // bura değişicek theme e göre
                     currentPanel = new GameViewer(game);
+                    currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
                     addComp(currentPanel);
                     setVis(true);
@@ -253,6 +255,7 @@ public class MainFrame extends JFrame
                     System.out.println("create");
                     Game game = new Game(1, 1, theme); // bura değişicek theme e göre
                     currentPanel = new GameViewer(game);
+                    currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
                     addComp(currentPanel);
                     setVis(true);
@@ -304,6 +307,7 @@ public class MainFrame extends JFrame
                     removeComp(currentPanel);
                     Game game = new Game(0, 2, theme); // bura değişicek theme e göre
                     currentPanel = new GameViewer(game);
+                    currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
                     addComp(currentPanel);
                     setVis(true);
