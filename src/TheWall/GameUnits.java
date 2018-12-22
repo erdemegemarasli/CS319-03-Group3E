@@ -11,6 +11,7 @@ abstract class GameUnits extends GameObject{
     int radius;
     boolean isEnemy;
     ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
+    ImageIcon voldemort = new ImageIcon("src/TheWall/images/voldemort.jpg");
     int theme;
     public GameUnits(int x, int y,int radius,boolean isEnemy, int theme){
         super(x, y);
@@ -33,11 +34,13 @@ abstract class GameUnits extends GameObject{
         }
         else if(theme == 1){
             if(isEnemy) {
+                /*
                 g.setColor(Color.RED);
                 g.fillOval(this.getX(), this.getY(), radius, radius);
+                */
+                voldemort.paintIcon(null, g, this.getX(), this.getY());
             }
             else{
-                System.out.println(new File("").getAbsolutePath());
                 harry.paintIcon(null, g, this.getX(), this.getY());
             }
         }

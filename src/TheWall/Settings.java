@@ -15,6 +15,7 @@ public class Settings extends SimplePanel{
     JButton c1 = new JButton("Pink");
     JButton c2 = new JButton("Blue");
     JButton c3 = new JButton("Red");
+    int imageID;
     public Settings() {
         super();
         type = "settings";

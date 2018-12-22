@@ -225,6 +225,7 @@ public class MainFrame extends JFrame
             {
                 if(currentPanel.getSelection() == 2) {
                     removeComp(currentPanel);
+                    System.out.println("create");
                     Game game = new Game(1, 1, 1); // bura değişicek theme e göre
                     currentPanel = new GameViewer(game);
                     game.getRender().addView((GameViewer)currentPanel);
@@ -232,7 +233,7 @@ public class MainFrame extends JFrame
                     setVis(true);
 
                 }
-                if(currentPanel.getSelection() == 1) {
+                else if(currentPanel.getSelection() == 1) {
                     removeComp(currentPanel);
                     currentPanel = new DesignedMapSelection();
                     addComp(currentPanel);
@@ -253,6 +254,29 @@ public class MainFrame extends JFrame
                 if(currentPanel.getSelection() == 0 ){
                     removeComp(currentPanel);
                     currentPanel = new DeveloperMode();
+                    addComp(currentPanel);
+                    setVis(true);
+                }
+            }
+            else if(currentPanel.getType().equals("designedMapSelection"))
+            {
+
+                if(currentPanel.getSelection() == 0 ){
+                    removeComp(currentPanel);
+                    currentPanel = new DeveloperMode();
+                    addComp(currentPanel);
+                    setVis(true);
+                }
+                if(currentPanel.getSelection() == 1 ){
+                    /*FOR
+
+                    TRY
+
+                     */
+                    removeComp(currentPanel);
+                    Game game = new Game(0, 2, 1); // bura değişicek theme e göre
+                    currentPanel = new GameViewer(game);
+                    game.getRender().addView((GameViewer)currentPanel);
                     addComp(currentPanel);
                     setVis(true);
                 }

@@ -66,7 +66,18 @@ public class GameViewer extends SimplePanel implements Viewer {
             timerLabel = new JLabel();
             timerLabel.setLocation(500,10);
             timerLabel.setSize(100,100);
-            timerLabel.setText("remaining time");
+
+            int time = 3600;
+            Timer timer = new Timer(time, e->timerLabel.setText("Done"));
+            timer.setRepeats(false);
+            timer.start();
+            /*
+            long now = System.currentTimeMillis();
+            int remaining = time - (int)now;
+            String rem = ""+remaining;
+
+            timerLabel.setText(rem);
+            */
             this.add(timerLabel);
             this.setLayout(null);
             this.setBackground(Color.GRAY);
