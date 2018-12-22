@@ -7,8 +7,10 @@ import java.awt.event.ActionListener;
 /*
 Creator: Erdem Ege Marasli
  */
-
+//
+//0 -255- 51
 public class GameViewer extends SimplePanel implements Viewer {
+    public static final Color FOSFORLU_YESIL = new Color(0,255,51);
     private Game game;
     private GameBoard board;
     private Wall[] walls;
@@ -64,11 +66,6 @@ public class GameViewer extends SimplePanel implements Viewer {
             type = "challenge";
             selection = 1;
 
-            timerLabel = new JLabel(""+game.getRemainingTime());
-            timerLabel.setLocation(500,10);
-            timerLabel.setSize(100,100);
-
-            this.add(timerLabel);
             this.setLayout(null);
             this.setBackground(Color.GRAY);
             backButton.setLocation(1100,500);
@@ -108,6 +105,9 @@ public class GameViewer extends SimplePanel implements Viewer {
             if (walls[i].isMoving())
                 walls[i].draw(g);
         }
+        g.setColor(FOSFORLU_YESIL);
+        g.setFont(new Font("Comic Sans MS", Font.BOLD, 24));;
+        g.drawString("Time: " + game.getRemainingTime(), 500, 30);
 
     }
     private class ButtonListener implements ActionListener
