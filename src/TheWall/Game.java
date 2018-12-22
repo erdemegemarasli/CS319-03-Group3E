@@ -146,10 +146,12 @@ public class Game {
                 JOptionPane.showMessageDialog(null, "You Passed The Level " , "You Passed The Level", JOptionPane.INFORMATION_MESSAGE);
                 renderListener.stop();
             }
-            else if(timer.getInitialDelay() == 3600 && mode == 2){
-                JOptionPane.showMessageDialog(null, "Time is up " , "Time is up", JOptionPane.INFORMATION_MESSAGE);
-                timer.stop();
-                renderListener.stop();
+            if(mode == 2){
+                if(timer.getInitialDelay() == 3600){
+                    JOptionPane.showMessageDialog(null, "Time is up " , "Time is up", JOptionPane.INFORMATION_MESSAGE);
+                    timer.stop();
+                    renderListener.stop();
+                }
             }
         }
     }
