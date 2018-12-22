@@ -64,7 +64,7 @@ public class GameViewer extends SimplePanel implements Viewer {
             type = "challenge";
             selection = 1;
 
-            timerLabel = new JLabel();
+            timerLabel = new JLabel(""+game.getRemainingTime());
             timerLabel.setLocation(500,10);
             timerLabel.setSize(100,100);
 
@@ -104,10 +104,10 @@ public class GameViewer extends SimplePanel implements Viewer {
         board.draw(g);
         for(int i = 0; i < 4; i++)
             walls[i].draw(g);
-        for(int i = 0; i < 4; i++)
-            if(walls[i].isMoving())
+        for(int i = 0; i < 4; i++) {
+            if (walls[i].isMoving())
                 walls[i].draw(g);
-
+        }
 
     }
     private class ButtonListener implements ActionListener

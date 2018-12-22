@@ -18,7 +18,9 @@ public class Game {
     private int mode;
     private int theme;
     private Timer timer;
-    private boolean timeIsUp;
+
+    int remainingTime = 150;
+    private JButton returnPrev;
     public Game(int level, int mode, int theme){
         this.mode = mode;
         this.theme = theme;
@@ -93,13 +95,16 @@ public class Game {
         CHALLENGE MODE : 2
          */
         if(mode == 2){
+            returnPrev = new JButton("Back");
+            remainingTime = 45;
             walls = new Walls();
             levels = new Levels();
-            int random = (int )(Math.random() * 10 + 1);
+            int random = (int )(Math.random() * 5+ 1);
+            System.out.println("map no"+random);
             map = levels.getLevels()[random];
             playerMap = map;
             board = new GameBoard(map,mode, theme);
-            timer = new Timer(3600, new RenderListener());
+            timer = new Timer(1000, new TimerListener());
             timer.setRepeats(false);
             timer.start();
             render = new Render();
@@ -146,16 +151,23 @@ public class Game {
                 JOptionPane.showMessageDialog(null, "You Passed The Level " , "You Passed The Level", JOptionPane.INFORMATION_MESSAGE);
                 renderListener.stop();
             }
-            if(mode == 2){
-                if(timer.getInitialDelay() == 3600){
-                    JOptionPane.showMessageDialog(null, "Time is up " , "Time is up", JOptionPane.INFORMATION_MESSAGE);
-                    timer.stop();
-                    renderListener.stop();
-                }
+
+        }
+    }
+
+    private class TimerListener implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+            remainingTime--;
+            if(remainingTime ==0){
+                JOptionPane jop = new JOptionPane();
+                jop.add(returnPrev);
+                JOptionPane.showMessageDialog(null, "Time is up " , "Time is up", JOptionPane.INFORMATION_MESSAGE);
+                timer.stop();
             }
         }
     }
 
-
-
+    public int getRemainingTime() {
+        return remainingTime;
+    }
 }
