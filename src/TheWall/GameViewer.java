@@ -81,7 +81,6 @@ public class GameViewer extends SimplePanel implements Viewer {
             this.addMouseListener(mouseListen);
             this.addMouseMotionListener(mouseListen);
             this.setFocusable(true);
-
             //repaint();
         }
 

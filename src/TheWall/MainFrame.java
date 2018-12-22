@@ -14,11 +14,13 @@ public class MainFrame extends JFrame
 {
     private SimplePanel currentPanel;
     private Timer updateTimer;
+    int theme;
     public MainFrame()
     {
         this.setSize(1200,600);
         Toolkit tk = Toolkit.getDefaultToolkit();
         Dimension dim = tk.getScreenSize();
+        theme = 0;
 
         int x = (dim.width / 2) - (this.getWidth() / 2);
         int y = (dim.height / 2) - (this.getHeight() / 2);
@@ -129,6 +131,7 @@ public class MainFrame extends JFrame
 
                 if(currentPanel.getSelection() == 0)
                 {
+                    theme = currentPanel.getTheme();
                     removeComp(currentPanel);
                     currentPanel = new MainMenu();
                     addComp(currentPanel);

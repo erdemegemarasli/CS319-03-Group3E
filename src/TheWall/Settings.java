@@ -59,10 +59,10 @@ public class Settings extends SimplePanel{
                 selection = 0;
             }
             else if(event.getSource() == c1) {
-                setBG(1);
+                setTheme(1);
             }
             else if(event.getSource() == c2) {
-                //setBG(Color.blue);
+                setTheme(2);
             }
             else if(event.getSource() == c3) {
                 //setBG(MY_RED);
