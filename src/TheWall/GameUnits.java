@@ -44,17 +44,7 @@ abstract class GameUnits extends GameObject{
     }
     @Override
     public void draw(Graphics g) {
-        if (theme == 0) {
-            if(isEnemy) {
-                g.setColor(Color.RED);
-                g.fillOval(this.getX(), this.getY(), radius, radius);
-            }
-            else{
-                g.setColor(Color.BLUE);
-                g.fillOval(this.getX() , this.getY() , radius, radius);
-            }
-        }
-        else if(theme == 1){
+         if(theme == 1){
             if(isEnemy) {
                 voldemort.paintIcon(null, g, this.getX(), this.getY());
             }
@@ -87,6 +77,16 @@ abstract class GameUnits extends GameObject{
                     arya.paintIcon(null,g,this.getX(),this.getY());
                 else if(info == 2)
                     khaleesi.paintIcon(null,g,this.getX(),this.getY());
+            }
+        }
+        else{
+            if(isEnemy) {
+                g.setColor(Color.RED);
+                g.fillOval(this.getX(), this.getY(), radius, radius);
+            }
+            else{
+                g.setColor(Color.BLUE);
+                g.fillOval(this.getX() , this.getY() , radius, radius);
             }
         }
 

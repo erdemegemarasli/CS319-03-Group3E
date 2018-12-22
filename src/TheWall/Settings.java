@@ -12,9 +12,11 @@ public class Settings extends SimplePanel{
     public static final Color MY_RED = new Color(153,0,0);
     JButton returnPrev = new JButton("Back");
     JLabel backgroundtitle = new JLabel("Background:");
-    JButton c1 = new JButton("Background");
-    JButton c2 = new JButton("Background 2");
-    JButton c3 = new JButton("Background 3");
+    JButton c1 = new JButton("The Wall Background");
+    JButton c2 = new JButton("Potterhead Background");
+    JButton c3 = new JButton("Game of Thrones Background");
+    JButton c4 = new JButton("Mountains Background");
+    JButton c5 = new JButton("Brick Background");
     int imageID;
     public Settings() {
         super();
@@ -33,6 +35,10 @@ public class Settings extends SimplePanel{
         c2.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
         c3.addActionListener(buttonListen);
         c3.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+        c4.addActionListener(buttonListen);
+        c4.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+        c5.addActionListener(buttonListen);
+        c5.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
         returnPrev.addActionListener(buttonListen);
         returnPrev.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
 
@@ -42,6 +48,8 @@ public class Settings extends SimplePanel{
         this.add(c1);
         this.add(c2);
         this.add(c3);
+        this.add(c4);
+        this.add(c5);
 
         this.add(returnPrev);
 
@@ -68,6 +76,14 @@ public class Settings extends SimplePanel{
             }
             else if(event.getSource() == c3) {
                 setTheme(2);
+                repaint();
+            }
+            else if(event.getSource() == c4) {
+                setTheme(3);
+                repaint();
+            }
+            else if(event.getSource() == c5) {
+                setTheme(4);
                 repaint();
             }
         }
