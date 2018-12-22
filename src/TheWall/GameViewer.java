@@ -14,6 +14,8 @@ public class GameViewer extends SimplePanel implements Viewer {
     private Wall[] walls;
     private Map playerMap;
     private JButton backButton = new JButton("Go Back");
+    private JLabel timerLabel;
+    private Timer timer = new Timer(50,new TimerListener());
     public GameViewer(Game game){
         super();
         if(game.getMode() == 0){
@@ -57,6 +59,32 @@ public class GameViewer extends SimplePanel implements Viewer {
             //repaint();
         }
 
+        if(game.getMode() == 2){
+            type = "challenge";
+            selection = 1;
+
+            timerLabel = new JLabel();
+            timerLabel.setLocation(500,10);
+            timerLabel.setSize(100,100);
+            timerLabel.setText("remaining time");
+            this.add(timerLabel);
+            this.setLayout(null);
+            this.setBackground(Color.GRAY);
+            backButton.setLocation(1100,500);
+            backButton.setSize(100,100);
+            this.add(backButton);
+            backButton.addActionListener(new ButtonListener());
+
+            this.game = game;
+            board = game.getGameBoard();
+            walls = game.getWalls();
+            playerMap = game.getPlayerMap();
+            MouseListener mouseListen = new MouseListener(walls, board, playerMap);
+            this.addMouseListener(mouseListen);
+            this.addMouseMotionListener(mouseListen);
+            this.setFocusable(true);
+            //repaint();
+        }
 
     }
 
@@ -89,9 +117,17 @@ public class GameViewer extends SimplePanel implements Viewer {
 
         }
     }
+    private class TimerListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
     //update method to call repaint
     public void update()
     {
         repaint();
     }
+
 }

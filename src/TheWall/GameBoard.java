@@ -239,7 +239,7 @@ public class GameBoard implements Drawable
             verticalRectangles[i].draw(g);
         for(int i = 0; i < 16; i++)
             squares[i].draw(g);
-        if (mode == 0) {
+        if (mode == 0 || mode == 2) {
             for (int i = 0; i < gameUnits.size(); i++)
                 gameUnits.get(i).draw(g);
             for (int i = 0; i < castle.length; i++) {

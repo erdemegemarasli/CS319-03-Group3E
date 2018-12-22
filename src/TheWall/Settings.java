@@ -49,7 +49,7 @@ public class Settings extends SimplePanel{
         return selection;
     }
     public void setBG(int imageID){
-        setImageIcon(1);
+        setTheme(imageID);
     }
     private class ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event)
@@ -58,7 +58,7 @@ public class Settings extends SimplePanel{
                 selection = 0;
             }
             else if(event.getSource() == c1) {
-                //setBG(1);
+                setBG(1);
             }
             else if(event.getSource() == c2) {
                 //setBG(Color.blue);

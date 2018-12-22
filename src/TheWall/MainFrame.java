@@ -98,9 +98,17 @@ public class MainFrame extends JFrame
                     setVis(true);
 
                 }
+                if(currentPanel.getSelection() == 3)
+                {
+                    removeComp(currentPanel);
+                    Game game = new Game(0, 2, 1); // bura değişicek theme e göre
+                    currentPanel = new GameViewer(game);
+                    game.getRender().addView((GameViewer)currentPanel);
+                    addComp(currentPanel);
+                    setVis(true);
+                }
                 else if(currentPanel.getSelection() == 0)
                 {
-                    System.out.println("asda");
                     removeComp(currentPanel);
                     currentPanel = new MainMenu();
                     addComp(currentPanel);
@@ -245,6 +253,16 @@ public class MainFrame extends JFrame
                 if(currentPanel.getSelection() == 0 ){
                     removeComp(currentPanel);
                     currentPanel = new DeveloperMode();
+                    addComp(currentPanel);
+                    setVis(true);
+                }
+            }
+            else if(currentPanel.getType().equals("challenge"))
+            {
+
+                if(currentPanel.getSelection() == 0 ){
+                    removeComp(currentPanel);
+                    currentPanel = new PlayScreen();
                     addComp(currentPanel);
                     setVis(true);
                 }

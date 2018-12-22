@@ -87,6 +87,23 @@ public class Game {
 
         }
 
+        /*
+        CHALLENGE MODE : 2
+         */
+        if(mode == 2){
+            walls = new Walls();
+            levels = new Levels();
+            int random = (int )(Math.random() * 10 + 1);
+            map = levels.getLevels()[random];
+            playerMap = map;
+            board = new GameBoard(map,mode, theme);
+
+            render = new Render();
+            renderListener = new Timer(25,new RenderListener());
+            renderListener.start();
+
+        }
+
     }
 
     public void setMode(int mode) {
