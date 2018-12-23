@@ -312,8 +312,8 @@ public class GameBoard implements Drawable
         fixedUnits[1] = fixedHostileUnit;
         GameUnit fixedCastle1 = new GameUnit(1100, 200, squareHeight,false,theme);
         GameUnit fixedCastle2 = new GameUnit(1100,280, squareHeight,false,theme);
-        GameUnit fixedCastle3 = new GameUnit(1000,380,squareHeight,false,theme);
-        GameUnit fixedCastle4 = new GameUnit(1080,380,squareHeight,false,theme);
+        GameUnit fixedCastle3 = new GameUnit(1050,380,squareHeight,false,theme);
+        GameUnit fixedCastle4 = new GameUnit(1130,380,squareHeight,false,theme);
         castle1Dev[0] = fixedCastle1;
         castle1Dev[1] = fixedCastle2;
         castle2Dev[0] = fixedCastle3;
