@@ -39,8 +39,13 @@ public class HowToPlayScreen extends SimplePanel {
 
         this.add(returnPrev);
     }
+
     public int getSelection(){
         return selection;
+    }
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
     }
     private class ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event)
