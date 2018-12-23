@@ -92,6 +92,17 @@ abstract class GameUnits extends GameObject{
         }
 
     }
+    public boolean isContainMouse(int contX, int contY) {
+        if (contX >= this.getX() && contX <= (this.getX()) + (this.getRadius()) &&
+                contY >= this.getY() && contY <= (this.getY()) + (this.getRadius())) {
+            return true;
+        }
+        if(contX >= this.getX() && contX <= (this.getX() ) + (this.getRadius() ) &&
+            contY >= this.getY() && contY <= (this.getY() ) + (this.getRadius() ) ) {
+                return true;
+            }
+        return false;
+    }
 
     public int getRadius() {
         return radius;
