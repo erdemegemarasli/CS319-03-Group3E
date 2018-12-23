@@ -289,7 +289,7 @@ public class MainFrame extends JFrame
 
                      */
                     removeComp(currentPanel);
-                    Game game = new Game(0, 2, theme);
+                    Game game = new Game(0, 0, theme);
                     currentPanel = new GameViewer(game);
                     currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
