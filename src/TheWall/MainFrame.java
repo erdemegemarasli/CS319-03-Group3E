@@ -277,7 +277,7 @@ public class MainFrame extends JFrame
             {
                 if(currentPanel.getSelection() == 0 ){
                     removeComp(currentPanel);
-                    currentPanel = new DesignedMapSelection();
+                    currentPanel = new DeveloperMode();
                     currentPanel.setTheme(theme);
                     addComp(currentPanel);
                     setVis(true);
