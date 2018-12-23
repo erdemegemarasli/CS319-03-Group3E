@@ -17,6 +17,9 @@ public class Settings extends SimplePanel{
     JButton c3 = new JButton("Game of Thrones Background");
     JButton c4 = new JButton("Mountains Background");
     JButton c5 = new JButton("Brick Background");
+    JLabel soundtitle = new JLabel("Sound:");
+    JButton soundOn = new JButton("ON");
+    JButton soundOff = new JButton("OF");
     int imageID;
     public Settings() {
         super();
@@ -25,10 +28,11 @@ public class Settings extends SimplePanel{
         title.setForeground(Color.RED);
         title.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
         this.add(title);
+        ButtonListener buttonListen = new ButtonListener();
 
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
-        this.setBorder(new EmptyBorder(new Insets(300,400,300,400)));
-        ButtonListener buttonListen = new ButtonListener();
+        this.setBorder(new EmptyBorder(new Insets(100,400,300,400)));
+
         c1.addActionListener(buttonListen);
         c1.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
         c2.addActionListener(buttonListen);
@@ -39,8 +43,7 @@ public class Settings extends SimplePanel{
         c4.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
         c5.addActionListener(buttonListen);
         c5.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
-        returnPrev.addActionListener(buttonListen);
-        returnPrev.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+
 
         backgroundtitle.setForeground(VERY_LIGHT_BLUE);
         backgroundtitle.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
@@ -50,8 +53,22 @@ public class Settings extends SimplePanel{
         this.add(c3);
         this.add(c4);
         this.add(c5);
+        soundtitle.setForeground(VERY_LIGHT_BLUE);
+        soundtitle.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
+        soundOn.addActionListener(buttonListen);
+        soundOn.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+        soundOff.addActionListener(buttonListen);
+        soundOff.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+        this.add(soundtitle);
+        this.add(soundOn);
+        this.add(soundOff);
+
+        returnPrev.addActionListener(buttonListen);
+        returnPrev.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+        returnPrev.setLocation(1000, 400);
 
         this.add(returnPrev);
+
 
     }
     public int getSelection(){
