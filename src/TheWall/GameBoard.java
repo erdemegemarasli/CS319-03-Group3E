@@ -43,6 +43,19 @@ public class GameBoard implements Drawable
             createUnitsForDeveloper();
         }
     }
+
+    public GameUnit[] getCastle1Dev() {
+        return castle1Dev;
+    }
+
+    public GameUnit[] getCastle2Dev() {
+        return castle2Dev;
+    }
+
+    public GameUnit[] getFixedUnits() {
+        return fixedUnits;
+    }
+
     public void setUpGameBoard(){
         int temp = 0;
         for (int i = 0; i < map.getSquareLocations().length; i++) {
