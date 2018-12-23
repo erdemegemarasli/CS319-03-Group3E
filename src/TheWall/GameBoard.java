@@ -274,6 +274,22 @@ public class GameBoard implements Drawable
         if(mode == 1){
             fixedUnits[0].draw(g);
             fixedUnits[1].draw(g);
+            castle1Dev[0].draw(g);
+            castle1Dev[1].draw(g);
+            castle2Dev[0].draw(g);
+            castle2Dev[1].draw(g);
+            g.setColor(Color.BLUE);
+            if (castle1Dev[0].getY() == castle1Dev[1].getY()) {
+                g.fillRect(castle1Dev[0].getX() + castle1Dev[0].getRadius() / 4, castle1Dev[0].getY() + castle1Dev[0].getRadius() / 4, castle1Dev[0].getRadius() + castle1Dev[0].getRadius() / 2, castle1Dev[0].getRadius() / 2);
+            } else if (castle1Dev[0].getX() == castle1Dev[1].getX()) {
+                g.fillRect(castle1Dev[0].getX() + castle1Dev[0].getRadius() / 4, castle1Dev[0].getY() + castle1Dev[0].getRadius() / 4, castle1Dev[0].getRadius() / 2, castle1Dev[0].getRadius() + castle1Dev[0].getRadius() / 2);
+            }
+            if (castle2Dev[0].getY() == castle2Dev[1].getY()) {
+                g.fillRect(castle2Dev[0].getX() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getY() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getRadius() + castle2Dev[0].getRadius() / 2, castle2Dev[0].getRadius() / 2);
+            } else if (castle2Dev[0].getX() == castle2Dev[1].getX()) {
+                g.fillRect(castle2Dev[0].getX() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getY() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getRadius() / 2, castle2Dev[0].getRadius() + castle2Dev[0].getRadius() / 2);
+            }
+
         }
 
 
@@ -294,7 +310,14 @@ public class GameBoard implements Drawable
         GameUnit fixedHostileUnit = new GameUnit(1100,100,squareHeight, true,theme);
         fixedUnits[0] = fixedFriendlyUnit;
         fixedUnits[1] = fixedHostileUnit;
-        GameUnit fixedCastle = new GameUnit(1100, 200, squareHeight,false,theme);
+        GameUnit fixedCastle1 = new GameUnit(1100, 200, squareHeight,false,theme);
+        GameUnit fixedCastle2 = new GameUnit(1100,280, squareHeight,false,theme);
+        GameUnit fixedCastle3 = new GameUnit(1000,380,squareHeight,false,theme);
+        GameUnit fixedCastle4 = new GameUnit(1080,380,squareHeight,false,theme);
+        castle1Dev[0] = fixedCastle1;
+        castle1Dev[1] = fixedCastle2;
+        castle2Dev[0] = fixedCastle3;
+        castle2Dev[1] = fixedCastle4;
 
         /*
         for (int i = 0; i < map.getSquareLocations().length; i++) {
