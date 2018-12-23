@@ -63,6 +63,7 @@ public class Game {
         DEVELOPER MODE : 1
          */
         if(mode == 1){
+            System.out.println("sdasdada");
             walls = new Walls();
             int [] squareLocations = {0,0,0,
                     0,0,0,0,0,
@@ -87,7 +88,6 @@ public class Game {
 
 
             board = new GameBoard(map,mode,theme);
-
 
             render = new Render();
             renderListener = new Timer(25,new RenderListener());

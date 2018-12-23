@@ -10,6 +10,9 @@ public class GameBoard implements Drawable
     private Map map;
     private ArrayList<GameUnits> gameUnits = new ArrayList<GameUnits>();
     private GameUnit[] castle;
+    private GameUnit[] castle1Dev;
+    private GameUnit[] castle2Dev;
+    private GameUnit[] fixedUnits;
     final int edgeHeight = 20;
     final int edgeWidth = 20;
     final int squareHeight = 60;
@@ -36,6 +39,9 @@ public class GameBoard implements Drawable
         castle = new GameUnit[2];
         setUpGameBoard();
         this.mode = mode;
+        if (mode == 1) {
+            createUnitsForDeveloper();
+        }
     }
     public void setUpGameBoard(){
         int temp = 0;
@@ -265,6 +271,10 @@ public class GameBoard implements Drawable
                 g.fillRect(castle[0].getX() + castle[0].getRadius() / 4, castle[0].getY() + castle[0].getRadius() / 4, castle[0].getRadius() / 2, castle[0].getRadius() + castle[0].getRadius() / 2);
             }
         }
+        if(mode == 1){
+            fixedUnits[0].draw(g);
+            fixedUnits[1].draw(g);
+        }
 
 
     }
@@ -274,6 +284,40 @@ public class GameBoard implements Drawable
         createHorizontalRectangles();
         createVerticalRectangles();
         createSquares();;
+    }
+    public void createUnitsForDeveloper(){
+        int temp = 0;
+        castle1Dev = new GameUnit[2];
+        castle2Dev = new GameUnit[2];
+        fixedUnits = new GameUnit[2];
+        GameUnit fixedFriendlyUnit = new GameUnit(1100,0,squareHeight, false,theme);
+        GameUnit fixedHostileUnit = new GameUnit(1100,100,squareHeight, true,theme);
+        fixedUnits[0] = fixedFriendlyUnit;
+        fixedUnits[1] = fixedHostileUnit;
+        GameUnit fixedCastle = new GameUnit(1100, 200, squareHeight,false,theme);
+
+        /*
+        for (int i = 0; i < map.getSquareLocations().length; i++) {
+            squares[i].setInfo(map.getSquareLocations()[i]);
+            if (map.getSquareLocations()[i] == 1) {
+                GameUnit unit = new GameUnit(squares[i].getX(), squares[i].getY(), squareHeight, false, theme);
+                unit.setInfo(friendlyUnitCount);
+                friendlyUnitCount++;
+                gameUnits.add(unit);
+            }
+            else if (map.getSquareLocations()[i] == 2) {
+                GameUnit unit = new GameUnit(squares[i].getX(), squares[i].getY(), squareHeight, true, theme);
+                unit.setInfo(hostileUnitCount);
+                hostileUnitCount++;
+                gameUnits.add(unit);
+            }
+            else if (map.getSquareLocations()[i] == 3) {
+                castle[temp] = new GameUnit(squares[i].getX(), squares[i].getY(), squareHeight, false, theme);
+                castle[temp].setIsCastle(true);
+                temp++;
+            }
+        }
+        */
     }
     public void createEdges()
     {
