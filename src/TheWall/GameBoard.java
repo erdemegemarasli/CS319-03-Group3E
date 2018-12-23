@@ -147,6 +147,7 @@ public class GameBoard implements Drawable
 
     }
 
+
     public void makeMove(Wall wall){
         int middleX;
         int middleY;
