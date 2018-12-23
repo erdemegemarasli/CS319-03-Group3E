@@ -9,7 +9,7 @@ import java.awt.event.ItemListener;
 
 public class DesignedMapSelection extends SimplePanel {
     //Map[] list = new Map[4];
-    String[] list = { "map1", "map2", "map3"};
+    String[] list = { "BerlinWall\tAeyc\t4.4", "TheGreatWall\tErdemege\t8.7", "SampleWall\tUnknown\t6.4"};
     //JButton[] list = {new JButton("button1"), new JButton("button2")};
     JComboBox maps = new JComboBox(list);
     JButton returnPrev = new JButton("Back");
@@ -31,7 +31,7 @@ public class DesignedMapSelection extends SimplePanel {
             public void actionPerformed(ActionEvent e) {
                 //IF STATEMENT IS OK BUT FOR TRIAL IT IS COMMENTED
                 //if (maps.getSelectedItem() == list[0])
-                    selection = 1;
+                selection = 1;
             }
         });
 
@@ -56,3 +56,4 @@ public class DesignedMapSelection extends SimplePanel {
 
 
 }
+

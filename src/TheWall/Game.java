@@ -17,6 +17,8 @@ For Modes:
  */
 public class Game {
 
+    ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
+    ImageIcon voldemort = new ImageIcon("src/TheWall/images/voldemort.jpg");
     private GameBoard board;
     private Walls walls;
     private Render render;
@@ -168,7 +170,8 @@ public class Game {
         BufferedReader br = new BufferedReader(new FileReader("src/TheWall/stories/story.txt"));
         String aLineFromFile = null;
         if ((aLineFromFile = br.readLine()) != null){
-            JOptionPane.showMessageDialog(null, aLineFromFile,"Story:", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, aLineFromFile,"Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+            JOptionPane.showMessageDialog(null, "Never!","Story:", JOptionPane.INFORMATION_MESSAGE, harry);
         }
         br.close();
     }
@@ -187,7 +190,7 @@ public class Game {
                 levelPassed = true;
                 renderListener.stop();
             }
-            if(!storyIsShown && mode == 3){
+            if(!storyIsShown && mode == 3 && theme == 1){
 
                 try{
                     showStory();
