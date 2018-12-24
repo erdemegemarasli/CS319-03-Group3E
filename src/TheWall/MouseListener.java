@@ -37,7 +37,7 @@ public class MouseListener extends MouseAdapter {
     {
 
         if(SwingUtilities.isLeftMouseButton(e)){
-            if(!movingWall){
+            if(!movingWall && movingUnit == false){
                 for(int i = 0; i < walls.length; i++){
                     if(walls[i].isContainMouse(e.getX(),e.getY())){
                         wallIndex = i;
@@ -50,7 +50,7 @@ public class MouseListener extends MouseAdapter {
                     }
                 }
             }
-            else if(movingWall){
+            else if(movingWall && movingUnit == false){
                 walls[wallIndex].setMoving(false);
 
                 if(gameBoard.isValidMove(walls[wallIndex])){
@@ -74,7 +74,7 @@ public class MouseListener extends MouseAdapter {
                 wallIndex = -1;
                 movingWall = false;
             }
-            if(gameBoard.getMode() == 1){
+            if(gameBoard.getMode() == 1 && movingWall == false){
                 if(!movingUnit){
                     if(fixedUnits[0].isContainMouse(e.getX(),e.getY())){
                         tempUnit = gameBoard.createUnit(fixedUnits[0].getX(),fixedUnits[0].getY(),false);
@@ -140,7 +140,6 @@ public class MouseListener extends MouseAdapter {
                 tempUnit.setY(e.getY() - 30);
                 //System.out.println(gameBoard.getGameUnits().get(0).getX());
                 if(gameBoard.isValidMove(tempUnit)){
-                    System.out.println("asda");
                 }
             }
         }
