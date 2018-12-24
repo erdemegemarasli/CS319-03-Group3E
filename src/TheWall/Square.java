@@ -1,8 +1,9 @@
 package TheWall;
 
 import java.awt.*;
-/*
+/**
 Creator: Erdem Ege Marasli
+ Square class for the component of gameboard.
  */
 
 public class Square extends GameBoardComponent{
