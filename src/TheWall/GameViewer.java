@@ -26,6 +26,7 @@ public class GameViewer extends SimplePanel implements Viewer {
 
     JLabel mapName = new JLabel("mapName:");
 
+    JButton nextLevel = new JButton("next");
     Render render;
     public GameViewer(Game game){
         super();
@@ -117,6 +118,9 @@ public class GameViewer extends SimplePanel implements Viewer {
             selection = 1;
             this.setLayout(null);
             this.setBackground(Color.GRAY);
+            nextLevel.setLocation(1100,300);
+            nextLevel.setSize(100,100);
+            this.add(nextLevel);
             backButton.setLocation(1100,500);
             backButton.setSize(100,100);
             this.add(backButton);
@@ -196,6 +200,8 @@ public class GameViewer extends SimplePanel implements Viewer {
                 System.out.println(mapData);
 
             }
+            if(event.getSource() == nextLevel)
+                selection = 1;
         }
     }
     //update method to call repaint
