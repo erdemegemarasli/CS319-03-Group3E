@@ -14,12 +14,4 @@ public class Rectangle extends GameBoardComponent {
         g.setColor(Color.BLACK);
         g.fillRect(getX(),getY(),getWidth(),getHeight());
     }
-    public boolean isContainPoint(int contX, int contY)
-    {
-        if(contX >= this.getX() && contX <= (this.getX() ) + (this.getWidth() ) &&
-                contY >= this.getY() && contY <= (this.getY() ) + (this.getHeight() ) ) {
-            return true;
-        }
-        return false;
-    }
 }
