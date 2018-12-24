@@ -1,8 +1,9 @@
 package TheWall;
 
 import java.awt.*;
-/*
+/**
 Creator: Ayca Begum Tascioglu
+ This class creates 4 specific wall for the game.
  */
 public class Walls{
     Wall walls[] = new Wall[4];
