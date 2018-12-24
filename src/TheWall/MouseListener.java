@@ -5,8 +5,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-/*
+/**
 Creator: Erdem Ege Marasli
+This class controls the mouse movement and actions and make changes according to the mouse action
  */
 public class MouseListener extends MouseAdapter {
     private Wall [] walls;
@@ -36,6 +37,22 @@ public class MouseListener extends MouseAdapter {
             count = 0;
         }
     }
+
+    /**
+     * For every mode when left key of mouse is pressed if cursor on a specific wall
+     * that specific wall is selected and start to move with the mouse move.
+     *
+     * While a specific wall is selected when right key of mouse is pressed selected wall rotates.
+     *
+     * When selected wall can be placed in the current location of mouse and if user pressed the left key of mouse again
+     * that specific wall is placed to the gameboard accordingly.
+     *
+     * Also user can take a placed wall back by click that wall by left key gameboard setups that accordingly.
+     *
+     * For Developer Mode Units are work nearly like walls.Only difference is units do not rotate
+     *
+     *
+     */
     public void mousePressed(MouseEvent e)
     {
 
@@ -177,6 +194,13 @@ public class MouseListener extends MouseAdapter {
 
 
     }
+    /**
+     * For every mode when a wall is selected, mouse movement update that wall's cordinates. Also make wall green
+     * if the current position is a valid position to put wall.
+     *
+     * For Developer mode it is nearly same as wall but unit do no be green when is valid to put.
+     *
+     * */
     public void mouseMoved(MouseEvent e){
         if(movingWall){
             walls[wallIndex].setX(e.getX());
