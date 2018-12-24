@@ -116,7 +116,7 @@ public class Game {
         }
 
         /*
-        CAMPAIGN MODE : 2
+        CAMPAIGN MODE : 3
          */
         if(mode == 3){
 
@@ -129,6 +129,25 @@ public class Game {
             render = new Render();
             renderListener = new Timer(25,new RenderListener());
             renderListener.start();
+        }
+        if(mode == 4){
+            String mapCode = JOptionPane.showInputDialog(
+                    null,
+                    "Enter the Generated Map Code to Play",
+                    "Generated Map Code Needed",
+                    JOptionPane.WARNING_MESSAGE
+            );
+            walls = new Walls();
+
+            //dadadada
+            board = new GameBoard(map,mode, theme);
+            System.out.println("asda");
+            board.setUpCreatedMap(mapCode);
+            render = new Render();
+            renderListener = new Timer(25,new RenderListener());
+            renderListener.start();
+
+
         }
 
     }
@@ -173,7 +192,7 @@ public class Game {
         public void actionPerformed(ActionEvent event)
         {
             render.update();
-            if(checkWinCondition() == true && mode == 0){
+            if(checkWinCondition() == true && (mode == 0 || mode == 4)){
                 JOptionPane.showMessageDialog(null, "You Passed The Level " , "You Passed The Level", JOptionPane.INFORMATION_MESSAGE);
                 renderListener.stop();
             }

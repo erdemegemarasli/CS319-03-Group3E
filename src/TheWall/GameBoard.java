@@ -31,20 +31,56 @@ public class GameBoard implements Drawable
     int hostileUnitCount;
     public GameBoard(Map map, int mode, int theme)
     {
-        friendlyUnitCount=0;
-        hostileUnitCount=0;
-        this.theme = theme;
-        createEmptyGameBoard();
-        this.map = map;
-        castle = new GameUnit[2];
-        setUpGameBoard();
-        this.mode = mode;
-        if (mode == 1) {
-            createUnitsForDeveloper();
-            castle = null;
+        if(mode == 4){
+            friendlyUnitCount=0;
+            hostileUnitCount=0;
+            this.theme = theme;
+            this.mode = mode;
+            createEmptyGameBoard();
+            castle = new GameUnit[2];
         }
-    }
+        else{
+            friendlyUnitCount=0;
+            hostileUnitCount=0;
+            this.theme = theme;
+            createEmptyGameBoard();
+            this.map = map;
+            castle = new GameUnit[2];
+            setUpGameBoard();
+            this.mode = mode;
+            if (mode == 1) {
+                createUnitsForDeveloper();
+                castle = null;
+            }
+        }
 
+    }
+    public void setUpCreatedMap(String str){
+        int [] squaresLocations = new int[16];
+        int [] edgeLocations = new int[26];
+        int [] horizontalLineLocations = new int[21];
+        int [] verticalLineLocations = new int[20];
+        int count = 0;
+        for(int i = 0; i < squaresLocations.length; i++){
+            squaresLocations[i] = Character.getNumericValue(str.charAt(count));
+            count++;
+        }
+        for(int i = 0; i < edgeLocations.length; i++){
+            edgeLocations[i] = Character.getNumericValue(str.charAt(count));
+            count++;
+        }
+        for(int i = 0; i < horizontalLineLocations.length; i++){
+            horizontalLineLocations[i] = Character.getNumericValue(str.charAt(count));
+            count++;
+        }
+        for(int i = 0; i < verticalLineLocations.length; i++){
+            verticalLineLocations[i] = Character.getNumericValue(str.charAt(count));
+            count++;
+        }
+        map = new Map(squaresLocations,edgeLocations,horizontalLineLocations,verticalLineLocations);
+        setUpGameBoard();
+
+    }
     public void setCastle(GameUnit[] castle) {
         this.castle = castle;
     }

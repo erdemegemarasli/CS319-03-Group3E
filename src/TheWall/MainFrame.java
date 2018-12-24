@@ -100,7 +100,7 @@ public class MainFrame extends JFrame
                 else if(currentPanel.getSelection() == 2)
                 {
                     removeComp(currentPanel);
-                    currentPanel = new LoginScreen();
+                    currentPanel = new DeveloperMode();
                     currentPanel.setTheme(theme);
                     addComp(currentPanel);
                     setVis(true);
@@ -185,53 +185,6 @@ public class MainFrame extends JFrame
                 }
 
             }
-
-            else if(currentPanel.getType().equals("loginScreen"))
-            {
-                //login
-                if(currentPanel.getSelection() == 1)
-                {
-                    removeComp(currentPanel);
-                    currentPanel = new DeveloperMode();
-                    currentPanel.setTheme(theme);
-                    addComp(currentPanel);
-                    setVis(true);
-
-
-                }
-                else if(currentPanel.getSelection() == 2)
-                {
-                    removeComp(currentPanel);
-                    currentPanel = new SignUpScreen();
-                    currentPanel.setTheme(theme);
-                    addComp(currentPanel);
-                    setVis(true);
-                }
-                else if(currentPanel.getSelection() == 0)
-                {
-                    removeComp(currentPanel);
-                    currentPanel = new PlayScreen();
-                    currentPanel.setTheme(theme);
-                    addComp(currentPanel);
-                    setVis(true);
-                }
-            }
-            else if(currentPanel.getType().equals("signUpScreen"))
-            {
-                //signup
-                if(currentPanel.getSelection() == 1) {
-
-
-                }
-                else if(currentPanel.getSelection() == 0)
-                {
-                    removeComp(currentPanel);
-                    currentPanel = new PlayScreen();
-                    currentPanel.setTheme(theme);
-                    addComp(currentPanel);
-                    setVis(true);
-                }
-            }
             else if(currentPanel.getType().equals("developerMode"))
             {
                 if(currentPanel.getSelection() == 2) {
@@ -246,9 +199,12 @@ public class MainFrame extends JFrame
 
                 }
                 else if(currentPanel.getSelection() == 1) {
+                    //burası
                     removeComp(currentPanel);
-                    currentPanel = new DesignedMapSelection();
+                    Game game = new Game(0, 4, theme);
+                    currentPanel = new GameViewer(game);
                     currentPanel.setTheme(theme);
+                    game.getRender().addView((GameViewer)currentPanel);
                     addComp(currentPanel);
                     setVis(true);
 
@@ -271,31 +227,6 @@ public class MainFrame extends JFrame
                     currentPanel.setTheme(theme);
                     addComp(currentPanel);
                     setVis(true);
-                }
-            }
-            else if(currentPanel.getType().equals("designedMapSelection"))
-            {
-                if(currentPanel.getSelection() == 0 ){
-                    removeComp(currentPanel);
-                    currentPanel = new DeveloperMode();
-                    currentPanel.setTheme(theme);
-                    addComp(currentPanel);
-                    setVis(true);
-                }
-                else if(currentPanel.getSelection() == 1 ){
-                    /*FOR
-
-                    TRY
-
-                     */
-                    removeComp(currentPanel);
-                    Game game = new Game(0, 0, theme);
-                    currentPanel = new GameViewer(game);
-                    currentPanel.setTheme(theme);
-                    game.getRender().addView((GameViewer)currentPanel);
-                    addComp(currentPanel);
-                    setVis(true);
-                    
                 }
             }
             else if(currentPanel.getType().equals("challenge"))
