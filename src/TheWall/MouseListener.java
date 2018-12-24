@@ -3,6 +3,8 @@ package TheWall;
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
 /*
 Creator: Erdem Ege Marasli
  */
@@ -16,6 +18,7 @@ public class MouseListener extends MouseAdapter {
     private GameUnit [] castle1;
     private GameUnit [] castle2;
     private GameUnit tempUnit;
+    private ArrayList<GameUnit> gameUnits;
     public MouseListener(Wall[] walls, GameBoard gameBoard){
         this.walls = walls;
         this.gameBoard = gameBoard;
@@ -27,6 +30,7 @@ public class MouseListener extends MouseAdapter {
             fixedUnits = gameBoard.getFixedUnits();
             castle1 = gameBoard.getCastle1Dev();
             castle2 = gameBoard.getCastle2Dev();
+            this.gameUnits = gameBoard.getGameUnits();
         }
     }
     public void mousePressed(MouseEvent e)
@@ -84,6 +88,16 @@ public class MouseListener extends MouseAdapter {
                     }
                     else if(castle1[0].isContainMouse(e.getX(),e.getY())){
 
+                    }
+                    else{
+                        for(int i = 0; i < gameUnits.size(); i++){
+                            if(gameUnits.get(i).isContainMouse(e.getX(),e.getY())){
+                                tempUnit = gameUnits.get(i);
+                                gameBoard.detachUnit(gameUnits.get(i));
+                                movingUnit = true;
+                                break;
+                            }
+                        }
                     }
                 }
                 else{
