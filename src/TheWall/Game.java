@@ -7,13 +7,14 @@ import java.io.*;
 /*
 Creator: Erdem Ege Marasli
  */
-/*
+/**
 For Modes:
 0 = classic
 1 = developer map create
 2 = challange
 3 = campaign
 4 = developer map play
+ Controller of the game.
  */
 public class Game {
 
