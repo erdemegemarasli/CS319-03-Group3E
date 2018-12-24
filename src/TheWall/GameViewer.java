@@ -60,10 +60,12 @@ public class GameViewer extends SimplePanel implements Viewer {
             mapName.setFont(new Font("Comic Sans MS", Font.PLAIN, 15));
             mapName.setLocation(50, 500);
             this.add(mapName);
+
             JTextField textField1 = new JTextField();
             textField1.setToolTipText("Map name");
             textField1.setSize(130,20);
             textField1.setLocation(70, 500);
+
             //SERVER CONNECTION USERNAME INPUT: usernameInput
             String mapnameInput = textField1.getText();
 
