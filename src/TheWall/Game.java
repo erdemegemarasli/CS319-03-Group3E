@@ -126,6 +126,7 @@ public class Game {
             levels = new Levels();
             map = levels.getLevels()[level];
             board = new GameBoard(map,mode, theme);
+            System.out.println("level" +level);
 
             render = new Render();
             renderListener = new Timer(25,new RenderListener());
@@ -178,14 +179,16 @@ public class Game {
     }
 
     public void showStory()throws IOException {
-        //ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
-        BufferedReader br = new BufferedReader(new FileReader("src/TheWall/stories/story.txt"));
-        String aLineFromFile = null;
-        if ((aLineFromFile = br.readLine()) != null){
-            JOptionPane.showMessageDialog(null, aLineFromFile,"Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
-            JOptionPane.showMessageDialog(null, "Never!","Story:", JOptionPane.INFORMATION_MESSAGE, harry);
+        if (level == 4) {
+            //ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
+            BufferedReader br = new BufferedReader(new FileReader("src/TheWall/stories/story.txt"));
+            String aLineFromFile = null;
+            if ((aLineFromFile = br.readLine()) != null) {
+                JOptionPane.showMessageDialog(null, aLineFromFile, "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+                JOptionPane.showMessageDialog(null, "Never!", "Story:", JOptionPane.INFORMATION_MESSAGE, harry);
+            }
+            br.close();
         }
-        br.close();
     }
 
     private class RenderListener implements ActionListener
