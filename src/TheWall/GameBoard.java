@@ -2,8 +2,9 @@ package TheWall;
 
 import java.awt.*;
 import java.util.ArrayList;
-/*
+/**
 Creator: Erdem Ege Marasli
+ This class contains all the information about the gameboard.
  */
 public class GameBoard implements Drawable
 {
@@ -55,6 +56,11 @@ public class GameBoard implements Drawable
         }
 
     }
+
+    /**
+     *
+     * This method setups the game board for to play already created map
+     */
     public void setUpCreatedMap(String str){
         int [] squaresLocations = new int[16];
         int [] edgeLocations = new int[26];
@@ -109,6 +115,9 @@ public class GameBoard implements Drawable
         return mode;
     }
 
+    /**
+     * This method setups the gameboard according to the current map.
+     * */
     public void setUpGameBoard(){
         int temp = 0;
         for (int i = 0; i < map.getSquareLocations().length; i++) {
@@ -151,6 +160,11 @@ public class GameBoard implements Drawable
 
 
     }
+
+    /**
+     *
+     * This method checks if selected castle is valid to place that current location.
+     */
     public boolean isValidMoveCastle(){
         int count = 0;
         if(castle != null){
@@ -165,6 +179,10 @@ public class GameBoard implements Drawable
         }
         return count == 2;
     }
+
+    /**
+     * This method place the castle to the current location and setups the current map accordingly.
+     */
     public void makeMoveCastle(){
         if(castle != null){
             for(int i = 0; i < squares.length; i++){
@@ -183,6 +201,10 @@ public class GameBoard implements Drawable
             }
         }
     }
+
+    /**
+     * This method detach the castle when placed,however it has some bugs.
+     */
     public void detachCastle(){
         if(castle != null){
             squares[castle[0].getIndexNo()].setInfo(0);
@@ -191,6 +213,11 @@ public class GameBoard implements Drawable
             castle[1].setIndexNo(-1);
         }
     }
+
+    /**
+     *
+     * This method controls the given unit. Returns true if given unit can place to the current location.
+     */
     public boolean isValidMove(GameUnit unit){
         if(unit.isCastle() == false){
             for(int i = 0; i < squares.length; i++){
@@ -201,6 +228,10 @@ public class GameBoard implements Drawable
         }
         return false;
     }
+    /**
+     *
+     * This method place the given unit to the current location and setups the current map accordingly
+     */
     public void makeMove(GameUnit unit){
         if(unit.isCastle() == false){
             for(int i = 0; i < squares.length; i++){
@@ -219,6 +250,11 @@ public class GameBoard implements Drawable
             }
         }
     }
+
+    /**
+     *
+     * This method detach the given unit from the gameboard and setups the gameboard accordingly.
+     */
     public void detachUnit(GameUnit unit){
         if(unit.isCastle() == false){
             squares[unit.getIndexNo()].setInfo(0);
@@ -226,6 +262,10 @@ public class GameBoard implements Drawable
         }
 
     }
+    /**
+     *
+     * This method controls the given wall. Returns true if given wall can place to the current location.
+     */
     public boolean isValidMove(Wall wall){
         //Found the type of the wall
         int verticalCount = 0;
@@ -288,7 +328,10 @@ public class GameBoard implements Drawable
 
     }
 
-
+    /**
+     *
+     * This method place the given wall to the current location and setups the current map accordingly
+     */
     public void makeMove(Wall wall){
         int middleX;
         int middleY;
@@ -337,6 +380,10 @@ public class GameBoard implements Drawable
         }
         wall.setPlaced(true);
     }
+    /**
+     *
+     * This method detach the given wall from the gameboard and setups the gameboard accordingly.
+     */
     public void detachWall(Wall wall){
         for(int i = 0; i < wall.getWallLines().length; i++){
             if(wall.getWallLines()[i].isVertical()){
@@ -368,6 +415,11 @@ public class GameBoard implements Drawable
         return temp;
     }
 
+    /**
+     *
+     * This method controls if the players current map matches with the given map. If they are match player solved
+     * the map so method returns true.
+     */
     public boolean isGameFinished(){
         for(int i = 0; i < squares.length; i++){
             if(squares[i].getInfo() != map.getSquareLocations()[i])
@@ -477,13 +529,20 @@ public class GameBoard implements Drawable
         temp.setIsPlaced(false);
         return temp;
     }
+
+    /**
+     * This method creates an empty gameboard with related methods.
+     */
     public void createEmptyGameBoard()
     {
         createEdges();
         createHorizontalRectangles();
         createVerticalRectangles();
-        createSquares();;
+        createSquares();
     }
+    /**
+     * This method creates units for the developer mode.
+     */
     public void createUnitsForDeveloper(){
         int temp = 0;
         castle1Dev = new GameUnit[2];
@@ -533,6 +592,9 @@ public class GameBoard implements Drawable
         }
         */
     }
+    /**
+     * This method creates empty edges for gameboard.
+     */
     public void createEdges()
     {
         int tempX = mostLeftX + edgeHeight + rectangleWidth;
@@ -563,6 +625,9 @@ public class GameBoard implements Drawable
             tempX += edgeHeight + rectangleWidth;
         }
     }
+    /**
+     * This method creates empty horizontalRectangles for gameboard.
+     */
     public void createHorizontalRectangles()
     {
         int tempX = mostLeftX + edgeWidth + edgeWidth + rectangleWidth;
@@ -594,6 +659,9 @@ public class GameBoard implements Drawable
             tempX += edgeHeight + rectangleWidth;
         }
     }
+    /**
+     * This method creates empty verticalRectangles for gameboard.
+     */
     public void createVerticalRectangles()
     {
         int tempX = mostLeftX + edgeHeight + rectangleWidth;
@@ -625,6 +693,9 @@ public class GameBoard implements Drawable
             tempX += rectangleHeight + squareWidth;
         }
     }
+    /**
+     * This method creates empty squares for gameboard.
+     */
     public void createSquares()
     {
         int tempX = mostLeftX + edgeHeight + rectangleWidth + rectangleHeight;
