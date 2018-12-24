@@ -3,8 +3,9 @@ package TheWall;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
-/*
+/**
 Creator: Ayca Begum Tascioglu
+ Contains basic information for the GameUnits
  */
 
 abstract class GameUnits extends GameObject{
