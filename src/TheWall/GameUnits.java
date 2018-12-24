@@ -25,6 +25,7 @@ abstract class GameUnits extends GameObject{
     int theme;
     boolean isCastle = false;
     int info = 0;
+    boolean isHorizontalCastle;
     public GameUnits(int x, int y,int radius,boolean isEnemy, int theme){
         super(x, y);
         this.theme = theme;
@@ -34,6 +35,13 @@ abstract class GameUnits extends GameObject{
 
     public void setInfo(int info) {
         this.info = info;
+    }
+
+    public void setIsHorizontalCastle(boolean b){
+        isHorizontalCastle = b;
+    }
+    public boolean isHorizontalCastle(){
+        return isHorizontalCastle;
     }
 
     public void setIsCastle(boolean b){
@@ -92,6 +100,34 @@ abstract class GameUnits extends GameObject{
         }
 
     }
+    public int getMidX(){
+        if(!isCastle){
+            return getX() + radius / 2;
+        }
+        else{
+            if(isHorizontalCastle){
+                return getX() + radius / 2 + 40;
+            }
+            else{
+                return getX() + radius / 2;
+            }
+        }
+
+    }
+    public int getMidY(){
+        if(!isCastle){
+            return getY() + radius / 2;
+        }
+        else{
+            if(isHorizontalCastle){
+                return getY() + radius / 2;
+            }
+            else{
+                return getY() + radius / 2 + 40;
+            }
+        }
+
+    }
     public boolean isContainMouse(int contX, int contY) {
         if (contX >= this.getX() && contX <= (this.getX()) + (this.getRadius()) &&
                 contY >= this.getY() && contY <= (this.getY()) + (this.getRadius())) {
@@ -103,6 +139,7 @@ abstract class GameUnits extends GameObject{
             }
         return false;
     }
+
 
     public int getRadius() {
         return radius;
