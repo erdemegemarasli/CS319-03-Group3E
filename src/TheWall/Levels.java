@@ -434,10 +434,10 @@ int [] horizontalRectangleLocations19={
    0,0,1,0,0,
      0,0,0};
 int [] verticalRectangleLocations19={
-    1,1,0,0,
-   0,1,1,1,0,0,
-   1,0,2,0,1,0,
-   1,0,1,0};
+    1,1,2,0,
+   1,1,0,1,0,0,
+   0,0,1,1,1,0,
+   0,0,0,0};
 levels[19] = new Map(squareLocations19,edgeLocations19,horizontalRectangleLocations19,verticalRectangleLocations19);//level-36
     }
 
