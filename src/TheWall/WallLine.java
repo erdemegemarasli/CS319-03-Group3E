@@ -1,8 +1,9 @@
 package TheWall;
 
 import java.awt.*;
-/*
-Creator: Ayca Begum Tascioglu
+/**
+ Creator: Ayca Begum Tascioglu
+ This class contains the attributes of the line of wall. Wall is created from WallEdges and WallLines
  */
 
 public class WallLine  extends GameObject {
