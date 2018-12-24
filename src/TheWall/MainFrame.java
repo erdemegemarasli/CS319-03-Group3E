@@ -16,6 +16,7 @@ public class MainFrame extends JFrame
     private SimplePanel currentPanel;
     private Timer updateTimer;
     int theme;
+    private int levelforCampaign;
     public MainFrame()
     {
         this.setSize(1200,600);
@@ -38,6 +39,16 @@ public class MainFrame extends JFrame
 
 
     }
+    public int increaseLevel(int level){
+        level++;
+        System.out.println("level increased"+level);
+        return level;
+    }
+
+    public void setLevelforCampaign(int levelforCampaign) {
+        this.levelforCampaign = levelforCampaign;
+    }
+
     public void addComp(Component c){
         this.add(c);
     }
@@ -252,10 +263,11 @@ public class MainFrame extends JFrame
                     setVis(true);
                 }
                 else if (currentPanel.getSelection() == 1){
+                    levelforCampaign = 4;
                     removeComp(currentPanel);
                     int tmp = theme;
                     theme = 1;
-                    Game game = new Game(4, 3, 1);
+                    Game game = new Game(levelforCampaign, 3, 1);
                     currentPanel = new GameViewer(game);
                     currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
@@ -286,7 +298,22 @@ public class MainFrame extends JFrame
                     addComp(currentPanel);
                     setVis(true);
                 }
+                else if(currentPanel.getSelection() == 19 ){
+                    int newLevel = increaseLevel(levelforCampaign);
+                    setLevelforCampaign(newLevel);
+                    removeComp(currentPanel);
+                    int tmp = theme;
+                    theme = 1;
+                    Game game = new Game(newLevel, 3, 1);
+                    currentPanel = new GameViewer(game);
+                    currentPanel.setTheme(theme);
+                    game.getRender().addView((GameViewer)currentPanel);
+                    addComp(currentPanel);
+                    setVis(true);
+                    theme = tmp;
+                }
             }
+
 
         }
     }

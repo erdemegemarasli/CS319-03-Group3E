@@ -20,6 +20,8 @@ public class Game {
 
     ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
     ImageIcon voldemort = new ImageIcon("src/TheWall/images/voldemort.jpg");
+    ImageIcon hermione = new ImageIcon("src/TheWall/images/hermione.jpg");
+    ImageIcon ron = new ImageIcon("src/TheWall/images/ron.jpg");
     private GameBoard board;
     private Walls walls;
     private Render render;
@@ -126,7 +128,6 @@ public class Game {
             levels = new Levels();
             map = levels.getLevels()[level];
             board = new GameBoard(map,mode, theme);
-            System.out.println("level" +level);
 
             render = new Render();
             renderListener = new Timer(25,new RenderListener());
@@ -188,6 +189,11 @@ public class Game {
                 JOptionPane.showMessageDialog(null, "Never!", "Story:", JOptionPane.INFORMATION_MESSAGE, harry);
             }
             br.close();
+        }
+        if (level == 5) {
+            JOptionPane.showMessageDialog(null, "You ağ a wizağd hağğy!!", "Story:", JOptionPane.INFORMATION_MESSAGE, ron);
+            JOptionPane.showMessageDialog(null, "That's true #lit", "Story:", JOptionPane.INFORMATION_MESSAGE, harry);
+            JOptionPane.showMessageDialog(null, "You're a fool, Harry Potter, and you will lose everything.", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
         }
     }
 

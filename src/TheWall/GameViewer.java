@@ -118,6 +118,7 @@ public class GameViewer extends SimplePanel implements Viewer {
             selection = 1;
             this.setLayout(null);
             this.setBackground(Color.GRAY);
+            nextLevel.addActionListener(new ButtonListener());
             nextLevel.setLocation(1100,300);
             nextLevel.setSize(100,100);
             this.add(nextLevel);
@@ -200,8 +201,9 @@ public class GameViewer extends SimplePanel implements Viewer {
                 System.out.println(mapData);
 
             }
-            if(event.getSource() == nextLevel)
-                selection = 1;
+            else if(event.getSource() == nextLevel) {
+                selection = 19;
+            }
         }
     }
     //update method to call repaint
