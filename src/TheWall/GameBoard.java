@@ -56,6 +56,10 @@ public class GameBoard implements Drawable
         return fixedUnits;
     }
 
+    public int getMode() {
+        return mode;
+    }
+
     public void setUpGameBoard(){
         int temp = 0;
         for (int i = 0; i < map.getSquareLocations().length; i++) {

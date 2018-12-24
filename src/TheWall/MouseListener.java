@@ -11,11 +11,13 @@ public class MouseListener extends MouseAdapter {
     private boolean movingWall;
     private int wallIndex;
     private GameBoard gameBoard;
+    private boolean movingUnit;
     public MouseListener(Wall[] walls, GameBoard gameBoard){
         this.walls = walls;
         this.gameBoard = gameBoard;
         movingWall = false;
         wallIndex = -1;
+        movingUnit = false;
     }
     public void mousePressed(MouseEvent e)
     {
