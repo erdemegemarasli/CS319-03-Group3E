@@ -19,11 +19,11 @@ public class HowToPlayScreen extends SimplePanel {
         this.setBorder(new EmptyBorder(new Insets(300,400,300,400)));
         ButtonListener buttonListen = new ButtonListener();
         JLabel info = new JLabel("Choose a challenge. ");
-        JLabel info1 = new JLabel("Place the red knights,the blue knights and high towers");
-        JLabel info2 = new JLabel( "with blue rooftops on the game board as indicated.");
-        JLabel info3 = new JLabel("The red knights are kept outside, ");
-        JLabel info4 = new JLabel( "the blue knights and high towers remain ");
-        JLabel info41 = new JLabel("within the ramparts.");
+        JLabel info1 = new JLabel("Choose a wall with left click of mouse");
+        JLabel info2 = new JLabel( "Rotate the choosen wall with left click of mouse");
+        JLabel info3 = new JLabel(" and place the wall with right click");
+        JLabel info4 = new JLabel( "The red knights needed to kept outside, the blue ");
+        JLabel info41 = new JLabel("knights and high towers needed to remain within the walls.");
         JLabel info5 = new JLabel("There is only one solution per challenge.");
 
         JLabel texts[] = {info, info1,info2,info3, info4,info41};
