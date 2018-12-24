@@ -120,6 +120,9 @@ public class MouseListener extends MouseAdapter {
                 tempUnit.setX(e.getX() - 30);
                 tempUnit.setY(e.getY() - 30);
                 //System.out.println(gameBoard.getGameUnits().get(0).getX());
+                if(gameBoard.isValidMove(tempUnit)){
+                    System.out.println("asda");
+                }
             }
         }
 
