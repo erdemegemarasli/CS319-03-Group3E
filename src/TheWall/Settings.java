@@ -6,6 +6,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Creator : Ayça Begüm Taşçıoğlu
+ * This class contains the informatin for the setting panel.
+ */
 public class Settings extends SimplePanel{
     public static final Color VERY_LIGHT_BLUE = new Color(51,204,255);
     //153- 0 - 0
