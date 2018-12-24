@@ -26,7 +26,6 @@ public class DbConnector {
 		}
 		return con;
 	}
-	
 	/** 
 	 * @author Ensar Kaya
 	 *This method search username, password parameters in mytable
@@ -55,7 +54,6 @@ public class DbConnector {
 		catch(SQLException e){
 			e.printStackTrace();}		
 		return ret;}
-
 	/** 
 	 * @author Ensar Kaya
 	 *This method returns a string which displays all
@@ -87,7 +85,6 @@ public class DbConnector {
 		catch(SQLException e){
 			e.printStackTrace();}
 		return str;}
-	
 	/** 
 	 * @author Ensar Kaya
 	 * 
@@ -104,11 +101,11 @@ public class DbConnector {
 			PreparedStatement pStat = con.prepareStatement("INSERT INTO mytable"+" VALUES(?,?,?,?,?,?,?,?)");
 			pStat.setString(1,name);
 			pStat.setString(2,password);
-			pStat.setString(3,"");
+			pStat.setInt(3,0);
 			pStat.setString(4,"");
-			pStat.setInt(5,0);
-			pStat.setString(6, "");
-			pStat.setString(7, "");
+			pStat.setString(5,"");
+			pStat.setString(6,"");
+			pStat.setString(7,"");
 			pStat.setString(8,"");
 			i = pStat.executeUpdate();
 		}
@@ -117,7 +114,6 @@ public class DbConnector {
 		if(i>=1)
 			return true;
 		return false;}
-	
 	/** 
 	 * @author Ensar Kaya
 	 * This method uploads a map into the table
@@ -183,13 +179,18 @@ public class DbConnector {
 		try{
 			con = getConnection();
 			Statement stat = con.createStatement();
-			String sql = "SELECT map1, map2 FROM mytable";
+			String sql = "SELECT username, map1, map2 FROM mytable";
 			ResultSet rs=stat.executeQuery(sql);
 			while(rs.next())
 			{
 				String m1=rs.getString("map1");
 				String m2=rs.getString("map2");	
-				ret+=" Map1: "+m1+" Map2: "+m2+"\n";
+				String name=rs.getString("username");
+				ret+=name+": ";
+				if(!m1.equals(""))
+					ret+="Map1:"+m1;
+				if(!m2.equals(""))
+					ret+=" Map2:"+m2+"\n";
 			}
 			rs.close();
 		}
