@@ -20,6 +20,9 @@ public class GameViewer extends SimplePanel implements Viewer {
     private Wall[] walls;
     private JButton backButton = new JButton("Go Back");
     private JLabel timerLabel;
+    private JButton saveTheMap = new JButton("Save the Map");
+
+    JLabel mapName = new JLabel("mapName:");
 
     Render render;
     public GameViewer(Game game){
@@ -48,10 +51,31 @@ public class GameViewer extends SimplePanel implements Viewer {
             selection = 1;
             this.setLayout(null);
             this.setBackground(Color.GRAY);
+
+            saveTheMap.addActionListener(new ButtonListener());
+            saveTheMap.setLocation(200, 500);
+            saveTheMap.setSize(100,20);
+            this.add(saveTheMap);
+
+            mapName.setFont(new Font("Comic Sans MS", Font.PLAIN, 15));
+            mapName.setLocation(50, 500);
+            this.add(mapName);
+            JTextField textField1 = new JTextField();
+            textField1.setToolTipText("Map name");
+            textField1.setSize(130,20);
+            textField1.setLocation(70, 500);
+            //SERVER CONNECTION USERNAME INPUT: usernameInput
+            String mapnameInput = textField1.getText();
+
+            mapName.setLabelFor(textField1);
+            this.add(textField1);
+
             backButton.setLocation(1100,500);
             backButton.setSize(100,100);
             this.add(backButton);
             backButton.addActionListener(new ButtonListener());
+
+
 
             this.game = game;
             board = game.getGameBoard();
