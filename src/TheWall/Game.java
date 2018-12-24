@@ -25,7 +25,6 @@ public class Game {
     private Timer renderListener;
     private Levels levels;
     private Map map;
-    private Map playerMap;
     private int mode;
     private int theme;
     private Timer timer;
@@ -46,7 +45,6 @@ public class Game {
 
             levels = new Levels();
             map = levels.getLevels()[level];
-            playerMap = map;
             board = new GameBoard(map,mode, theme);
 
             render = new Render();
@@ -86,7 +84,6 @@ public class Game {
                     0,0,0,0,0,0,
                     0,0,0,0};
             map = new Map(squareLocations,edgeLocations,horizontalRectangleLocations,verticalRectangleLocations);
-            playerMap = null;
 
 
             board = new GameBoard(map,mode,theme);
@@ -108,7 +105,6 @@ public class Game {
             int random = (int )(Math.random() * 5+ 1);
             System.out.println("map no"+random);
             map = levels.getLevels()[random];
-            playerMap = map;
             board = new GameBoard(map,mode, theme);
             timer = new Timer(1000, new TimerListener());
             //timer.setRepeats(false);
@@ -128,7 +124,6 @@ public class Game {
 
             levels = new Levels();
             map = levels.getLevels()[level];
-            playerMap = map;
             board = new GameBoard(map,mode, theme);
 
             render = new Render();
@@ -154,9 +149,6 @@ public class Game {
         return walls.getWalls();
     }
 
-    public Map getPlayerMap() {
-        return playerMap;
-    }
 
     public Render getRender() {
         return render;
