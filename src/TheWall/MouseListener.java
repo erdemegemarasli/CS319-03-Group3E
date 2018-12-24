@@ -88,6 +88,11 @@ public class MouseListener extends MouseAdapter {
                 }
                 else{
                     if(tempUnit.isCastle() == false){
+                        if(gameBoard.isValidMove(tempUnit)){
+                            gameBoard.makeMove(tempUnit);
+                            movingUnit = false;
+                            tempUnit = null;
+                        }
                         gameBoard.getGameUnits().remove(tempUnit);
                         tempUnit = null;
                         movingUnit = false;
