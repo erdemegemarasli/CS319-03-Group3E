@@ -15,12 +15,14 @@ public class MouseListener extends MouseAdapter {
     private GameUnit [] fixedUnits;
     private GameUnit [] castle1;
     private GameUnit [] castle2;
+    private GameUnit tempUnit;
     public MouseListener(Wall[] walls, GameBoard gameBoard){
         this.walls = walls;
         this.gameBoard = gameBoard;
         movingWall = false;
         wallIndex = -1;
         movingUnit = false;
+        tempUnit = null;
         if(gameBoard.getMode() == 1){
             fixedUnits = gameBoard.getFixedUnits();
             castle1 = gameBoard.getCastle1Dev();
@@ -71,9 +73,17 @@ public class MouseListener extends MouseAdapter {
             if(gameBoard.getMode() == 1){
                 if(!movingUnit){
                     if(fixedUnits[0].isContainMouse(e.getX(),e.getY())){
-
+                        System.out.println("Click Blue");
+                        tempUnit = gameBoard.createUnit(fixedUnits[0].getX(),fixedUnits[0].getY(),false);
+                        gameBoard.getGameUnits().add(tempUnit);
+                        movingUnit = true;
                     }
-                    else if(castle1[0].isContainMouse(e.getX(),e.getY()) || castle1[1].isContainMouse(e.getX(),e.getY())){
+                    else if(fixedUnits[1].isContainMouse(e.getX(),e.getY())){
+                        tempUnit = gameBoard.createUnit(fixedUnits[1].getX(),fixedUnits[1].getY(),true);
+                        gameBoard.getGameUnits().add(tempUnit);
+                        movingUnit = true;
+                    }
+                    else if(castle1[0].isContainMouse(e.getX(),e.getY())){
 
                     }
                 }
@@ -97,6 +107,13 @@ public class MouseListener extends MouseAdapter {
             }
             else{
                 walls[wallIndex].makeGreen(false);
+            }
+        }
+        else if(movingUnit){
+            if(tempUnit != null){
+                System.out.println("asda");
+                tempUnit.setX(e.getX());
+                tempUnit.setY(e.getY());
             }
         }
 
