@@ -26,11 +26,15 @@ abstract class GameUnits extends GameObject{
     boolean isCastle = false;
     int info = 0;
     boolean isHorizontalCastle;
+    int fixedX;
+    int fixedY;
     public GameUnits(int x, int y,int radius,boolean isEnemy, int theme){
         super(x, y);
         this.theme = theme;
         this.radius = radius;
         this.isEnemy = isEnemy;
+        fixedX = x;
+        fixedY = y;
     }
 
     public void setInfo(int info) {
