@@ -41,7 +41,12 @@ public class GameBoard implements Drawable
         this.mode = mode;
         if (mode == 1) {
             createUnitsForDeveloper();
+            castle = null;
         }
+    }
+
+    public ArrayList<GameUnits> getGameUnits() {
+        return gameUnits;
     }
 
     public GameUnit[] getCastle1Dev() {
@@ -277,10 +282,12 @@ public class GameBoard implements Drawable
         for(int i = 0; i < 16; i++)
             squares[i].draw(g);
         if (mode == 0 || mode == 2 || mode ==3) {
-            for (int i = 0; i < gameUnits.size(); i++)
+            for (int i = 0; i < gameUnits.size(); i++){
                 gameUnits.get(i).draw(g);
+            }
             for (int i = 0; i < castle.length; i++) {
                 castle[i].draw(g);
+
             }
             g.setColor(Color.BLUE);
             if (castle[0].getY() == castle[1].getY()) {
@@ -307,10 +314,17 @@ public class GameBoard implements Drawable
             } else if (castle2Dev[0].getX() == castle2Dev[1].getX()) {
                 g.fillRect(castle2Dev[0].getX() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getY() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getRadius() / 2, castle2Dev[0].getRadius() + castle2Dev[0].getRadius() / 2);
             }
+            for (int i = 0; i < gameUnits.size(); i++){
+                gameUnits.get(i).draw(g);
+            }
 
         }
 
 
+    }
+    public GameUnit createUnit(int x, int y, boolean isEnemy){
+        GameUnit temp = new GameUnit(x,y,squareHeight,isEnemy,theme);
+        return temp;
     }
     public void createEmptyGameBoard()
     {
