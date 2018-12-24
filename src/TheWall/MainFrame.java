@@ -7,8 +7,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 
-/*
+/**
 Creator: Erdem Ege Marasli and Ayca Begum Tascioglu
+ This class controls all the panels and also this is the mainframe of the game.
  */
 public class MainFrame extends JFrame
 {
