@@ -17,7 +17,9 @@ public class MouseListener extends MouseAdapter {
     private GameUnit [] fixedUnits;
     private GameUnit [] castle1;
     private GameUnit [] castle2;
+    private GameUnit [] tempCastle;
     private GameUnit tempUnit;
+    private int count;
     private ArrayList<GameUnit> gameUnits;
     public MouseListener(Wall[] walls, GameBoard gameBoard){
         this.walls = walls;
@@ -31,6 +33,7 @@ public class MouseListener extends MouseAdapter {
             castle1 = gameBoard.getCastle1Dev();
             castle2 = gameBoard.getCastle2Dev();
             this.gameUnits = gameBoard.getGameUnits();
+            count = 0;
         }
     }
     public void mousePressed(MouseEvent e)
@@ -86,18 +89,44 @@ public class MouseListener extends MouseAdapter {
                         gameBoard.getGameUnits().add(tempUnit);
                         movingUnit = true;
                     }
-                    else if(castle1[0].isContainMouse(e.getX(),e.getY())){
-
+                    else if(castle1[0].isContainMouse(e.getX(),e.getY()) && count == 0) {
+                        tempUnit = castle1[0];
+                        tempCastle = castle1;
+                        gameBoard.setCastle(castle1);
+                        movingUnit = true;
                     }
-                    else{
-                        for(int i = 0; i < gameUnits.size(); i++){
-                            if(gameUnits.get(i).isContainMouse(e.getX(),e.getY())){
-                                tempUnit = gameUnits.get(i);
-                                gameBoard.detachUnit(gameUnits.get(i));
-                                movingUnit = true;
-                                break;
+                    else if(castle2[0].isContainMouse(e.getX(),e.getY()) && count == 0){
+                        tempUnit = castle2[0];
+                        tempCastle = castle2;
+                        gameBoard.setCastle(castle2);
+                        movingUnit = true;
+                    }
+                    else if(tempUnit != null){
+                        if(tempUnit.isCastle() == false){
+                            for(int i = 0; i < gameUnits.size(); i++){
+                                if(gameUnits.get(i).isContainMouse(e.getX(),e.getY())){
+                                    tempUnit = gameUnits.get(i);
+                                    gameBoard.detachUnit(gameUnits.get(i));
+                                    movingUnit = true;
+                                    break;
+                                }
                             }
                         }
+                        else{
+                            if(gameBoard.getCastle()[0].isContainMouse(e.getX(),e.getY()) && count == 0) {
+                                if(gameBoard.getCastle()[0] == castle1[0]){
+                                    tempUnit = castle1[0];
+                                    gameBoard.detachCastle();
+                                    movingUnit = false;
+                                }
+                                else{
+                                    tempUnit = castle2[0];
+                                    gameBoard.detachCastle();
+                                    movingUnit = false;
+                                }
+                            }
+                        }
+
                     }
                 }
                 else{
@@ -107,9 +136,34 @@ public class MouseListener extends MouseAdapter {
                             movingUnit = false;
                             tempUnit = null;
                         }
-                        gameBoard.getGameUnits().remove(tempUnit);
-                        tempUnit = null;
-                        movingUnit = false;
+                        else{
+                            gameBoard.getGameUnits().remove(tempUnit);
+                            tempUnit = null;
+                            movingUnit = false;
+                        }
+
+                    }
+                    else{
+                        if(gameBoard.isValidMoveCastle()){
+                            gameBoard.makeMoveCastle();
+                            movingUnit = false;
+                            tempUnit = null;
+                            count++;
+                        }
+                        else{
+                            if(castle1 == gameBoard.getCastle()){
+                                castle1 = tempCastle;
+                                gameBoard.setCastle(null);
+                                movingUnit = false;
+                                tempUnit = null;
+                            }
+                            else{
+                                castle2 = tempCastle;
+                                gameBoard.setCastle(null);
+                                movingUnit = false;
+                                tempUnit = null;
+                            }
+                        }
                     }
                 }
             }
@@ -136,11 +190,26 @@ public class MouseListener extends MouseAdapter {
         }
         else if(movingUnit){
             if(tempUnit != null){
-                tempUnit.setX(e.getX() - 30);
-                tempUnit.setY(e.getY() - 30);
-                //System.out.println(gameBoard.getGameUnits().get(0).getX());
-                if(gameBoard.isValidMove(tempUnit)){
+                if(tempUnit.isCastle() == false){
+                    //System.out.println("hayda");
+                    tempUnit.setX(e.getX() - 30);
+                    tempUnit.setY(e.getY() - 30);
                 }
+                else{
+                    if(tempUnit == castle1[0]){
+                        gameBoard.getCastle()[0].setX(e.getX() - 30);
+                        gameBoard.getCastle()[1].setX(e.getX() - 30);
+                        gameBoard.getCastle()[0].setY(e.getY()- 30 - gameBoard.getCastle()[0].getRadius() / 2);
+                        gameBoard.getCastle()[1].setY(e.getY() + 80 - 30 - gameBoard.getCastle()[0].getRadius() / 2);
+                    }
+                    else{
+                        gameBoard.getCastle()[0].setX(e.getX() - 30 - gameBoard.getCastle()[0].getRadius() / 2);
+                        gameBoard.getCastle()[1].setX(e.getX() + 80 - 30 - gameBoard.getCastle()[0].getRadius() / 2);
+                        gameBoard.getCastle()[0].setY(e.getY()- 30);
+                        gameBoard.getCastle()[1].setY(e.getY()- 30);
+                    }
+                }
+                //System.out.println(gameBoard.getGameUnits().get(0).getX());
             }
         }
 
