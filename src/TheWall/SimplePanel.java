@@ -3,8 +3,9 @@ package TheWall;
 import javax.swing.*;
 import java.awt.*;
 
-/*
+/**
 Creator: Erdem Ege Marasli and Ayca Begum Tascioglu
+ This class gives us opportunity to sustain basic information in JPanels to control panel transtion and general options.
  */
 abstract class SimplePanel extends JPanel
 {
