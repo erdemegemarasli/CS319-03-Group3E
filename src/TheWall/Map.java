@@ -2,6 +2,10 @@ package TheWall;
 /*
 Creator: Erdem Ege Marasli
  */
+/**
+ * This class has attributes of a basic map.
+ * For more information you can check the comment of levels class.
+ * */
 public class Map {
     int [] squareLocations; // 16
     int [] edgeLocations; // 26
