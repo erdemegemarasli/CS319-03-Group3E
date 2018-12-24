@@ -55,4 +55,12 @@ abstract class GameBoardComponent implements Drawable
     public void setInfo(int info) {
         this.info = info;
     }
+    public boolean isContainPoint(int contX, int contY)
+    {
+        if(contX >= this.getX() && contX <= (this.getX() ) + (this.getWidth() ) &&
+                contY >= this.getY() && contY <= (this.getY() ) + (this.getHeight() ) ) {
+            return true;
+        }
+        return false;
+    }
 }
