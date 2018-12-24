@@ -315,6 +315,22 @@ public class GameBoard implements Drawable
         }
         wall.setPlaced(false);
     }
+    public String returnCreatedMap(){
+        String temp = "";
+        for(int i = 0; i < squares.length; i++){
+            temp += squares[i];
+        }
+        for(int i = 0; i < edges.length; i++){
+            temp += edges[i];
+        }
+        for(int i = 0; i < horizontalRectangles.length; i++){
+            temp += horizontalRectangles[i];
+        }
+        for(int i = 0; i < verticalRectangles.length; i++){
+            temp += verticalRectangles[i];
+        }
+        return temp;
+    }
 
     public boolean isGameFinished(){
         for(int i = 0; i < squares.length; i++){

@@ -60,10 +60,10 @@ public class Game {
         }
 
         /*
-        DEVELOPER MODE : 1
+        DEVELOPER MODE : 1 Create
          */
         if(mode == 1){
-            System.out.println("sdasdada");
+            //System.out.println("sdasdada");
             walls = new Walls();
             int [] squareLocations = {0,0,0,
                     0,0,0,0,0,
