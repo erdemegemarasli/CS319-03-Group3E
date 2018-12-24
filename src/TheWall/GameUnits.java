@@ -29,6 +29,7 @@ abstract class GameUnits extends GameObject{
     int fixedX;
     int fixedY;
     int indexNo;
+    boolean isPlaced;
     public GameUnits(int x, int y,int radius,boolean isEnemy, int theme){
         super(x, y);
         this.theme = theme;
@@ -37,6 +38,13 @@ abstract class GameUnits extends GameObject{
         fixedX = x;
         fixedY = y;
         indexNo = -1;
+        isPlaced = true;
+    }
+    public void setIsPlaced(boolean b){
+        isPlaced = b;
+    }
+    public boolean isPlaced(){
+        return isPlaced;
     }
     public boolean isEnemy(){
         return isEnemy;
@@ -45,7 +53,7 @@ abstract class GameUnits extends GameObject{
         this.indexNo = index;
     }
 
-    public int getIndex() {
+    public int getIndexNo() {
         return indexNo;
     }
 
