@@ -73,7 +73,6 @@ public class MouseListener extends MouseAdapter {
             if(gameBoard.getMode() == 1){
                 if(!movingUnit){
                     if(fixedUnits[0].isContainMouse(e.getX(),e.getY())){
-                        System.out.println("Click Blue");
                         tempUnit = gameBoard.createUnit(fixedUnits[0].getX(),fixedUnits[0].getY(),false);
                         gameBoard.getGameUnits().add(tempUnit);
                         movingUnit = true;
@@ -85,6 +84,13 @@ public class MouseListener extends MouseAdapter {
                     }
                     else if(castle1[0].isContainMouse(e.getX(),e.getY())){
 
+                    }
+                }
+                else{
+                    if(tempUnit.isCastle() == false){
+                        gameBoard.getGameUnits().remove(tempUnit);
+                        tempUnit = null;
+                        movingUnit = false;
                     }
                 }
             }
@@ -111,9 +117,9 @@ public class MouseListener extends MouseAdapter {
         }
         else if(movingUnit){
             if(tempUnit != null){
-                System.out.println("asda");
-                tempUnit.setX(e.getX());
-                tempUnit.setY(e.getY());
+                tempUnit.setX(e.getX() - 30);
+                tempUnit.setY(e.getY() - 30);
+                //System.out.println(gameBoard.getGameUnits().get(0).getX());
             }
         }
 
