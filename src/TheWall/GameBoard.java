@@ -318,16 +318,16 @@ public class GameBoard implements Drawable
     public String returnCreatedMap(){
         String temp = "";
         for(int i = 0; i < squares.length; i++){
-            temp += squares[i];
+            temp += squares[i].getInfo();
         }
         for(int i = 0; i < edges.length; i++){
-            temp += edges[i];
+            temp += edges[i].getInfo();
         }
         for(int i = 0; i < horizontalRectangles.length; i++){
-            temp += horizontalRectangles[i];
+            temp += horizontalRectangles[i].getInfo();
         }
         for(int i = 0; i < verticalRectangles.length; i++){
-            temp += verticalRectangles[i];
+            temp += verticalRectangles[i].getInfo();
         }
         return temp;
     }

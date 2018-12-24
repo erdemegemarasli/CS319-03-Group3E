@@ -2,6 +2,8 @@ package TheWall;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -165,6 +167,16 @@ public class GameViewer extends SimplePanel implements Viewer {
         {
             if(event.getSource() == backButton)
                 selection = 0;
+            else if(event.getSource() == saveTheMap){
+                String mapData = game.getGameBoard().returnCreatedMap();
+                JOptionPane.showMessageDialog(null, "Map Code Generate Succesful and copied to the clipboard. Just paste the copied code to the play screen in order to play. You can even send the code to your friends to challange them","Map Code Generate Succesful", JOptionPane.INFORMATION_MESSAGE);
+                StringSelection selection = new StringSelection(mapData);
+                Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard.setContents(selection, selection);
+
+                System.out.println(mapData);
+
+            }
         }
     }
     //update method to call repaint
