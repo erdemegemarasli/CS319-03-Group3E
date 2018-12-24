@@ -12,12 +12,20 @@ public class MouseListener extends MouseAdapter {
     private int wallIndex;
     private GameBoard gameBoard;
     private boolean movingUnit;
+    private GameUnit [] fixedUnits;
+    private GameUnit [] castle1;
+    private GameUnit [] castle2;
     public MouseListener(Wall[] walls, GameBoard gameBoard){
         this.walls = walls;
         this.gameBoard = gameBoard;
         movingWall = false;
         wallIndex = -1;
         movingUnit = false;
+        if(gameBoard.getMode() == 1){
+            fixedUnits = gameBoard.getFixedUnits();
+            castle1 = gameBoard.getCastle1Dev();
+            castle2 = gameBoard.getCastle2Dev();
+        }
     }
     public void mousePressed(MouseEvent e)
     {
@@ -59,6 +67,16 @@ public class MouseListener extends MouseAdapter {
                 }
                 wallIndex = -1;
                 movingWall = false;
+            }
+            if(gameBoard.getMode() == 1){
+                if(!movingUnit){
+                    if(fixedUnits[0].isContainMouse(e.getX(),e.getY())){
+
+                    }
+                    else if(castle1[0].isContainMouse(e.getX(),e.getY()) || castle1[1].isContainMouse(e.getX(),e.getY())){
+
+                    }
+                }
             }
         }
         else if(SwingUtilities.isRightMouseButton(e) && movingWall && wallIndex > -1){
