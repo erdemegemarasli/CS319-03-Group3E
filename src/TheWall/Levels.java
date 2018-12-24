@@ -472,15 +472,15 @@ int [] edgeLocations21={0,0,0,0,
        0,0,0,0,0,1,
          0,1,0,1};
 int [] horizontalRectangleLocations21={
-     0,1,0,
+     0,0,0,
    0,1,0,1,0,
-   0,1,0,1,0,
-   0,1,2,1,0,
+   0,1,1,0,1,
+   0,1,2,0,1,
      0,1,1};
 int [] verticalRectangleLocations21={
-    0,1,1,0,
-   0,1,0,0,1,0,
-   0,1,0,1,0,0,
+    0,0,0,0,
+   0,0,1,1,1,1,
+   0,1,0,0,0,1,
    0,1,1,1};
 levels[21] = new Map(squareLocations21,edgeLocations21,horizontalRectangleLocations21,verticalRectangleLocations21);//level-38
     }
