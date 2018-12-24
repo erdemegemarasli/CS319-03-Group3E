@@ -110,12 +110,30 @@ public class GameBoard implements Drawable
     public boolean isValidMove(GameUnit unit){
         if(unit.isCastle() == false){
             for(int i = 0; i < squares.length; i++){
-                if(squares[i].isContainPoint(unit.getMidX(),unit.getMidY())){
+                if(squares[i].isContainPoint(unit.getMidX(),unit.getMidY()) && squares[i].getInfo() == 0){
                     return true;
                 }
             }
         }
         return false;
+    }
+    public void makeMove(GameUnit unit){
+        if(unit.isCastle() == false){
+            for(int i = 0; i < squares.length; i++){
+                if(squares[i].isContainPoint(unit.getMidX(),unit.getMidY()) && squares[i].getInfo() == 0){
+                    unit.setIndexNo(i);
+                    unit.setX(squares[i].getX());
+                    unit.setY(squares[i].getY());
+                    if(unit.isEnemy() == false){
+                        squares[i].setInfo(1);
+                    }
+                    else{
+                        squares[i].setInfo(2);
+                    }
+                    break;
+                }
+            }
+        }
     }
     public boolean isValidMove(Wall wall){
         //Found the type of the wall
