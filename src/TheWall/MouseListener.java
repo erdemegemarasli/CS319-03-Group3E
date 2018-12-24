@@ -10,12 +10,10 @@ public class MouseListener extends MouseAdapter {
     private Wall [] walls;
     private boolean moving;
     private int wallIndex;
-    private Map playerMap;
     private GameBoard gameBoard;
-    public MouseListener(Wall[] walls, GameBoard gameBoard, Map playerMap){
+    public MouseListener(Wall[] walls, GameBoard gameBoard){
         this.walls = walls;
         this.gameBoard = gameBoard;
-        this.playerMap = playerMap;
         moving = false;
         wallIndex = -1;
     }
