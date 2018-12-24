@@ -18,7 +18,6 @@ public class GameViewer extends SimplePanel implements Viewer {
     private Game game;
     private GameBoard board;
     private Wall[] walls;
-    private Map playerMap;
     private JButton backButton = new JButton("Go Back");
     private JLabel timerLabel;
 
@@ -38,8 +37,7 @@ public class GameViewer extends SimplePanel implements Viewer {
             this.game = game;
             board = game.getGameBoard();
             walls = game.getWalls();
-            playerMap = game.getPlayerMap();
-            MouseListener mouseListen = new MouseListener(walls, board, playerMap);
+            MouseListener mouseListen = new MouseListener(walls, board);
             this.addMouseListener(mouseListen);
             this.addMouseMotionListener(mouseListen);
             this.setFocusable(true);
@@ -58,8 +56,7 @@ public class GameViewer extends SimplePanel implements Viewer {
             this.game = game;
             board = game.getGameBoard();
             walls = game.getWalls();
-            playerMap = game.getPlayerMap();
-            MouseListener mouseListen = new MouseListener(walls, board, playerMap);
+            MouseListener mouseListen = new MouseListener(walls, board);
             this.addMouseListener(mouseListen);
             this.addMouseMotionListener(mouseListen);
             this.setFocusable(true);
@@ -80,8 +77,7 @@ public class GameViewer extends SimplePanel implements Viewer {
             this.game = game;
             board = game.getGameBoard();
             walls = game.getWalls();
-            playerMap = game.getPlayerMap();
-            MouseListener mouseListen = new MouseListener(walls, board, playerMap);
+            MouseListener mouseListen = new MouseListener(walls, board);
             this.addMouseListener(mouseListen);
             this.addMouseMotionListener(mouseListen);
             this.setFocusable(true);
@@ -101,8 +97,7 @@ public class GameViewer extends SimplePanel implements Viewer {
             this.game = game;
             board = game.getGameBoard();
             walls = game.getWalls();
-            playerMap = game.getPlayerMap();
-            MouseListener mouseListen = new MouseListener(walls, board, playerMap);
+            MouseListener mouseListen = new MouseListener(walls, board);
             this.addMouseListener(mouseListen);
             this.addMouseMotionListener(mouseListen);
             this.setFocusable(true);
