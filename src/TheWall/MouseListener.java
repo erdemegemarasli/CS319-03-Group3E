@@ -8,24 +8,24 @@ Creator: Erdem Ege Marasli
  */
 public class MouseListener extends MouseAdapter {
     private Wall [] walls;
-    private boolean moving;
+    private boolean movingWall;
     private int wallIndex;
     private GameBoard gameBoard;
     public MouseListener(Wall[] walls, GameBoard gameBoard){
         this.walls = walls;
         this.gameBoard = gameBoard;
-        moving = false;
+        movingWall = false;
         wallIndex = -1;
     }
     public void mousePressed(MouseEvent e)
     {
 
         if(SwingUtilities.isLeftMouseButton(e)){
-            if(!moving){
+            if(!movingWall){
                 for(int i = 0; i < walls.length; i++){
                     if(walls[i].isContainMouse(e.getX(),e.getY())){
                         wallIndex = i;
-                        moving = true;
+                        movingWall = true;
                         walls[i].setMoving(true);
                         if(walls[i].isPlaced()){
                             gameBoard.detachWall(walls[i]);
@@ -34,11 +34,11 @@ public class MouseListener extends MouseAdapter {
                     }
                 }
             }
-            else if(moving){
+            else if(movingWall){
                 walls[wallIndex].setMoving(false);
 
                 if(gameBoard.isValidMove(walls[wallIndex])){
-                    System.out.println("Valid");
+                    //System.out.println("Valid");
                     walls[wallIndex].makeGreen(false);
                     gameBoard.makeMove(walls[wallIndex]);
                 }
@@ -56,10 +56,10 @@ public class MouseListener extends MouseAdapter {
                     walls[wallIndex].setRotateCount(0);
                 }
                 wallIndex = -1;
-                moving = false;
+                movingWall = false;
             }
         }
-        else if(SwingUtilities.isRightMouseButton(e) && moving && wallIndex > -1){
+        else if(SwingUtilities.isRightMouseButton(e) && movingWall && wallIndex > -1){
             walls[wallIndex].rotate();
             int tmp = walls[wallIndex].getRotateCount() + 1;
             walls[wallIndex].setRotateCount(tmp);
@@ -69,7 +69,7 @@ public class MouseListener extends MouseAdapter {
 
     }
     public void mouseMoved(MouseEvent e){
-        if(moving){
+        if(movingWall){
             walls[wallIndex].setX(e.getX());
             walls[wallIndex].setY(e.getY());
             if(gameBoard.isValidMove(walls[wallIndex])){
