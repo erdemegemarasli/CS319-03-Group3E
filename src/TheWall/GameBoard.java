@@ -45,6 +45,14 @@ public class GameBoard implements Drawable
         }
     }
 
+    public void setCastle(GameUnit[] castle) {
+        this.castle = castle;
+    }
+
+    public GameUnit[] getCastle() {
+        return castle;
+    }
+
     public ArrayList<GameUnit> getGameUnits() {
         return gameUnits;
     }
@@ -106,6 +114,46 @@ public class GameBoard implements Drawable
         }
 
 
+    }
+    public boolean isValidMoveCastle(){
+        int count = 0;
+        if(castle != null){
+            for(int i = 0; i < squares.length; i++){
+                if(squares[i].isContainPoint(castle[0].getMidX(),castle[0].getMidY()) && squares[i].getInfo() == 0){
+                    count++;
+                }
+                else if(squares[i].isContainPoint(castle[1].getMidX(), castle[1].getMidY()) && squares[i].getInfo() == 0){
+                    count++;
+                }
+            }
+        }
+        return count == 2;
+    }
+    public void makeMoveCastle(){
+        if(castle != null){
+            for(int i = 0; i < squares.length; i++){
+                if(squares[i].isContainPoint(castle[0].getMidX(),castle[0].getMidY()) && squares[i].getInfo() == 0){
+                    castle[0].setIndexNo(i);
+                    castle[0].setX(squares[i].getX());
+                    castle[0].setY(squares[i].getY());
+                    squares[i].setInfo(3);
+                }
+                else if(squares[i].isContainPoint(castle[1].getMidX(), castle[1].getMidY()) && squares[i].getInfo() == 0){
+                    castle[1].setIndexNo(i);
+                    castle[1].setX(squares[i].getX());
+                    castle[1].setY(squares[i].getY());
+                    squares[i].setInfo(3);
+                }
+            }
+        }
+    }
+    public void detachCastle(){
+        if(castle != null){
+            squares[castle[0].getIndexNo()].setInfo(0);
+            squares[castle[1].getIndexNo()].setInfo(0);
+            castle[0].setIndexNo(-1);
+            castle[1].setIndexNo(-1);
+        }
     }
     public boolean isValidMove(GameUnit unit){
         if(unit.isCastle() == false){
@@ -334,21 +382,36 @@ public class GameBoard implements Drawable
         if(mode == 1){
             fixedUnits[0].draw(g);
             fixedUnits[1].draw(g);
-            castle1Dev[0].draw(g);
-            castle1Dev[1].draw(g);
-            castle2Dev[0].draw(g);
-            castle2Dev[1].draw(g);
             g.setColor(Color.BLUE);
-            if (castle1Dev[0].getY() == castle1Dev[1].getY()) {
-                g.fillRect(castle1Dev[0].getX() + castle1Dev[0].getRadius() / 4, castle1Dev[0].getY() + castle1Dev[0].getRadius() / 4, castle1Dev[0].getRadius() + castle1Dev[0].getRadius() / 2, castle1Dev[0].getRadius() / 2);
-            } else if (castle1Dev[0].getX() == castle1Dev[1].getX()) {
-                g.fillRect(castle1Dev[0].getX() + castle1Dev[0].getRadius() / 4, castle1Dev[0].getY() + castle1Dev[0].getRadius() / 4, castle1Dev[0].getRadius() / 2, castle1Dev[0].getRadius() + castle1Dev[0].getRadius() / 2);
+            if(castle == null){
+                castle1Dev[0].draw(g);
+                castle1Dev[1].draw(g);
+                castle2Dev[0].draw(g);
+                castle2Dev[1].draw(g);
+                if (castle1Dev[0].getY() == castle1Dev[1].getY()) {
+                    g.fillRect(castle1Dev[0].getX() + castle1Dev[0].getRadius() / 4, castle1Dev[0].getY() + castle1Dev[0].getRadius() / 4, castle1Dev[0].getRadius() + castle1Dev[0].getRadius() / 2, castle1Dev[0].getRadius() / 2);
+                } else if (castle1Dev[0].getX() == castle1Dev[1].getX()) {
+                    g.fillRect(castle1Dev[0].getX() + castle1Dev[0].getRadius() / 4, castle1Dev[0].getY() + castle1Dev[0].getRadius() / 4, castle1Dev[0].getRadius() / 2, castle1Dev[0].getRadius() + castle1Dev[0].getRadius() / 2);
+                }
+                if (castle2Dev[0].getY() == castle2Dev[1].getY()) {
+                    g.fillRect(castle2Dev[0].getX() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getY() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getRadius() + castle2Dev[0].getRadius() / 2, castle2Dev[0].getRadius() / 2);
+                } else if (castle2Dev[0].getX() == castle2Dev[1].getX()) {
+                    g.fillRect(castle2Dev[0].getX() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getY() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getRadius() / 2, castle2Dev[0].getRadius() + castle2Dev[0].getRadius() / 2);
+                }
             }
-            if (castle2Dev[0].getY() == castle2Dev[1].getY()) {
-                g.fillRect(castle2Dev[0].getX() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getY() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getRadius() + castle2Dev[0].getRadius() / 2, castle2Dev[0].getRadius() / 2);
-            } else if (castle2Dev[0].getX() == castle2Dev[1].getX()) {
-                g.fillRect(castle2Dev[0].getX() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getY() + castle2Dev[0].getRadius() / 4, castle2Dev[0].getRadius() / 2, castle2Dev[0].getRadius() + castle2Dev[0].getRadius() / 2);
+            else{
+                for (int i = 0; i < castle.length; i++) {
+                    castle[i].draw(g);
+
+                }
+                g.setColor(Color.BLUE);
+                if (castle[0].getY() == castle[1].getY()) {
+                    g.fillRect(castle[0].getX() + castle[0].getRadius() / 4, castle[0].getY() + castle[0].getRadius() / 4, castle[0].getRadius() + castle[0].getRadius() / 2, castle[0].getRadius() / 2);
+                } else if (castle[0].getX() == castle[1].getX()) {
+                    g.fillRect(castle[0].getX() + castle[0].getRadius() / 4, castle[0].getY() + castle[0].getRadius() / 4, castle[0].getRadius() / 2, castle[0].getRadius() + castle[0].getRadius() / 2);
+                }
             }
+
             for (int i = 0; i < gameUnits.size(); i++){
                 gameUnits.get(i).draw(g);
             }
@@ -382,6 +445,14 @@ public class GameBoard implements Drawable
         GameUnit fixedCastle2 = new GameUnit(1100,280, squareHeight,false,theme);
         GameUnit fixedCastle3 = new GameUnit(1050,380,squareHeight,false,theme);
         GameUnit fixedCastle4 = new GameUnit(1130,380,squareHeight,false,theme);
+        fixedCastle1.setIsCastle(true);
+        fixedCastle2.setIsCastle(true);
+        fixedCastle1.setIsHorizontalCastle(false);
+        fixedCastle2.setIsHorizontalCastle(false);
+        fixedCastle3.setIsCastle(true);
+        fixedCastle4.setIsCastle(true);
+        fixedCastle3.setIsHorizontalCastle(true);
+        fixedCastle4.setIsHorizontalCastle(true);
         castle1Dev[0] = fixedCastle1;
         castle1Dev[1] = fixedCastle2;
         castle2Dev[0] = fixedCastle3;
