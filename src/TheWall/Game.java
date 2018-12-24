@@ -33,7 +33,7 @@ public class Game {
     boolean levelPassed;
     boolean storyIsShown;
 
-    int remainingTime = 150;
+    int remainingTime;
     private JButton returnPrev;
     public Game(int level, int mode, int theme){
         this.level = level;
@@ -206,15 +206,18 @@ public class Game {
 
     private class TimerListener implements ActionListener{
         public void actionPerformed(ActionEvent e){
-            remainingTime--;
-            if(remainingTime ==0){
-                JOptionPane.showMessageDialog(null, "Time is up " , "Time is up", JOptionPane.INFORMATION_MESSAGE);
-                timer.stop();
+            if(mode == 2){
+                remainingTime--;
+                if(remainingTime ==0){
+                    JOptionPane.showMessageDialog(null, "Time is up " , "Time is up", JOptionPane.INFORMATION_MESSAGE);
+                    timer.stop();
+                }
+                if(remainingTime >0 && checkWinCondition()){
+                    JOptionPane.showMessageDialog(null, "You Passed The Level " , "You Passed The Level", JOptionPane.INFORMATION_MESSAGE);
+                    timer.stop();
+                }
             }
-            if(remainingTime >0 && checkWinCondition()){
-                JOptionPane.showMessageDialog(null, "You Passed The Level " , "You Passed The Level", JOptionPane.INFORMATION_MESSAGE);
-                timer.stop();
-            }
+
         }
     }
 
