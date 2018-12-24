@@ -125,42 +125,43 @@ abstract class GameUnits extends GameObject{
 
     }
     public int getMidX(){
-        if(!isCastle){
-            return getX() + radius / 2;
-        }
-        else{
-            if(isHorizontalCastle){
-                return getX() + radius / 2 + 40;
-            }
-            else{
-                return getX() + radius / 2;
-            }
-        }
+        return getX() + radius / 2;
 
     }
     public int getMidY(){
+        return getY() + radius / 2;
+
+    }
+    /*
+    This method controls if the given point is in that game object
+    Note: If you are going to use this method for a isCastle == true object,
+    since castle froms from 2 seperate pieces use the first piece of the castle
+    For example GameUnit [] castle = new GameUnit[2] After initializes
+    call castle[0].isContainMouse(x,y) Do no call castle[1].isContainMouse(x,y)
+     */
+    public boolean isContainMouse(int contX, int contY) {
         if(!isCastle){
-            return getY() + radius / 2;
+            if (contX >= this.getX() && contX <= (this.getX()) + (this.getRadius()) &&
+                    contY >= this.getY() && contY <= (this.getY()) + (this.getRadius())) {
+                return true;
+            }
         }
         else{
             if(isHorizontalCastle){
-                return getY() + radius / 2;
+                if (contX >= this.getX() && contX <= (this.getX()) + 2 *(this.getRadius()) + 40 &&
+                        contY >= this.getY() && contY <= (this.getY()) + (this.getRadius())) {
+                    return true;
+                }
             }
             else{
-                return getY() + radius / 2 + 40;
+                if (contX >= this.getX() && contX <= (this.getX()) + (this.getRadius()) &&
+                        contY >= this.getY() && contY <= (this.getY()) + 2 * (this.getRadius()) + 40) {
+                    return true;
+                }
+
             }
         }
 
-    }
-    public boolean isContainMouse(int contX, int contY) {
-        if (contX >= this.getX() && contX <= (this.getX()) + (this.getRadius()) &&
-                contY >= this.getY() && contY <= (this.getY()) + (this.getRadius())) {
-            return true;
-        }
-        if(contX >= this.getX() && contX <= (this.getX() ) + (this.getRadius() ) &&
-            contY >= this.getY() && contY <= (this.getY() ) + (this.getRadius() ) ) {
-                return true;
-            }
         return false;
     }
 
