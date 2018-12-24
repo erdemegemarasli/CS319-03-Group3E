@@ -16,6 +16,7 @@ package TheWall;
  * 0 = empty
  * 1 = wall
  * 2 = castle wall
+ * This class contains levels for classical mode, chalange mode and story mode.
  */
 
 public class Levels {
