@@ -2,8 +2,9 @@ package TheWall;
 
 import java.awt.*;
 import java.util.ArrayList;
-/*
+/**
 Creator: Erdem Ege Marasli
+ Contains basic same information for Components of game board.
  */
 abstract class GameBoardComponent implements Drawable
 {
