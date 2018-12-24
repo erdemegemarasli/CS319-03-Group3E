@@ -6,8 +6,9 @@ import java.awt.Rectangle;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
-/*
+/**
 Creator: Ayca Begum Tascioglu
+ This class provides the attributes of a wall object. Wall object created by WallEdges and WallLines
  */
 
 public class Wall implements Moveable, Drawable{
@@ -110,9 +111,9 @@ public class Wall implements Moveable, Drawable{
         this.fixedMidPointY = fixedMidPointY;
     }
 
-    /*
-                            rotates the wall 90 degrees in Clockwise
-                             */
+    /**
+     * rotates the wall 90 degrees in Clockwise according to current postion and mid points.
+     */
     public void rotate(){
 
         for(int i = 0; i < wallLines.length; i++){
@@ -140,6 +141,9 @@ public class Wall implements Moveable, Drawable{
         }
     }
 
+    /**
+     *This method checks if the given points are into the wall.
+     */
     public boolean isContainMouse(int contX, int contY)
     {
         for(int i = 0; i < wallLines.length; i++){
