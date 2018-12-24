@@ -8,7 +8,7 @@ Creator: Erdem Ege Marasli
 public class GameBoard implements Drawable
 {
     private Map map;
-    private ArrayList<GameUnits> gameUnits = new ArrayList<GameUnits>();
+    private ArrayList<GameUnit> gameUnits = new ArrayList<GameUnit>();
     private GameUnit[] castle;
     private GameUnit[] castle1Dev;
     private GameUnit[] castle2Dev;
@@ -45,7 +45,7 @@ public class GameBoard implements Drawable
         }
     }
 
-    public ArrayList<GameUnits> getGameUnits() {
+    public ArrayList<GameUnit> getGameUnits() {
         return gameUnits;
     }
 
@@ -134,6 +134,13 @@ public class GameBoard implements Drawable
                 }
             }
         }
+    }
+    public void detachUnit(GameUnit unit){
+        if(unit.isCastle() == false){
+            squares[unit.getIndexNo()].setInfo(0);
+            unit.setIndexNo(-1);
+        }
+
     }
     public boolean isValidMove(Wall wall){
         //Found the type of the wall
@@ -352,6 +359,7 @@ public class GameBoard implements Drawable
     }
     public GameUnit createUnit(int x, int y, boolean isEnemy){
         GameUnit temp = new GameUnit(x,y,squareHeight,isEnemy,theme);
+        temp.setIsPlaced(false);
         return temp;
     }
     public void createEmptyGameBoard()
