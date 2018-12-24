@@ -1,8 +1,9 @@
 package TheWall;
 
 import java.awt.*;
-/*
+/**
 Creator: Erdem Ege Marasli
+ Contains information for edges
  */
 public class Edge extends GameBoardComponent {
     public Edge(int x,int y, int width, int height){
