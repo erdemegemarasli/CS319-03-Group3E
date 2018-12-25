@@ -108,10 +108,21 @@ public class WallEdge extends GameObject {
         return middleY;
     }
 
+
+    /**
+     * updateMiddlePoint method to update the middle point coordinates of the wall edge
+     */
     public void updateMiddlePoint(){
         middleX = getX() + radius / 2;
         middleY = getY() + radius / 2;
     }
+
+    /**
+     * makeGreen method to color green when a wall edge is placed in a proper place
+     * @param b : boolean
+     *          b is true if the wall placed in a appropriate place otherwise
+     *          b is false
+     */
     public void makeGreen(boolean b){
         if(b == true)
             currentColor = GREEN;
@@ -121,23 +132,44 @@ public class WallEdge extends GameObject {
     }
 
     @Override
+    /**
+     * getY method to get y coordinate of a wall edge
+     * @return super.get() - as the y coordinate of the game object- the wall edge
+     */
     public int getY() {
         return super.getY();
     }
 
     @Override
+    /**
+     * getX method to get x coordinate of a wall edge
+     * @return super.get() - as the x coordinate of the game object- the wall edge
+     */
     public int getX() {
         return super.getX();
     }
 
+    /**
+     * getIndexNo method to take the index no of a wall edge
+     * @return indexNo: int as the index of a wall edge
+     * this method is for placing a wall
+     */
     public int getIndexNo() {
         return indexNo;
     }
 
+    /**
+     * setIndexNo method to set the index of a wall edge
+     * @param indexNo: int - the index which will be set as the walledge's index
+     */
     public void setIndexNo(int indexNo) {
         this.indexNo = indexNo;
     }
 
+    /**
+     * setFixedY method to set the fixedY which is the initial y coordinate of the wall
+     * @param fixedY: int -the coordinate which will be set as the initial y coordinate
+     */
     public void setFixedY(int fixedY) {
         this.fixedY = fixedY;
     }
