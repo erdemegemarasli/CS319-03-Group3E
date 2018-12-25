@@ -228,7 +228,7 @@ levels[9] = new Map(squareLocations9,edgeLocations9,horizontalRectangleLocations
 int [] squareLocations10= {2,2,2,
         1,0,0,1,0,
         0,3,0,0,0,
-          3,2,1};
+          3,2,0};
 int [] edgeLocations10={0,0,0,1,
        0,0,0,0,0,0,
        0,0,0,0,1,0,
