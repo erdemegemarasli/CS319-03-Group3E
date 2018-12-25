@@ -625,9 +625,9 @@ int [] verticalRectangleLocations27={
    0,0,0,0};
 levels[27] = new Map(squareLocations27,edgeLocations27,horizontalRectangleLocations27,verticalRectangleLocations27);//level-44
 int [] squareLocations28 {
-	  1,3,0,
-        0,2,3,0,0,
-        1,2,0,0,0,
+	  1,2,0,
+        2,0,0,1,0,
+        1,3,3,2,0,
           0,0,0};
 int [] edgeLocations28={
 	 1,0,1,0,
