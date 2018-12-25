@@ -66,21 +66,36 @@ public class WallEdge extends GameObject {
         }
     }
 
-
+    /**
+     * isCastle method to determine if the edge contains a castle or nor
+     * @return isCastle: a boolean flag
+     */
     public boolean isCastle() {
         return isCastle;
     }
 
 
+    /**
+     * getRadius method to get the radius of the wall edge
+     * @return radius : int the radius of the wall edge
+     */
     public int getRadius() {
         return radius;
     }
 
+    /**
+     * setRadius method to set the radius of the wall edge
+     * @param radius : int -the desired value of the radius
+     */
     public void setRadius(int radius) {
         this.radius = radius;
         updateMiddlePoint();
     }
 
+    /**
+     * getMiddleX method to get the middle point's x coordinate of a wall edge
+     * @return middleX : int -the middle point's x coordinate of a wall edge
+     */
     public int getMiddleX() {
         return middleX;
     }
