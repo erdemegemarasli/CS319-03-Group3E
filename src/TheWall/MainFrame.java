@@ -219,36 +219,46 @@ public class MainFrame extends JFrame
                             JOptionPane.WARNING_MESSAGE
                     );
                     if(mapCode != null){
-                        int [] squaresLocations = new int[16];
-                        int [] edgeLocations = new int[26];
-                        int [] horizontalLineLocations = new int[21];
-                        int [] verticalLineLocations = new int[20];
-                        int count = 0;
-                        for(int i = 0; i < squaresLocations.length; i++){
-                            squaresLocations[i] = Character.getNumericValue(mapCode.charAt(count));
-                            count++;
+                        if(mapCode.length() == 83){
+                            int [] squaresLocations = new int[16];
+                            int [] edgeLocations = new int[26];
+                            int [] horizontalLineLocations = new int[21];
+                            int [] verticalLineLocations = new int[20];
+                            int count = 0;
+                            for(int i = 0; i < squaresLocations.length; i++){
+                                squaresLocations[i] = Integer.parseInt(mapCode.substring(count,count + 1));
+                                count++;
+                            }
+                            for(int i = 0; i < edgeLocations.length; i++){
+                                edgeLocations[i] = Integer.parseInt(mapCode.substring(count,count + 1));
+                                count++;
+                            }
+                            for(int i = 0; i < horizontalLineLocations.length; i++){
+                                horizontalLineLocations[i] = Integer.parseInt(mapCode.substring(count,count + 1));
+                                count++;
+                            }
+                            for(int i = 0; i < verticalLineLocations.length; i++){
+                                verticalLineLocations[i] = Integer.parseInt(mapCode.substring(count,count + 1));
+                                count++;
+                            }
+                            Map map = new Map(squaresLocations,edgeLocations,horizontalLineLocations,verticalLineLocations);
+                            for(int i = 0; i <map.getSquareLocations().length;i++){
+                                System.out.print(map.getSquareLocations()[i]);
+                            }
+                            removeComp(currentPanel);
+                            Game game = new Game(map, 4, theme);
+                            currentPanel = new GameViewer(game);
+                            currentPanel.setTheme(theme);
+                            game.getRender().addView((GameViewer)currentPanel);
+                            addComp(currentPanel);
+                            setVis(true);
                         }
-                        for(int i = 0; i < edgeLocations.length; i++){
-                            edgeLocations[i] = Character.getNumericValue(mapCode.charAt(count));
-                            count++;
-                        }
-                        for(int i = 0; i < horizontalLineLocations.length; i++){
-                            horizontalLineLocations[i] = Character.getNumericValue(mapCode.charAt(count));
-                            count++;
-                        }
-                        for(int i = 0; i < verticalLineLocations.length; i++){
-                            verticalLineLocations[i] = Character.getNumericValue(mapCode.charAt(count));
-                            count++;
-                        }
-                        Map map = new Map(squaresLocations,edgeLocations,horizontalLineLocations,verticalLineLocations);
-                        for(int i = 0; i <map.getSquareLocations().length;i++){
-                            System.out.print(map.getSquareLocations()[i]);
-                        }
+
+                    }
+                    else{
                         removeComp(currentPanel);
-                        Game game = new Game(map, 4, theme);
-                        currentPanel = new GameViewer(game);
+                        currentPanel = new DeveloperMode();
                         currentPanel.setTheme(theme);
-                        game.getRender().addView((GameViewer)currentPanel);
                         addComp(currentPanel);
                         setVis(true);
                     }
@@ -362,6 +372,13 @@ public class MainFrame extends JFrame
                     setVis(true);
                     theme = tmp;
                 }
+            }
+            else if(currentPanel.getSelection() == 0 && currentPanel.getType() == "devPlay"){
+                removeComp(currentPanel);
+                currentPanel = new DeveloperMode();
+                currentPanel.setTheme(theme);
+                addComp(currentPanel);
+                setVis(true);
             }
 
 
