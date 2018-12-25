@@ -159,7 +159,9 @@ public class GameViewer extends SimplePanel implements Viewer {
     }
 
 
-
+    public void stopTimer(){
+        game.stopTimer();
+    }
     public void setGame(Game game) {
         this.game = game;
     }
