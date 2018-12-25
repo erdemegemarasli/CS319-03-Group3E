@@ -136,7 +136,7 @@ public class Game {
             remainingTime = 150;
             walls = new Walls();
             levels = new Levels();
-            int random = (int )(Math.random() * 5+ 1);
+            int random = (int )(Math.random() * 30+ 1);
             System.out.println("map no"+random);
             map = levels.getLevels()[random];
             board = new GameBoard(map,mode, theme);
