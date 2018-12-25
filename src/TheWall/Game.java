@@ -234,7 +234,7 @@ public class Game {
         }
         if (level == 7) {
             JOptionPane.showMessageDialog(null, "Arya! I thought you were dead"
-                    , "Story:", JOptionPane.INFORMATION_MESSAGE, jon);
+                    , "Jon:", JOptionPane.INFORMATION_MESSAGE, jon);
             JOptionPane.showMessageDialog(null, "Long story bro"
                     , "Arya:", JOptionPane.INFORMATION_MESSAGE, arya);
              }
