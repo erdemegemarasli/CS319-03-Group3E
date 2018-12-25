@@ -198,6 +198,16 @@ public class Game {
         if (level == 6) {
             JOptionPane.showMessageDialog(null, "Greatness inspires envy, envy engenders spite, spite spawns lies, Harry", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
         }
+        if (level == 7) {
+            JOptionPane.showMessageDialog(null, "How lies have fed your legend, Harry!"
+                    , "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+            JOptionPane.showMessageDialog(null, "Do you want to know what really happened thirteen years ago? ", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+            JOptionPane.showMessageDialog(null, "Shall I divulge how I truly lost my powers? It was love"
+                    , "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+            JOptionPane.showMessageDialog(null, " when dear sweet Lily Potter gave her life for her only son, it provided him with the ultimate protection"
+                    , "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+            JOptionPane.showMessageDialog(null, "But no matter, no matter, things have changed. I CAN TOUCH YOU… NOW!, ","Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+        }
     }
 
     private class RenderListener implements ActionListener
