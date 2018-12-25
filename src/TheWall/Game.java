@@ -229,14 +229,14 @@ public class Game {
             JOptionPane.showMessageDialog(null, "I will kill you!", "Story:", JOptionPane.INFORMATION_MESSAGE, arya);
             }
         if (level == 6) {
-            JOptionPane.showMessageDialog(null, "Red Woman Melisandre, you resurrected me!", "Story:", JOptionPane.INFORMATION_MESSAGE, jon);
-            JOptionPane.showMessageDialog(null, "You, my lord; you are the ONE!", "Story:", JOptionPane.INFORMATION_MESSAGE, melis);
+            JOptionPane.showMessageDialog(null, "Red Woman Melisandre, you resurrected me!", "Jon Snow:", JOptionPane.INFORMATION_MESSAGE, jon);
+            JOptionPane.showMessageDialog(null, "You, my lord; you are the ONE!", "The Red Woman:", JOptionPane.INFORMATION_MESSAGE, melis);
         }
         if (level == 7) {
             JOptionPane.showMessageDialog(null, "Arya! I thought you were dead"
-                    , "Jon:", JOptionPane.INFORMATION_MESSAGE, jon);
+                    , "Jon Snow:", JOptionPane.INFORMATION_MESSAGE, jon);
             JOptionPane.showMessageDialog(null, "Long story bro"
-                    , "Arya:", JOptionPane.INFORMATION_MESSAGE, arya);
+                    , "Arya Stark:", JOptionPane.INFORMATION_MESSAGE, arya);
              }
     }
 
