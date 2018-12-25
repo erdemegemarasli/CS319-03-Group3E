@@ -7,7 +7,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
 /**
-Creator: Ayca Begum Tascioglu
+Creator: Ayca Begum Tascioglu & Erdem Ege Marasli
  This class provides the attributes of a wall object. Wall object created by WallEdges and WallLines
  */
 
