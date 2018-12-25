@@ -212,13 +212,47 @@ public class MainFrame extends JFrame
                 }
                 else if(currentPanel.getSelection() == 1) {
                     //burası
-                    removeComp(currentPanel);
-                    Game game = new Game(0, 4, theme);
-                    currentPanel = new GameViewer(game);
-                    currentPanel.setTheme(theme);
-                    game.getRender().addView((GameViewer)currentPanel);
-                    addComp(currentPanel);
-                    setVis(true);
+                    String mapCode = JOptionPane.showInputDialog(
+                            null,
+                            "Enter the Generated Map Code to Play",
+                            "Generated Map Code Needed",
+                            JOptionPane.WARNING_MESSAGE
+                    );
+                    if(mapCode != null){
+                        int [] squaresLocations = new int[16];
+                        int [] edgeLocations = new int[26];
+                        int [] horizontalLineLocations = new int[21];
+                        int [] verticalLineLocations = new int[20];
+                        int count = 0;
+                        for(int i = 0; i < squaresLocations.length; i++){
+                            squaresLocations[i] = Character.getNumericValue(mapCode.charAt(count));
+                            count++;
+                        }
+                        for(int i = 0; i < edgeLocations.length; i++){
+                            edgeLocations[i] = Character.getNumericValue(mapCode.charAt(count));
+                            count++;
+                        }
+                        for(int i = 0; i < horizontalLineLocations.length; i++){
+                            horizontalLineLocations[i] = Character.getNumericValue(mapCode.charAt(count));
+                            count++;
+                        }
+                        for(int i = 0; i < verticalLineLocations.length; i++){
+                            verticalLineLocations[i] = Character.getNumericValue(mapCode.charAt(count));
+                            count++;
+                        }
+                        Map map = new Map(squaresLocations,edgeLocations,horizontalLineLocations,verticalLineLocations);
+                        for(int i = 0; i <map.getSquareLocations().length;i++){
+                            System.out.print(map.getSquareLocations()[i]);
+                        }
+                        removeComp(currentPanel);
+                        Game game = new Game(map, 4, theme);
+                        currentPanel = new GameViewer(game);
+                        currentPanel.setTheme(theme);
+                        game.getRender().addView((GameViewer)currentPanel);
+                        addComp(currentPanel);
+                        setVis(true);
+                    }
+
 
                 }
                 else if(currentPanel.getSelection() == 0)

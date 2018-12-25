@@ -32,6 +32,7 @@ public class GameBoard implements Drawable
     int hostileUnitCount;
     public GameBoard(Map map, int mode, int theme)
     {
+        /*
         if(mode == 4){
             friendlyUnitCount=0;
             hostileUnitCount=0;
@@ -40,19 +41,26 @@ public class GameBoard implements Drawable
             createEmptyGameBoard();
             castle = new GameUnit[2];
         }
-        else{
-            friendlyUnitCount=0;
-            hostileUnitCount=0;
-            this.theme = theme;
-            createEmptyGameBoard();
-            this.map = map;
-            castle = new GameUnit[2];
-            setUpGameBoard();
-            this.mode = mode;
-            if (mode == 1) {
-                createUnitsForDeveloper();
-                castle = null;
-            }
+        */
+
+
+        friendlyUnitCount=0;
+        hostileUnitCount=0;
+        this.theme = theme;
+        createEmptyGameBoard();
+
+        this.map = map;
+        System.out.println("--------");
+        System.out.println("");
+        for(int i = 0; i < map.getSquareLocations().length; i++){
+            System.out.print(map.getSquareLocations()[i]);
+        }
+        castle = new GameUnit[2];
+        setUpGameBoard();
+        this.mode = mode;
+        if (mode == 1) {
+            createUnitsForDeveloper();
+            castle = null;
         }
 
     }
@@ -129,7 +137,7 @@ public class GameBoard implements Drawable
             if (map.getSquareLocations()[i] == 1) {
                 GameUnit unit = new GameUnit(squares[i].getX(), squares[i].getY(), squareHeight, false, theme);
                 unit.setInfo(friendlyUnitCount);
-                System.out.println("test");
+                //System.out.println("test");
                 friendlyUnitCount++;
                 gameUnits.add(unit);
             }

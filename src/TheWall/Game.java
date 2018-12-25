@@ -183,7 +183,20 @@ public class Game {
 
 
         }
-
+    }
+    public Game(Map map,int mode, int theme){
+        this.level = -1;
+        this.mode = mode;
+        this.theme = theme;
+        this.map = map;
+        levelPassed = false;
+        storyIsShownForHP = false;
+        storyIsShownForGoT = false;
+        walls = new Walls();
+        board = new GameBoard(map,mode, theme);
+        render = new Render();
+        renderListener = new Timer(25,new RenderListener());
+        renderListener.start();
     }
 
     /**
