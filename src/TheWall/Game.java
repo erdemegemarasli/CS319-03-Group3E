@@ -6,8 +6,9 @@ import java.awt.event.ActionListener;
 import java.io.*;
 /*
 Creator: Erdem Ege Marasli & Ayca Begum Tascioglu
-Description: A simple class to construct a game acoording to its mode and its theme
+Description: A simple game class to construct a game acoording to its mode and its theme
  */
+
 /**
 For Modes:
 0 = classic
@@ -19,6 +20,9 @@ For Modes:
  */
 public class Game {
 
+    /*
+    ImageIcons to used in the JOptionPanes
+     */
     ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
     ImageIcon voldemort = new ImageIcon("src/TheWall/images/voldemort.jpg");
     ImageIcon hermione = new ImageIcon("src/TheWall/images/hermione.jpg");
@@ -30,6 +34,8 @@ public class Game {
     ImageIcon khaleesi = new ImageIcon("src/TheWall/images/khaleesi.jpg");
     ImageIcon nk = new ImageIcon("src/TheWall/images/nightking.jpg");
     ImageIcon melis = new ImageIcon("src/TheWall/images/melis.jpg");
+
+
     private GameBoard board;
     private Walls walls;
     private Render render;
@@ -41,10 +47,14 @@ public class Game {
     private Timer timer;
     int level;
     boolean levelPassed;
+    /*
+    storyIsShownForHp is a boolean flag for campaign mode to show the story according to its theme
+    storyIsShownForGoT is a boolean flag for campaign mode to show the story according to its theme
+     */
     boolean storyIsShownForHP;
     boolean storyIsShownForGoT;
 
-    int remainingTime;
+    int remainingTime; //an integer which presents remaining time for challenge mode
     private JButton returnPrev;
     public Game(int level, int mode, int theme){
         this.level = level;
