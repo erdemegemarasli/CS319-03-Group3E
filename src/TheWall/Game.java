@@ -200,9 +200,18 @@ public class Game {
         return mode;
     }
 
+    /*
+    getGameBoard method to get game board
+    @return board: GameBoard as the game board which the whole game settled in
+     */
     public GameBoard getGameBoard(){
         return board;
     }
+
+    /*
+    getWalls method to get the walls in the game
+    @return a list of walls
+     */
     public Wall[] getWalls()
     {
         return walls.getWalls();
