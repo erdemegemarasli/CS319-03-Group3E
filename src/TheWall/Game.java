@@ -194,27 +194,27 @@ public class Game {
             BufferedReader br = new BufferedReader(new FileReader("src/TheWall/stories/story.txt"));
             String aLineFromFile = null;
             if ((aLineFromFile = br.readLine()) != null) {
-                JOptionPane.showMessageDialog(null, aLineFromFile, "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
-                JOptionPane.showMessageDialog(null, "Never!", "Story:", JOptionPane.INFORMATION_MESSAGE, harry);
+                JOptionPane.showMessageDialog(null, aLineFromFile, "Voldemort:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+                JOptionPane.showMessageDialog(null, "Never!", "Harry Potter:", JOptionPane.INFORMATION_MESSAGE, harry);
             }
             br.close();
         }
         if (level == 5) {
-            JOptionPane.showMessageDialog(null, "You ağ a wizağd hağğy!!", "Story:", JOptionPane.INFORMATION_MESSAGE, ron);
-            JOptionPane.showMessageDialog(null, "That's true #lit", "Story:", JOptionPane.INFORMATION_MESSAGE, harry);
-            JOptionPane.showMessageDialog(null, "You're a fool, Harry Potter, and you will lose everything.", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+            JOptionPane.showMessageDialog(null, "You ağ a wizağd hağğy!!", "Ron:", JOptionPane.INFORMATION_MESSAGE, ron);
+            JOptionPane.showMessageDialog(null, "That's true #lit", "Harry Potter:", JOptionPane.INFORMATION_MESSAGE, harry);
+            JOptionPane.showMessageDialog(null, "You're a fool, Harry Potter, and you will lose everything.", "Voldemort:", JOptionPane.INFORMATION_MESSAGE, voldemort);
         }
         if (level == 6) {
-            JOptionPane.showMessageDialog(null, "Greatness inspires envy, envy engenders spite, spite spawns lies, Harry", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+            JOptionPane.showMessageDialog(null, "Greatness inspires envy, envy engenders spite, spite spawns lies, Harry", "Voldemort:", JOptionPane.INFORMATION_MESSAGE, voldemort);
         }
         if (level == 7) {
             JOptionPane.showMessageDialog(null, "How lies have fed your legend, Harry!"
-                    , "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+                    , "Voldemort:", JOptionPane.INFORMATION_MESSAGE, voldemort);
             JOptionPane.showMessageDialog(null, "Do you want to know what really happened thirteen years ago? ", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
             JOptionPane.showMessageDialog(null, "Shall I divulge how I truly lost my powers? It was love"
-                    , "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+                    , "Voldemort continues:", JOptionPane.INFORMATION_MESSAGE, voldemort);
             JOptionPane.showMessageDialog(null, " when dear sweet Lily Potter gave her life for her only son, it provided him with the ultimate protection"
-                    , "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+                    , "Voldemort continues more and more:", JOptionPane.INFORMATION_MESSAGE, voldemort);
             JOptionPane.showMessageDialog(null, "But no matter, no matter, things have changed. I CAN TOUCH YOU… NOW!, ","Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
         }
     }
