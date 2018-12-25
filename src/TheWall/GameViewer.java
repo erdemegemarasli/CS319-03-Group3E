@@ -134,6 +134,9 @@ public class GameViewer extends SimplePanel implements Viewer {
             this.setFocusable(true);
             //repaint();
         }
+        /*
+        Developer play mode
+         */
         if(game.getMode() == 4){
             type = "devPlay";
             selection = 1;
@@ -151,7 +154,6 @@ public class GameViewer extends SimplePanel implements Viewer {
             this.addMouseListener(mouseListen);
             this.addMouseMotionListener(mouseListen);
             this.setFocusable(true);
-            //repaint();
         }
 
     }
