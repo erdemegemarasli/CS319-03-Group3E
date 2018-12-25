@@ -1309,57 +1309,33 @@ int [] verticalRectangleLocations56={
    0,1,1,1,1,1,
      0,1,1,1};
 levels[56] = new Map(squareLocations56,edgeLocations56,horizontalRectangleLocations56,verticalRectangleLocations56);//level-73
-int [] squareLocations56= {
+int [] squareLocations57= {
 	  0,2,0,
         1,3,3,0,0,
         1,0,2,0,0,
           2,2,0};
-int [] edgeLocations56={
+int [] edgeLocations57={
 	 0,1,0,0,
        1,0,0,0,0,0,
        0,0,0,0,0,0,
        1,0,0,0,0,0,
          1,0,0,0};
-int [] horizontalRectangleLocations56={
+int [] horizontalRectangleLocations57={
      1,0,0,
    1,0,1,0,0,
    0,0,1,0,0,
    1,1,0,1,0,
      1,0,0};
-int [] verticalRectangleLocations56={
+int [] verticalRectangleLocations57={
      1,1,0,0,
    1,1,2,1,0,0,
    1,0,1,1,1,0,
      1,0,0,0};
-levels[56] = new Map(squareLocations56,edgeLocations56,horizontalRectangleLocations56,verticalRectangleLocations56);//level-74
-
-int [] squareLocations57= {
-	  0,1,2,
-        0,2,2,2,0,
-        0,0,3,3,0,
-          0,0,0};
-int [] edgeLocations57={
-	 0,1,0,1,
-       0,1,0,0,0,0,
-       0,0,0,0,1,0,
-       0,0,0,0,0,0,
-         0,0,0,0};
-int [] horizontalRectangleLocations57={
-     0,1,1,
-   0,1,1,0,1,
-   0,0,1,1,0,
-   0,0,1,1,0,
-     0,0,0};
-int [] verticalRectangleLocations57={
-     0,1,1,1,
-   0,1,0,1,0,1,
-   0,0,1,2,1,0,
-     0,0,1,0};
-levels[57] = new Map(squareLocations57,edgeLocations57,horizontalRectangleLocations57,verticalRectangleLocations57);//level-75
+levels[57] = new Map(squareLocations57,edgeLocations57,horizontalRectangleLocations57,verticalRectangleLocations57);//level-74
 
 int [] squareLocations58= {
-	  2,1,2,
-        0,0,2,2,0,
+	  0,1,2,
+        0,2,2,2,0,
         0,0,3,3,0,
           0,0,0};
 int [] edgeLocations58={
@@ -1379,106 +1355,106 @@ int [] verticalRectangleLocations58={
    0,1,0,1,0,1,
    0,0,1,2,1,0,
      0,0,1,0};
-levels[58] = new Map(squareLocations58,edgeLocations58,horizontalRectangleLocations58,verticalRectangleLocations58);//level-76
+levels[58] = new Map(squareLocations58,edgeLocations58,horizontalRectangleLocations58,verticalRectangleLocations58);//level-75
 
 int [] squareLocations59= {
+	  2,1,2,
+        0,0,2,2,0,
+        0,0,3,3,0,
+          0,0,0};
+int [] edgeLocations59={
+	 0,1,0,1,
+       0,1,0,0,0,0,
+       0,0,0,0,1,0,
+       0,0,0,0,0,0,
+         0,0,0,0};
+int [] horizontalRectangleLocations59={
+     0,1,1,
+   0,1,1,0,1,
+   0,0,1,1,0,
+   0,0,1,1,0,
+     0,0,0};
+int [] verticalRectangleLocations59={
+     0,1,1,1,
+   0,1,0,1,0,1,
+   0,0,1,2,1,0,
+     0,0,1,0};
+levels[59] = new Map(squareLocations59,edgeLocations59,horizontalRectangleLocations59,verticalRectangleLocations59);//level-76
+
+int [] squareLocations60= {
 	  0,0,0,
         0,2,3,3,0,
         0,1,2,2,0,
           0,0,0};
-int [] edgeLocations59={
+int [] edgeLocations60={
 	 0,0,0,0,
        0,1,0,0,1,0,
        0,0,0,0,0,0,
        0,1,0,0,0,0,
          0,1,0,0};
-int [] horizontalRectangleLocations59={
+int [] horizontalRectangleLocations60={
      0,1,0,
    1,0,1,1,0,
    0,1,1,1,0,
    0,1,0,0,0,
      0,1,0};
-int [] verticalRectangleLocations59={
+int [] verticalRectangleLocations60={
      0,0,1,0,
    1,1,1,2,1,0,
    0,1,1,1,0,0,
      0,1,0,0};
-levels[59] = new Map(squareLocations59,edgeLocations59,horizontalRectangleLocations59,verticalRectangleLocations59);//level-77
-int [] squareLocations60= {
+levels[60] = new Map(squareLocations60,edgeLocations60,horizontalRectangleLocations60,verticalRectangleLocations60);//level-77
+int [] squareLocations61= {
 	  0,0,0,
         0,3,0,0,1,
         1,3,0,0,0,
           0,0,0};
-int [] edgeLocations60={
+int [] edgeLocations61={
 	 0,0,0,0,
        0,0,0,0,0,0,
        1,0,0,0,0,1,
        0,0,1,0,1,0,
          0,0,0,0};
-int [] horizontalRectangleLocations60={
+int [] horizontalRectangleLocations61={
      0,0,0,
    0,1,1,0,1,
    1,2,0,1,1,
    1,1,0,1,0,
      0,0,0};
-int [] verticalRectangleLocations60={
+int [] verticalRectangleLocations61={
      0,0,0,0,
    0,1,1,1,1,1,
    1,1,1,0,1,0,
      0,0,0,0};
-levels[60] = new Map(squareLocations60,edgeLocations60,horizontalRectangleLocations60,verticalRectangleLocations60);//level-78
-int [] squareLocations61= {
+levels[61] = new Map(squareLocations61,edgeLocations61,horizontalRectangleLocations61,verticalRectangleLocations61);//level-78
+int [] squareLocations62= {
 	  0,0,0,
         0,2,3,2,0,
         0,1,3,2,0,
           0,1,0};
-int [] edgeLocations61={
+int [] edgeLocations62={
 	 0,1,0,0,
        0,0,0,1,0,0,
        0,0,1,0,0,0,
        0,0,0,0,0,0,
          0,1,0,0};
-int [] horizontalRectangleLocations61={
+int [] horizontalRectangleLocations62={
      1,0,0,
    0,0,1,0,0,
    0,1,2,1,0,
    0,1,1,0,1,
      0,1,0};
-int [] verticalRectangleLocations61={
+int [] verticalRectangleLocations62={
      0,1,0,0,
    0,1,1,1,0,0,
    0,1,0,1,1,1,
      0,1,1,0};
-levels[61] = new Map(squareLocations61,edgeLocations61,horizontalRectangleLocations61,verticalRectangleLocations61);//level-79
-
-int [] squareLocations62={
-	  1,0,0,
-        0,2,0,2,0,
-        0,1,3,0,0,
-          0,3,0};
-int [] edgeLocations62={
-	 1,0,0,0,
-       0,0,0,1,0,0,
-       0,0,1,0,1,0,
-       0,0,0,0,0,0,
-         0,0,0,0};
-int [] horizontalRectangleLocations62={
-     1,0,0,
-   0,1,1,0,0,
-   0,1,0,1,0,
-   1,1,2,1,0,
-     0,1,0};
-int [] verticalRectangleLocations62={
-     1,1,0,0,
-   0,0,1,1,0,0,
-   0,1,0,0,1,0,
-     1,1,1,0};
-levels[62] = new Map(squareLocations62,edgeLocations62,horizontalRectangleLocations62,verticalRectangleLocations62);//level-80
+levels[62] = new Map(squareLocations62,edgeLocations62,horizontalRectangleLocations62,verticalRectangleLocations62);//level-79
 
 int [] squareLocations63={
 	  1,0,0,
-        0,2,0,2,2,
-        0,1,3,1,0,
+        0,2,0,2,0,
+        0,1,3,0,0,
           0,3,0};
 int [] edgeLocations63={
 	 1,0,0,0,
@@ -1497,7 +1473,8 @@ int [] verticalRectangleLocations63={
    0,0,1,1,0,0,
    0,1,0,0,1,0,
      1,1,1,0};
-levels[63] = new Map(squareLocations63,edgeLocations63,horizontalRectangleLocations63,verticalRectangleLocations63);//level-81
+levels[63] = new Map(squareLocations63,edgeLocations63,horizontalRectangleLocations63,verticalRectangleLocations63);//level-80
+
 		   }
     public Map[] getLevels() {
         return levels;
