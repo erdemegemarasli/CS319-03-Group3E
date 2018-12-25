@@ -84,6 +84,9 @@ public class GameBoard implements Drawable
             count++;
         }
         map = new Map(squaresLocations,edgeLocations,horizontalLineLocations,verticalLineLocations);
+        for(int i = 0; i <map.getSquareLocations().length;i++){
+            System.out.print(map.getSquareLocations()[i]);
+        }
         setUpGameBoard();
 
     }
@@ -121,10 +124,12 @@ public class GameBoard implements Drawable
     public void setUpGameBoard(){
         int temp = 0;
         for (int i = 0; i < map.getSquareLocations().length; i++) {
+            System.out.println(map.getSquareLocations()[i]);
             squares[i].setInfo(map.getSquareLocations()[i]);
             if (map.getSquareLocations()[i] == 1) {
                 GameUnit unit = new GameUnit(squares[i].getX(), squares[i].getY(), squareHeight, false, theme);
                 unit.setInfo(friendlyUnitCount);
+                System.out.println("test");
                 friendlyUnitCount++;
                 gameUnits.add(unit);
             }
