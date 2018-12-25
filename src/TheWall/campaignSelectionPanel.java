@@ -61,6 +61,9 @@ public class campaignSelectionPanel extends SimplePanel{
     /**
      * ButtonListener class a class which is created to take which button is clicked
      * based on this information it sets the selection and helps to change the current panel on the screen
+     * if returnPrev button is clicked then selection = 0
+     * if button1 is clicked selection = 1
+     * if button2 is clicked selection = 2
      */
     private class ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event)
