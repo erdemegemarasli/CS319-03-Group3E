@@ -5,7 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 /*
-Creator: Erdem Ege Marasli
+Creator: Erdem Ege Marasli & Ayca Begum Tascioglu
+Description: A simple class to construct a game acoording to its mode and its theme
  */
 /**
 For Modes:
