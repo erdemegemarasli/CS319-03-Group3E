@@ -156,10 +156,12 @@ abstract class GameUnits extends GameObject{
 
         else{
             if(isEnemy) {
+                //System.out.println("enemy");
                 g.setColor(Color.RED);
                 g.fillOval(this.getX(), this.getY(), radius, radius);
             }
             else{
+                //System.out.println("friendly");
                 g.setColor(Color.BLUE);
                 g.fillOval(this.getX() , this.getY() , radius, radius);
             }
