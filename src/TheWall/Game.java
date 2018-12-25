@@ -38,7 +38,8 @@ public class Game {
     private Timer timer;
     int level;
     boolean levelPassed;
-    boolean storyIsShown;
+    boolean storyIsShownForHP;
+    boolean storyIsShownForGoT;
 
     int remainingTime;
     private JButton returnPrev;
@@ -47,7 +48,8 @@ public class Game {
         this.mode = mode;
         this.theme = theme;
         levelPassed = false;
-        storyIsShown = false;
+        storyIsShownForHP = false;
+        storyIsShownForGoT = false;
         if(mode == 0){
             walls = new Walls();
 
@@ -254,7 +256,7 @@ public class Game {
                 levelPassed = true;
                 renderListener.stop();
             }
-            if(!storyIsShown && mode == 3 && theme == 1){
+            if(!storyIsShownForHP && mode == 3 && theme == 1){
 
                 try{
                     showStory();
@@ -262,7 +264,17 @@ public class Game {
                 catch(IOException e){
                     System.out.println("story is not found");
                 }
-                storyIsShown = true;
+                storyIsShownForHP = true;
+            }
+            if(!storyIsShownForGoT && mode == 3 && theme == 2){
+
+                try{
+                    showStory();
+                }
+                catch(IOException e){
+                    System.out.println("story is not found");
+                }
+                storyIsShownForGoT = true;
             }
 
         }
