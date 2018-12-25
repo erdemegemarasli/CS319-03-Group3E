@@ -6,6 +6,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Creator: Ayca Begum Tascioglu
+ */
 public class CreditsScreen extends SimplePanel{
     JButton returnPrev = new JButton("Back");
     public CreditsScreen() {
