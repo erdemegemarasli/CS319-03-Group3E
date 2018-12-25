@@ -149,6 +149,7 @@ public class Game {
 
         }
 
+
         /**
         CAMPAIGN MODE : 3
          */
@@ -381,5 +382,8 @@ public class Game {
      */
     public int getRemainingTime() {
         return remainingTime;
+    }
+    public void stopTimer(){
+        timer.stop();
     }
 }
