@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-/*
+/**
 Creator: Erdem Ege Marasli & Ayca Begum Tascioglu
 Description: A simple game class to construct a game acoording to its mode and its theme
  */
@@ -20,7 +20,7 @@ For Modes:
  */
 public class Game {
 
-    /*
+    /**
     ImageIcons to used in the JOptionPanes
      */
     ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
@@ -47,7 +47,7 @@ public class Game {
     private Timer timer;
     int level;
     boolean levelPassed;
-    /*
+    /**
     storyIsShownForHp is a boolean flag for campaign mode to show the story according to its theme
     storyIsShownForGoT is a boolean flag for campaign mode to show the story according to its theme
      */
@@ -57,7 +57,7 @@ public class Game {
     int remainingTime; //an integer which presents remaining time for challenge mode
     private JButton returnPrev;
 
-    /*
+    /**
     Game constructor to construct a game object
     @param level: int (the game's level)
     @param mode: int (mode of the game classical, campaign, challenge or developer)
@@ -93,7 +93,7 @@ public class Game {
             }
         }
 
-        /*
+        /**
         DEVELOPER MODE : 1 Create
          */
         if(mode == 1){
@@ -128,7 +128,7 @@ public class Game {
 
         }
 
-        /*
+        /**
         CHALLENGE MODE : 2
          */
         if(mode == 2){
@@ -149,7 +149,7 @@ public class Game {
 
         }
 
-        /*
+        /**
         CAMPAIGN MODE : 3
          */
         if(mode == 3){
@@ -186,21 +186,22 @@ public class Game {
 
     }
 
-    /* setMode method to set game's mode
+    /**
+     *  setMode method to set game's mode
     @param mode: int the desired modes ID
      */
     public void setMode(int mode) {
         this.mode = mode;
     }
 
-    /* getMode method to get game's mode
+    /** getMode method to get game's mode
     @return mode: int the ID of the game's mode
      */
     public int getMode() {
         return mode;
     }
 
-    /*
+    /**
     getGameBoard method to get game board
     @return board: GameBoard as the game board which the whole game settled in
      */
@@ -208,7 +209,7 @@ public class Game {
         return board;
     }
 
-    /*
+    /**
     getWalls method to get the walls in the game
     @return a list of walls
      */
@@ -218,9 +219,20 @@ public class Game {
     }
 
 
+    /**
+    getRender method to get the render of the game
+    @return render: Render
+     */
     public Render getRender() {
         return render;
     }
+
+    /**
+    checkWinCondition method to check if the given challenge is solved or not
+    isGameFinished(): boolean
+     @return true if the win condition satisfied, the game is finished
+     @return false if the win condition is not datisfied, the game is not finished
+     */
     public boolean checkWinCondition(){
         return getGameBoard().isGameFinished();
     }
