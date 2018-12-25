@@ -8,6 +8,8 @@ Creator: Ayca Begum Tascioglu
 
 /**
  * Game unit class as an instance of the GameUnits
+ * This class was design for additional units at the beginning, however we did not included them and used this class
+ * for regular units as well.
  */
 public class GameUnit extends GameUnits{
 
