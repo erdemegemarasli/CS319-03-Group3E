@@ -201,7 +201,7 @@ public class WallEdge extends GameObject {
     @Override
     /**
      * setX method to set wall edge's x coordinate updates the middle point of the wall edge according to it
-     * @param: x : int the desired coordinate of the x
+     * @param x : int the desired coordinate of the x
      */
     public void setX(int x) {
         super.setX(x);
@@ -211,7 +211,7 @@ public class WallEdge extends GameObject {
     @Override
     /**
      * setY method to set wall edge's y coordinate updates the middle point of the wall edge according to it
-     * @param: y : int the desired coordinate of the y
+     * @param y : int the desired coordinate of the y
      */
     public void setY(int y) {
         super.setY(y);
