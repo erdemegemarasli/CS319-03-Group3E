@@ -27,6 +27,8 @@ public class Game {
     ImageIcon cersei = new ImageIcon("src/TheWall/images/cersei.jpg");
     ImageIcon jon = new ImageIcon("src/TheWall/images/jon.jpg");
     ImageIcon khaleesi = new ImageIcon("src/TheWall/images/khaleesi.jpg");
+    ImageIcon nk = new ImageIcon("src/TheWall/images/nightking.jpg");
+    ImageIcon melis = new ImageIcon("src/TheWall/images/melis.jpg");
     private GameBoard board;
     private Walls walls;
     private Render render;
@@ -219,27 +221,23 @@ public class Game {
     public void showStoryforGoT() {
         if (level == 4) {
             //ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
-
-            JOptionPane.showMessageDialog(null, "Never!", "Story:", JOptionPane.INFORMATION_MESSAGE, harry);
+            JOptionPane.showMessageDialog(null, "asdJUUkk,dI!@", "Story:", JOptionPane.INFORMATION_MESSAGE, nk);
+            JOptionPane.showMessageDialog(null, "Winter is coming we should be together!", "Story:", JOptionPane.INFORMATION_MESSAGE, jon);
         }
         if (level == 5) {
-            JOptionPane.showMessageDialog(null, "You ağ a wizağd hağğy!!", "Story:", JOptionPane.INFORMATION_MESSAGE, ron);
-            JOptionPane.showMessageDialog(null, "That's true #lit", "Story:", JOptionPane.INFORMATION_MESSAGE, harry);
-            JOptionPane.showMessageDialog(null, "You're a fool, Harry Potter, and you will lose everything.", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
-        }
+            JOptionPane.showMessageDialog(null, "I will kill all the Starks!!", "Story:", JOptionPane.INFORMATION_MESSAGE, cersei);
+            JOptionPane.showMessageDialog(null, "I will kill you!", "Story:", JOptionPane.INFORMATION_MESSAGE, arya);
+            }
         if (level == 6) {
-            JOptionPane.showMessageDialog(null, "Greatness inspires envy, envy engenders spite, spite spawns lies, Harry", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+            JOptionPane.showMessageDialog(null, "Red Woman Melisandre, you resurrected me!", "Story:", JOptionPane.INFORMATION_MESSAGE, jon);
+            JOptionPane.showMessageDialog(null, "You, my lord; you are the ONE!", "Story:", JOptionPane.INFORMATION_MESSAGE, melis);
         }
         if (level == 7) {
-            JOptionPane.showMessageDialog(null, "How lies have fed your legend, Harry!"
-                    , "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
-            JOptionPane.showMessageDialog(null, "Do you want to know what really happened thirteen years ago? ", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
-            JOptionPane.showMessageDialog(null, "Shall I divulge how I truly lost my powers? It was love"
-                    , "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
-            JOptionPane.showMessageDialog(null, " when dear sweet Lily Potter gave her life for her only son, it provided him with the ultimate protection"
-                    , "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
-            JOptionPane.showMessageDialog(null, "But no matter, no matter, things have changed. I CAN TOUCH YOU… NOW!, ","Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
-        }
+            JOptionPane.showMessageDialog(null, "Arya! I thought you were dead"
+                    , "Story:", JOptionPane.INFORMATION_MESSAGE, jon);
+            JOptionPane.showMessageDialog(null, "Long story bro"
+                    , "Arya:", JOptionPane.INFORMATION_MESSAGE, arya);
+             }
     }
 
     private class RenderListener implements ActionListener
@@ -268,12 +266,9 @@ public class Game {
             }
             if(!storyIsShownForGoT && mode == 3 && theme == 2){
 
-                try{
-                    showStory();
-                }
-                catch(IOException e){
-                    System.out.println("story is not found");
-                }
+
+                    showStoryforGoT();
+
                 storyIsShownForGoT = true;
             }
 

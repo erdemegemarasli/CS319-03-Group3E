@@ -18,9 +18,10 @@ abstract class GameUnits extends GameObject{
 
 
     ImageIcon arya = new ImageIcon("src/TheWall/images/arya.jpg");
-    ImageIcon cersei = new ImageIcon("src/TheWall/images/cersei.jpg");
+    ImageIcon cersei = new ImageIcon("src/TheWall/images/nightking.jpg");
     ImageIcon jon = new ImageIcon("src/TheWall/images/jon.jpg");
     ImageIcon khaleesi = new ImageIcon("src/TheWall/images/khaleesi.jpg");
+    //ImageIcon nightKing = new ImageIcon("src/TheWall/images/khaleesi.jpgg");
 
 
     int theme;
