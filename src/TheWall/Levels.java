@@ -577,6 +577,30 @@ int [] verticalRectangleLocations25={
    0,1,1,1};
 levels[25] = new Map(squareLocations25,edgeLocations25,horizontalRectangleLocations25,verticalRectangleLocations25);//level-42
 		    
+int [] squareLocations26 {
+	  0,0,0,
+        0,0,0,0,1,
+        0,0,3,2,0,
+          0,3,1};
+int [] edgeLocations26={
+	 0,0,0,0,
+       0,0,0,0,1,0,
+       0,0,0,0,0,0,
+       0,0,0,0,0,1,
+         0,1,0,1};
+int [] horizontalRectangleLocations26={
+     0,0,0,
+   0,0,0,0,1,
+   0,0,1,0,1,
+   0,1,2,1,1,
+     0,1,1};
+int [] verticalRectangleLocations26={
+    0,0,0,0,
+   0,0,0,0,1,1,
+   0,1,1,1,1,1,
+   0,1,1,1};
+levels[26] = new Map(squareLocations26,edgeLocations26,horizontalRectangleLocations26,verticalRectangleLocations26);//level-43
+		    
     }
     public Map[] getLevels() {
         return levels;
