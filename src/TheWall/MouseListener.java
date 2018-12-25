@@ -118,29 +118,13 @@ public class MouseListener extends MouseAdapter {
                         gameBoard.setCastle(castle2);
                         movingUnit = true;
                     }
-                    else if(tempUnit != null){
-                        if(tempUnit.isCastle() == false){
-                            for(int i = 0; i < gameUnits.size(); i++){
-                                if(gameUnits.get(i).isContainMouse(e.getX(),e.getY())){
-                                    tempUnit = gameUnits.get(i);
-                                    gameBoard.detachUnit(gameUnits.get(i));
-                                    movingUnit = true;
-                                    break;
-                                }
-                            }
-                        }
-                        else{
-                            if(gameBoard.getCastle()[0].isContainMouse(e.getX(),e.getY()) && count == 0) {
-                                if(gameBoard.getCastle()[0] == castle1[0]){
-                                    tempUnit = castle1[0];
-                                    gameBoard.detachCastle();
-                                    movingUnit = false;
-                                }
-                                else{
-                                    tempUnit = castle2[0];
-                                    gameBoard.detachCastle();
-                                    movingUnit = false;
-                                }
+                    else if(tempUnit == null){
+                        for(int i = 0; i < gameUnits.size(); i++){
+                            if(gameUnits.get(i).isContainMouse(e.getX(),e.getY()) && gameUnits.get(i).isCastle() == false){
+                                tempUnit = gameUnits.get(i);
+                                gameBoard.detachUnit(gameUnits.get(i));
+                                movingUnit = true;
+                                break;
                             }
                         }
 
