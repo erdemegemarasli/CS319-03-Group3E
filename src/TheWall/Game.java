@@ -237,6 +237,10 @@ public class Game {
         return getGameBoard().isGameFinished();
     }
 
+    /**
+     * showStory method to show the desired story for HarryPotter theme, in campaign Mode
+     *
+     */
     public void showStory()throws IOException {
         if (level == 4) {
             //ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
@@ -267,6 +271,10 @@ public class Game {
             JOptionPane.showMessageDialog(null, "But no matter, no matter, things have changed. I CAN TOUCH YOU… NOW!, ","Voldemort again:", JOptionPane.INFORMATION_MESSAGE, voldemort);
         }
     }
+    /**
+     * showStory method to show the desired story for Game of Thrones theme, in campaign Mode
+     *
+     */
     public void showStoryforGoT() {
         if (level == 4) {
             //ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
@@ -324,8 +332,20 @@ public class Game {
         }
     }
 
+    /**
+     * TimerListener class to construct an instance of an ActionListener
+     * this class is designed for the challenge mode
+     * for the timer in it
+     */
     private class TimerListener implements ActionListener{
         public void actionPerformed(ActionEvent e){
+            /**
+             * if he mode is 2 which represents the game is for challenge mode
+             * then it decreases the remaining time
+             * if the remaining time is zero and the win condition is not satisfied then a popup will be pushed
+             * to tell user s/he failed
+             * else a popup will be pushed to show s/he pass the level
+             */
             if(mode == 2){
                 remainingTime--;
                 if(remainingTime ==0){
@@ -341,6 +361,11 @@ public class Game {
         }
     }
 
+    /**
+     * a function to get remaining time
+     * this function is using in challenge mode to get the time which user should pass the level in it
+     * @return remainingTime: int as the remaining time to solve the challenge
+     */
     public int getRemainingTime() {
         return remainingTime;
     }
