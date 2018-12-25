@@ -19,6 +19,7 @@ abstract class GameUnits extends GameObject{
     ImageIcon voldemort = new ImageIcon("src/TheWall/images/voldemort.jpg");
     ImageIcon hermione = new ImageIcon("src/TheWall/images/hermione.jpg");
     ImageIcon ron = new ImageIcon("src/TheWall/images/ron.jpg");
+    ImageIcon death = new ImageIcon("src/TheWall/images/death.jpg");
 
 
     ImageIcon arya = new ImageIcon("src/TheWall/images/arya.jpg");
@@ -120,7 +121,13 @@ abstract class GameUnits extends GameObject{
     public void draw(Graphics g) {
          if(theme == 1){
             if(isEnemy) {
-                voldemort.paintIcon(null, g, this.getX(), this.getY());
+                if(info == 0){
+                    voldemort.paintIcon(null, g, this.getX(), this.getY());
+                }
+                else{
+                    death.paintIcon(null, g, this.getX(), this.getY());
+                }
+
             }
             else if(isCastle){
                 g.setColor(Color.BLUE);
