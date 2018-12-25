@@ -17,11 +17,24 @@ public class WallEdge extends GameObject {
 
     int indexNo;
 
+    /**
+     * some additional colors to color the walls
+     */
     public static final Color BROWN = new Color(153,102,0);
     public static final Color light_yellow = new Color(255,255,204);
     public static final Color golden_yellow = new Color(255,204, 51);
     public static final Color GREEN = Color.GREEN;
     Color currentColor;
+
+    /**
+     * wall edge class constructor to construct a wall edge which is an instance of a gameobject
+     * @param x : int - the x coordinate of a wall edge
+     * @param y : int y - the y coordinate of a wall edge
+     * @param radius : int - the radius of an wall edge
+     * @param isCastle : boolean - a boolean flag to determine is the edge contains a castle or not
+     * @param fixedX : int - the initial position's x coordinate of the wall edge
+     * @param fixedY : int - the initial position's y coordinate of the wall edge
+     */
     public WallEdge(int x, int y,int radius, boolean isCastle, int fixedX, int fixedY){
         super(x, y);
         this.radius = radius;
@@ -52,6 +65,7 @@ public class WallEdge extends GameObject {
             //g.drawOval(this.getX(), this.getY(), radius, radius);
         }
     }
+
 
     public boolean isCastle() {
         return isCastle;
