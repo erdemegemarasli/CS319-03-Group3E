@@ -589,11 +589,11 @@ int [] edgeLocations26={
        0,0,0,0,0,0,
          0,0,0,1};
 int [] horizontalRectangleLocations26={
-     0,0,0,
-   0,0,0,0,1,
-   0,0,1,0,1,
-   0,1,2,1,1,
-     0,1,1};
+     0,1,1,
+   0,1,0,1,0,
+   0,1,1,1,0,
+   1,0,1,1,0,
+     0,0,0};
 int [] verticalRectangleLocations26={
     0,0,0,0,
    0,0,0,0,1,1,
