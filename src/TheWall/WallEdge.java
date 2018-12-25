@@ -174,25 +174,45 @@ public class WallEdge extends GameObject {
         this.fixedY = fixedY;
     }
 
+    /**
+     * setFixedX method to set the fixedX which is the initial x coordinate of the wall
+     * @param fixedX: int -the coordinate which will be set as the initial x coordinate
+     */
     public void setFixedX(int fixedX) {
         this.fixedX = fixedX;
     }
 
+    /**
+     * getFixedY method to take the initial y coordinate of a wall edge
+     * @return fixedY: int the initial y coordinate of the wall edge
+     */
     public int getFixedY() {
         return fixedY;
     }
 
+    /**
+     * getFixedX method to take the initial x coordinate of a wall edge
+     * @return fixedX: int the initial x coordinate of the wall edge
+     */
     public int getFixedX() {
         return fixedX;
     }
 
     @Override
+    /**
+     * setX method to set wall edge's x coordinate updates the middle point of the wall edge according to it
+     * @param: x : int the desired coordinate of the x
+     */
     public void setX(int x) {
         super.setX(x);
         updateMiddlePoint();
     }
 
     @Override
+    /**
+     * setY method to set wall edge's y coordinate updates the middle point of the wall edge according to it
+     * @param: y : int the desired coordinate of the y
+     */
     public void setY(int y) {
         super.setY(y);
         updateMiddlePoint();
