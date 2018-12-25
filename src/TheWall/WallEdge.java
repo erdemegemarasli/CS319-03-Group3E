@@ -100,6 +100,10 @@ public class WallEdge extends GameObject {
         return middleX;
     }
 
+    /**
+     * getMiddleY method to get the middle point's y coordinate of a wall edge
+     * @return middleY : int -the middle point's y coordinate of a wall edge
+     */
     public int getMiddleY() {
         return middleY;
     }
