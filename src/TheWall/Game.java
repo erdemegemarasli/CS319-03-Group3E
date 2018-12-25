@@ -70,6 +70,10 @@ public class Game {
         levelPassed = false;
         storyIsShownForHP = false;
         storyIsShownForGoT = false;
+        /*
+        CLASSICAL MODE: 0
+        if mode is zero than a classical game will be created
+         */
         if(mode == 0){
             walls = new Walls();
 
@@ -182,10 +186,16 @@ public class Game {
 
     }
 
+    /* setMode method to set game's mode
+    @param mode: int the desired modes ID
+     */
     public void setMode(int mode) {
         this.mode = mode;
     }
 
+    /* getMode method to get game's mode
+    @return mode: int the ID of the game's mode
+     */
     public int getMode() {
         return mode;
     }
