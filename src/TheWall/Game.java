@@ -221,12 +221,12 @@ public class Game {
     public void showStoryforGoT() {
         if (level == 4) {
             //ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
-            JOptionPane.showMessageDialog(null, "asdJUUkk,dI!@", "Story:", JOptionPane.INFORMATION_MESSAGE, nk);
-            JOptionPane.showMessageDialog(null, "Winter is coming we should be together!", "Story:", JOptionPane.INFORMATION_MESSAGE, jon);
+            JOptionPane.showMessageDialog(null, "asdJUUkk,dI!@", "A Sample White Walker:", JOptionPane.INFORMATION_MESSAGE, nk);
+            JOptionPane.showMessageDialog(null, "Winter is coming we should be together!", "Jon Snow:", JOptionPane.INFORMATION_MESSAGE, jon);
         }
         if (level == 5) {
-            JOptionPane.showMessageDialog(null, "I will kill all the Starks!!", "Story:", JOptionPane.INFORMATION_MESSAGE, cersei);
-            JOptionPane.showMessageDialog(null, "I will kill you!", "Story:", JOptionPane.INFORMATION_MESSAGE, arya);
+            JOptionPane.showMessageDialog(null, "I will kill all the Starks!!", "Cersei:", JOptionPane.INFORMATION_MESSAGE, cersei);
+            JOptionPane.showMessageDialog(null, "I will kill you!", "Arya:", JOptionPane.INFORMATION_MESSAGE, arya);
             }
         if (level == 6) {
             JOptionPane.showMessageDialog(null, "Red Woman Melisandre, you resurrected me!", "Jon Snow:", JOptionPane.INFORMATION_MESSAGE, jon);
