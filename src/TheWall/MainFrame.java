@@ -289,6 +289,7 @@ public class MainFrame extends JFrame
             {
 
                 if(currentPanel.getSelection() == 0 ){
+                    ((GameViewer) currentPanel).stopTimer();
                     removeComp(currentPanel);
                     currentPanel = new PlayScreen();
                     currentPanel.setTheme(theme);
