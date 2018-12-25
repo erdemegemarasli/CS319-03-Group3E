@@ -9,8 +9,20 @@ import java.awt.event.ActionListener;
 /**
  * Creator: Ayca Begum Tascioglu
  */
+
+/**
+ * a panel to create a screen for credits screen for the game
+ * it extends the simple panel which is a JPanel with additional features such as
+ * selection: int
+ * theme: int
+ * type: String
+ */
 public class CreditsScreen extends SimplePanel{
     JButton returnPrev = new JButton("Back");
+
+    /**
+     * CreditsScreen constructor to construct a credits panel which user can see the developers of the game
+     */
     public CreditsScreen() {
         super();
         type = "credits";
@@ -45,6 +57,11 @@ public class CreditsScreen extends SimplePanel{
         this.add(dev5);
         this.add(returnPrev);
     }
+
+    /**
+     * getSelection method to get the selection of the panel
+     * @return selection: int to change the current panel which is shown to the user
+     */
     public int getSelection(){
         return selection;
     }
