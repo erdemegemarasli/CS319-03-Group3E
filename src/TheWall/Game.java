@@ -195,6 +195,9 @@ public class Game {
             JOptionPane.showMessageDialog(null, "That's true #lit", "Story:", JOptionPane.INFORMATION_MESSAGE, harry);
             JOptionPane.showMessageDialog(null, "You're a fool, Harry Potter, and you will lose everything.", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
         }
+        if (level == 6) {
+            JOptionPane.showMessageDialog(null, "Greatness inspires envy, envy engenders spite, spite spawns lies, Harry", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+        }
     }
 
     private class RenderListener implements ActionListener
