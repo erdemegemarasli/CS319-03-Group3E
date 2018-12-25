@@ -215,7 +215,7 @@ public class Game {
                     , "Voldemort continues:", JOptionPane.INFORMATION_MESSAGE, voldemort);
             JOptionPane.showMessageDialog(null, " when dear sweet Lily Potter gave her life for her only son, it provided him with the ultimate protection"
                     , "Voldemort continues more and more:", JOptionPane.INFORMATION_MESSAGE, voldemort);
-            JOptionPane.showMessageDialog(null, "But no matter, no matter, things have changed. I CAN TOUCH YOU… NOW!, ","Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+            JOptionPane.showMessageDialog(null, "But no matter, no matter, things have changed. I CAN TOUCH YOU… NOW!, ","Voldemort again:", JOptionPane.INFORMATION_MESSAGE, voldemort);
         }
     }
     public void showStoryforGoT() {
