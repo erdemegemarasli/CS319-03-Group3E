@@ -55,15 +55,35 @@ abstract class GameUnits extends GameObject{
         indexNo = -1;
         isPlaced = true;
     }
+
+    /**
+     *
+     * @param b
+     */
     public void setIsPlaced(boolean b){
         isPlaced = b;
     }
+
+    /**
+     *
+     * @return
+     */
     public boolean isPlaced(){
         return isPlaced;
     }
+
+    /**
+     * isEnemy method to decide if the game unit is an enemy(red knight) or not (blue knight)
+     * @return
+     */
     public boolean isEnemy(){
         return isEnemy;
     }
+
+    /**
+     *
+     * @param index
+     */
     public void setIndexNo(int index) {
         this.indexNo = index;
     }
@@ -90,6 +110,13 @@ abstract class GameUnits extends GameObject{
         return isCastle;
     }
     @Override
+    /**
+     * draw method to draw the images of the selected theme's character
+     * if theme is 1 then harry potter characters are used as knights
+     * if theme is 2 game of thrones characters are used as knights
+     * else the theme is default then red and blue knights will be used as the knights
+     * @param g: Graphics a tool to draw an image/shape etc.
+     */
     public void draw(Graphics g) {
          if(theme == 1){
             if(isEnemy) {
