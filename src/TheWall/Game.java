@@ -56,6 +56,13 @@ public class Game {
 
     int remainingTime; //an integer which presents remaining time for challenge mode
     private JButton returnPrev;
+
+    /*
+    Game constructor to construct a game object
+    @param level: int (the game's level)
+    @param mode: int (mode of the game classical, campaign, challenge or developer)
+    @param theme: int (game of thrones theme, harry potter theme)
+     */
     public Game(int level, int mode, int theme){
         this.level = level;
         this.mode = mode;
