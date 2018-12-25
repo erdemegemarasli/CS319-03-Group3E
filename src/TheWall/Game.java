@@ -22,6 +22,11 @@ public class Game {
     ImageIcon voldemort = new ImageIcon("src/TheWall/images/voldemort.jpg");
     ImageIcon hermione = new ImageIcon("src/TheWall/images/hermione.jpg");
     ImageIcon ron = new ImageIcon("src/TheWall/images/ron.jpg");
+
+    ImageIcon arya = new ImageIcon("src/TheWall/images/arya.jpg");
+    ImageIcon cersei = new ImageIcon("src/TheWall/images/cersei.jpg");
+    ImageIcon jon = new ImageIcon("src/TheWall/images/jon.jpg");
+    ImageIcon khaleesi = new ImageIcon("src/TheWall/images/khaleesi.jpg");
     private GameBoard board;
     private Walls walls;
     private Render render;
@@ -189,6 +194,31 @@ public class Game {
                 JOptionPane.showMessageDialog(null, "Never!", "Story:", JOptionPane.INFORMATION_MESSAGE, harry);
             }
             br.close();
+        }
+        if (level == 5) {
+            JOptionPane.showMessageDialog(null, "You ağ a wizağd hağğy!!", "Story:", JOptionPane.INFORMATION_MESSAGE, ron);
+            JOptionPane.showMessageDialog(null, "That's true #lit", "Story:", JOptionPane.INFORMATION_MESSAGE, harry);
+            JOptionPane.showMessageDialog(null, "You're a fool, Harry Potter, and you will lose everything.", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+        }
+        if (level == 6) {
+            JOptionPane.showMessageDialog(null, "Greatness inspires envy, envy engenders spite, spite spawns lies, Harry", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+        }
+        if (level == 7) {
+            JOptionPane.showMessageDialog(null, "How lies have fed your legend, Harry!"
+                    , "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+            JOptionPane.showMessageDialog(null, "Do you want to know what really happened thirteen years ago? ", "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+            JOptionPane.showMessageDialog(null, "Shall I divulge how I truly lost my powers? It was love"
+                    , "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+            JOptionPane.showMessageDialog(null, " when dear sweet Lily Potter gave her life for her only son, it provided him with the ultimate protection"
+                    , "Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+            JOptionPane.showMessageDialog(null, "But no matter, no matter, things have changed. I CAN TOUCH YOU… NOW!, ","Story:", JOptionPane.INFORMATION_MESSAGE, voldemort);
+        }
+    }
+    public void showStoryforGoT() {
+        if (level == 4) {
+            //ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
+
+            JOptionPane.showMessageDialog(null, "Never!", "Story:", JOptionPane.INFORMATION_MESSAGE, harry);
         }
         if (level == 5) {
             JOptionPane.showMessageDialog(null, "You ağ a wizağd hağğy!!", "Story:", JOptionPane.INFORMATION_MESSAGE, ron);

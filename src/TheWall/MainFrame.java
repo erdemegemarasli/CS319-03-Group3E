@@ -276,10 +276,12 @@ public class MainFrame extends JFrame
                     theme = tmp;
                 }
                 else if (currentPanel.getSelection() == 2){
+                    levelforCampaign = 4;
+                    removeComp(currentPanel);
                     removeComp(currentPanel);
                     int tmp = theme;
                     theme = 2;
-                    Game game = new Game(4, 3, 2);
+                    Game game = new Game(levelforCampaign, 3, 2);
                     currentPanel = new GameViewer(game);
                     currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
@@ -298,13 +300,27 @@ public class MainFrame extends JFrame
                     addComp(currentPanel);
                     setVis(true);
                 }
-                else if(currentPanel.getSelection() == 19 ){
+                else if(currentPanel.getSelection() == 19 && currentPanel.theme ==1){
                     int newLevel = increaseLevel(levelforCampaign);
                     setLevelforCampaign(newLevel);
                     removeComp(currentPanel);
                     int tmp = theme;
                     theme = 1;
                     Game game = new Game(newLevel, 3, 1);
+                    currentPanel = new GameViewer(game);
+                    currentPanel.setTheme(theme);
+                    game.getRender().addView((GameViewer)currentPanel);
+                    addComp(currentPanel);
+                    setVis(true);
+                    theme = tmp;
+                }
+                else if(currentPanel.getSelection() == 19 && currentPanel.theme ==2){
+                    int newLevel = increaseLevel(levelforCampaign);
+                    setLevelforCampaign(newLevel);
+                    removeComp(currentPanel);
+                    int tmp = theme;
+                    theme = 2;
+                    Game game = new Game(newLevel, 3, 2);
                     currentPanel = new GameViewer(game);
                     currentPanel.setTheme(theme);
                     game.getRender().addView((GameViewer)currentPanel);
