@@ -959,26 +959,26 @@ int [] verticalRectangleLocations41={
 levels[41] = new Map(squareLocations41,edgeLocations41,horizontalRectangleLocations41,verticalRectangleLocations41);//level-58
 int [] squareLocations42= {
 	  0,2,0,
-        0,0,3,2,2,
-        0,0,2,1,1,
-          0,0,0};
+        0,0,0,3,0,
+        1,1,0,3,0,
+          0,2,0};
 int [] edgeLocations42={
-	 0,1,0,0,
+	 0,0,1,0,
+       0,0,0,0,1,0,
+       1,0,0,0,0,1,
        0,0,0,0,0,0,
-       0,0,1,0,0,0,
-       0,0,0,1,0,1,
          0,0,0,0};
 int [] horizontalRectangleLocations42={
-     0,1,1,
-   0,0,2,1,0,
-   0,0,1,1,1,
-   0,0,0,1,1,
-     0,0,1};
+     0,1,0,
+   0,1,1,1,0,
+   1,0,1,2,1,
+   1,1,0,1,0,
+     0,0,0};
 int [] verticalRectangleLocations42={
-    0,1,1,1,
-   0,0,1,1,0,0,
-   0,0,0,1,1,1,
-   0,0,0,1};
+    0,0,1,0,
+   0,1,0,0,1,0,
+   1,0,1,1,1,1,
+   0,0,0,0};
 levels[42] = new Map(squareLocations42,edgeLocations42,horizontalRectangleLocations42,verticalRectangleLocations42);//level-59		    
 		    
 }
