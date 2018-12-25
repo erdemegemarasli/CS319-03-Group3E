@@ -10,11 +10,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-/*
-Creator: Erdem Ege Marasli
+/**
+Creator: Erdem Ege Marasli & Ayca Begum Tascioglu
  */
-//
-//0 -255- 51
 public class GameViewer extends SimplePanel implements Viewer {
     public static final Color FOSFORLU_YESIL = new Color(0,255,51);
     private Game game;
