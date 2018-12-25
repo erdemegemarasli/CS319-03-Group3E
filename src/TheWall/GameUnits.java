@@ -11,6 +11,10 @@ Creator: Ayca Begum Tascioglu
 abstract class GameUnits extends GameObject{
     int radius;
     boolean isEnemy;
+
+    /**
+     ImageIcons to used to draw a game unit
+     */
     ImageIcon harry = new ImageIcon("src/TheWall/images/harry.jpg");
     ImageIcon voldemort = new ImageIcon("src/TheWall/images/voldemort.jpg");
     ImageIcon hermione = new ImageIcon("src/TheWall/images/hermione.jpg");
@@ -25,13 +29,22 @@ abstract class GameUnits extends GameObject{
 
 
     int theme;
-    boolean isCastle = false;
+    boolean isCastle = false;   //a boolean flag to decide if the game unit is a blue knight or a castle
     int info = 0;
     boolean isHorizontalCastle;
     int fixedX;
     int fixedY;
     int indexNo;
     boolean isPlaced;
+
+    /**
+     * GameUnit constructor to construct a game unit such as knights and castle
+     * @param x : int - the x coordinate of a game unit
+     * @param y : int - the y coordinate of a game unit
+     * @param radius : int the radius of a game unit
+     * @param isEnemy : boolean a flag to understand if the knight is an enemy knight(red knight) or not(blue knight)
+     * @param theme : int an ID to decide if the theme (HarryPotter or GameOfThrones) character will be presented on the game units or not(default)
+     */
     public GameUnits(int x, int y,int radius,boolean isEnemy, int theme){
         super(x, y);
         this.theme = theme;
