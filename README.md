@@ -1,4 +1,4 @@
-**Game Trailer Video = https://www.youtube.com/watch?v=seI0tgJsoKc&feature=youtu.be
+**Game Trailer Video = https://www.youtube.com/watch?v=seI0tgJsoKc&feature=youtu.be**
 
 **CS319-03-Group3E**
 
